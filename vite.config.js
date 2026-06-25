@@ -131,28 +131,28 @@ function mockApiPlugin() {
           try {
             // GET /api/page-settings
             if (pathname === '/api/page-settings') {
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/page_settings.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/page_settings.json'), 'utf-8')
               res.end(fileContent)
               return
             }
 
             // GET /api/testimonials
             if (pathname === '/api/testimonials') {
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/testimonials.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/testimonials.json'), 'utf-8')
               res.end(fileContent)
               return
             }
 
             // GET /api/youtube/videos
             if (pathname === '/api/youtube/videos') {
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/youtube.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/youtube.json'), 'utf-8')
               res.end(fileContent)
               return
             }
 
             // GET /api/achievements
             if (pathname === '/api/achievements') {
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/achievements.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/achievements.json'), 'utf-8')
               res.end(fileContent)
               return
             }
@@ -167,7 +167,7 @@ function mockApiPlugin() {
                 })
                 .catch(err => {
                   console.warn('Live GitHub fetch failed, serving fallback data:', err.message);
-                  const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/github.json'), 'utf-8');
+                  const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/github.json'), 'utf-8');
                   res.end(fileContent);
                 });
               return;
@@ -175,7 +175,7 @@ function mockApiPlugin() {
 
             // GET /api/projects/:slug or GET /api/projects
             if (pathname === '/api/projects') {
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/projects.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/projects.json'), 'utf-8')
               let projects = JSON.parse(fileContent)
               
               if (parsedUrl.query.featured === '1') {
@@ -188,7 +188,7 @@ function mockApiPlugin() {
 
             if (pathname.startsWith('/api/projects/')) {
               const slug = pathname.replace('/api/projects/', '')
-              const fileContent = fs.readFileSync(path.resolve(__dirname, 'src/data/projects.json'), 'utf-8')
+              const fileContent = fs.readFileSync(path.resolve(__dirname, 'api/projects.json'), 'utf-8')
               const projects = JSON.parse(fileContent)
               const project = projects.find(p => p.slug === slug)
               

@@ -1,106 +1,170 @@
 [
   {
-    "slug": "isometricon",
-    "title": "Isometricon — AI 3D Icons Generator",
-    "description": "AI-powered 3D icon generator with pay-as-you-go billing for designers and product teams.",
-    "longDescription": "Isometricon is an AI-powered 3D icon generator for designers and developers who need production-ready assets without a full 3D pipeline. Users describe what they need in plain language and receive stylized isometric icons ready for product UI, marketing, and presentations.\n\nAs CTO, I led the full product stack — from the Next.js application and billing (Polar, Mayar) to generation pipelines powered by Fal.ai, Gemini, and Replicate. Storage runs on Cloudflare R2 with Supabase and Clerk for auth and data. The model is pay-as-you-go so teams generate on demand without paying for unused subscription capacity.\n\nThe goal was speed without sacrificing craft: a fast generation flow, consistent visual style across outputs, and infrastructure that scales with real usage instead of fixed overhead.",
-    "image": "https://utfs.io/f/octNiMKDR9jHTzKrxckwtrO7alVYQ5R8fvACbHFMXSDPgdUh",
+    "slug": "vorce-platform",
+    "title": "VORCE — Workforce Intelligence & Operations Platform",
+    "description": "An end-to-end workforce intelligence and business operations platform combining employee directories, attendance tracking, task management, and desktop device analytics.",
+    "longDescription": "VORCE is an integrated, end-to-end workforce intelligence and business operations platform designed to help organizations streamline employee management, monitor work activities, and extract real-time operational insights. I developed the platform end-to-end, starting from the responsive Next.js landing page to building the comprehensive web dashboard, and integrating the complete mobile and desktop telemetry systems.\n\nAt its core, VORCE unites GPS/Face ID attendance tracking, shift scheduling, task coordination, OCR receipt reimbursement, and organizational knowledge databases into a single responsive portal. By integrating device telemetry from the VLinked desktop agent, the platform's intelligence engine aggregates raw system activity into higher-level workforce signals. This generates real-time analytics for focus ratios, productivity scores, workload levels, and behavioral trends, presenting an executive view of team performance while maintaining data privacy and security.",
+    "image": "/assets/vorce_platform_mockup.png",
     "tags": [
-      "SaaS",
-      "AI",
-      "3D",
-      "Next.js"
+      "Next.js / React",
+      "TypeScript",
+      "Workforce Tech",
+      "Full-Stack"
     ],
-    "bgClass": "bg-surface-neutral",
-    "imagePosition": "object-top",
-    "client": "Isometricon",
-    "role": "CTO & Product Lead",
-    "timeline": "2024 – Present",
-    "liveUrl": "https://isometricon.com",
+    "bgClass": "bg-surface-purple",
+    "imagePosition": "object-center",
+    "client": "VORCE",
+    "role": "Lead Full-Stack Developer",
+    "timeline": "2025",
+    "liveUrl": "https://vorce.id",
     "images": [
-      "https://utfs.io/f/octNiMKDR9jH7Q4bFEiGjCfIWPsqm6nLDcF2E4HovVRgx7lX",
-      "https://utfs.io/f/octNiMKDR9jHAOSwb0C0peQyC1FUsVLcgGwOr7JD2M6Xuq4k",
-      "https://utfs.io/f/octNiMKDR9jHEygEXnoM6mWBQiDgHRzePV52SZyxjqk9bpF8"
+      "/assets/vorce_platform_mockup.png"
     ],
     "featured": true,
     "sortOrder": 1
   },
   {
-    "slug": "absenin-id",
-    "title": "Absenin.id — QR & Face-ID Attendance Platform",
-    "description": "Digital attendance platform with QR and Face ID verification, location lock, and a full HR dashboard.",
-    "longDescription": "Absenin.id is a digital attendance platform for teams that need more than a simple check-in. Employees verify presence through QR codes or Face ID, with location lock so check-ins only count when someone is on site. HR gets a real-time dashboard to track attendance, exceptions, and team coverage.\n\nI built the product end-to-end — UI on Next.js, backend on Convex, authentication with Clerk, and face matching through AWS Rekognition. Mobile-first flows were a priority: check-in had to feel fast on a phone, while employers still get trustworthy, auditable records.\n\nThe result replaces manual logs and informal messaging with a system teams can run daily without friction — accurate presence data employers can trust.",
-    "image": "https://utfs.io/f/octNiMKDR9jHBc4WGlyNKvtDE8s7gZXrbcUQTa0imS6d4Puz",
+    "slug": "vlinked-desktop-agent",
+    "title": "VLinked — Desktop Monitoring Agent",
+    "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
+    "longDescription": "VLinked Desktop Agent is a lightweight, cross-platform desktop monitoring agent developed as part of the VORCE ecosystem. It runs silently on macOS, Windows, and Linux machines to collect essential telemetry metrics, enabling companies to track employee device health, app-specific usage, and active work times.\n\nAs the Lead Desktop Developer, I built the agent using Electron, ensuring high-efficiency monitoring without high system overhead. Key implementations included secure OAuth token persistence via the OS keychain (DPAPI/safeStorage), background tracking systems using systeminformation and powerMonitor for idle-time checking, and a sandboxed IPC renderer architecture. All metric updates stream directly to the centralized VORCE API, serving as the single point of entry to ensure absolute data consistency and system security.",
+    "image": "/assets/vlinked_cards_mockup.png",
     "tags": [
-      "SaaS",
-      "Mobile",
-      "Face ID",
-      "HR Tech"
+      "Electron",
+      "Desktop App",
+      "IoT / Telemetry",
+      "Security"
     ],
-    "bgClass": "bg-surface-purple",
+    "bgClass": "bg-surface-blue",
     "imagePosition": "object-center",
-    "client": "Absenin.id",
-    "role": "Full-Stack Developer",
-    "timeline": "2025 – Present",
-    "liveUrl": "https://absenin.id",
+    "client": "Vorce",
+    "role": "Lead Desktop Developer",
+    "timeline": "2025",
+    "liveUrl": "https://vorce.id/vlinked",
     "images": [
-      "https://utfs.io/f/octNiMKDR9jHNagYZunO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
-      "https://utfs.io/f/octNiMKDR9jHNagYZunO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
-      "https://utfs.io/f/octNiMKDR9jHBLUxnCyNKvtDE8s7gZXrbcUQTa0imS6d4Puz"
+      "/assets/vlinked_cards_mockup.png"
     ],
     "featured": true,
     "sortOrder": 2
   },
   {
-    "slug": "voucher-kalanaraspa",
-    "title": "Kalanara Spa — Digital Voucher & Booking",
-    "description": "E-commerce voucher site for purchasing and redeeming Kalanara Spa service packages online.",
-    "longDescription": "Kalanara Spa needed a straightforward way for customers to buy service vouchers online — browse packages, pay digitally, and redeem at the spa without phone back-and-forth.\n\nI designed and built the voucher website around that flow: clear service listings, a simple purchase path, and branding aligned with a wellness business rather than a generic template store.\n\nThe site at voucher.kalanaraspa.com gives the spa an owned digital channel for promotions and prepaid packages, separate from walk-in-only bookings.",
-    "image": "https://utfs.io/f/octNiMKDR9jHtSJDVgO7T24FX6Y1uhMbIdpHfOGUWwKJijRD",
+    "slug": "dermdoc",
+    "title": "DermDoc — Skin Scan & Consult App",
+    "description": "Skin disease scan and consultant mobile app powered by deep learning.",
+    "longDescription": "DermDoc is a revolutionary application that aims to provide a complete user experience for dermatological needs. It features skin disease scanner APIs powered by 3 state-of-the-art Deep Learning classification models. The app predicts with considerably high accuracy if a user is suffering from Melanoma (the most fatal type of skin cancer) or other cancer types (basal cell carcinoma and 7 other types), as well as common allergies.\n\nAs Team Leader and ML Lead, I designed the product end-to-end, integrated medication database and doctor-appointment booking APIs, and built the mobile app scanner functionality to make skin cancer awareness and consulting easily accessible.",
+    "image": "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png",
     "tags": [
-      "E-Commerce",
-      "Web Design",
-      "Payments"
+      "AI / ML",
+      "Mobile App",
+      "DermNet",
+      "Health Tech"
     ],
-    "bgClass": "bg-surface-neutral",
-    "imagePosition": "object-top",
-    "client": "Kalanara Spa",
-    "role": "Design & Development",
-    "timeline": "2025",
-    "liveUrl": "https://voucher.kalanaraspa.com",
+    "bgClass": "bg-surface-purple",
+    "imagePosition": "object-center",
+    "client": "DermDoc",
+    "role": "Team Leader & ML Lead",
+    "timeline": "2024",
+    "liveUrl": "https://hellyoshaqiqieee.framer.ai/projects/DermDoc",
     "images": [
-      "https://utfs.io/f/octNiMKDR9jHEf1P7Z6oM6mWBQiDgHRzePV52SZyxjqk9bpF",
-      "https://utfs.io/f/octNiMKDR9jHgwmkOgQpbAFrLEhitVOyZ94BUlKkWRs07u6o",
-      "https://utfs.io/f/octNiMKDR9jHgcRbxXQpbAFrLEhitVOyZ94BUlKkWRs07u6o",
-      "https://utfs.io/f/octNiMKDR9jHtqKm5RnO7T24FX6Y1uhMbIdpHfOGUWwKJijR",
-      "https://utfs.io/f/octNiMKDR9jHOX85GVu4PVo0X8mWtALuiSMKp2sYUCr5eRqh",
-      "https://utfs.io/f/octNiMKDR9jHOvwuT74PVo0X8mWtALuiSMKp2sYUCr5eRqhE"
+      "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
     "featured": true,
     "sortOrder": 3
   },
   {
-    "slug": "termul",
-    "title": "Termul — Terminal Ultra for Manage a Hundred Projects",
-    "description": "Termul treats workspaces as first-class citizens, allowing you to organize terminals by project with persistent sessions, snapshots, and a clean tabbed interface.",
-    "longDescription": "I've Working for Termul's Landing Page",
-    "image": "https://utfs.io/f/octNiMKDR9jH7LIdpiGjCfIWPsqm6nLDcF2E4HovVRgx7lXU",
+    "slug": "smart-home",
+    "title": "Smart Home Dashboard",
+    "description": "A comprehensive IoT dashboard for real-time monitoring and control of smart home automation systems.",
+    "longDescription": "A powerful IoT smart home dashboard that consolidates status, controls, and environmental parameters in a single, user-friendly portal. It integrates microcontrollers with a real-time database, enabling remote operations, scheduling, and device status alerts.\n\nI built the dashboard frontend and backend APIs to support instant commands and live telemetry streams, making device automation seamless and responsive.",
+    "image": "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png",
     "tags": [
-      "Desktop App"
+      "IoT",
+      "Web App",
+      "Automation",
+      "Dashboard"
     ],
     "bgClass": "bg-surface-neutral",
     "imagePosition": "object-top",
-    "client": "Termul",
-    "role": "Design Engineer",
-    "timeline": "3 Days",
-    "liveUrl": "https://termul.dev",
+    "client": "Smart Home",
+    "role": "IoT Engineer & Developer",
+    "timeline": "2023",
+    "liveUrl": "https://hellyoshaqiqieee.framer.ai/projects/IoT-smart-home",
     "images": [
-      "https://utfs.io/f/octNiMKDR9jHNsh900nO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
-      "https://utfs.io/f/octNiMKDR9jHU7dfIv36NPc4mvehaf0liyV1G7rZEqLA2XzI",
-      "https://utfs.io/f/octNiMKDR9jHhlmY3UFV18d6Vo5B4lRTMuckhiGeJmKA2sES",
-      "https://utfs.io/f/octNiMKDR9jHn4FQLnEt03dNxEHDLFoZbXUIA82eGQupjimM"
+      "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
     "featured": true,
     "sortOrder": 4
+  },
+  {
+    "slug": "smart-vehicle",
+    "title": "Smart Vehicle App",
+    "description": "Mobile application enabling vehicle telemetry data gathering, control, and remote monitoring.",
+    "longDescription": "Developed and implemented a smart vehicle application allowing users to control and monitor vehicles remotely. It integrates hardware sensors that stream vehicle health indices, location, and lock status, communicating with the IoT cloud to provide drivers with real-time feedback and control.\n\nMy role was developing the C firmware for the hardware interfaces and scripting the telemetry gathering pipeline in Python, connecting vehicle telemetry to mobile clients.",
+    "image": "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png",
+    "tags": [
+      "IoT",
+      "Mobile",
+      "Telemetry",
+      "Firmware"
+    ],
+    "bgClass": "bg-surface-blue",
+    "imagePosition": "object-center",
+    "client": "Smart Vehicle",
+    "role": "Developer & Firmware Engineer",
+    "timeline": "2021",
+    "liveUrl": "https://hellyoshaqiqieee.framer.ai/",
+    "images": [
+      "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
+    ],
+    "featured": true,
+    "sortOrder": 5
+  },
+  {
+    "slug": "fleet-management",
+    "title": "Smart Fleet Management (Velinked)",
+    "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT.",
+    "longDescription": "Velinked is an innovative fleet management solution leveraging IoT technology to provide comprehensive vehicle tracking, remote control, and driver behavior monitoring. The platform integrates advanced features that empower fleet managers to optimize vehicle usage, reduce operational costs, and ensure vehicle security while promoting responsible driving practices.\n\nAs Team Leader & IoT Engineer, I developed the tracking systems and behaviour scoring algorithms, building end-to-end telemetry systems.",
+    "image": "https://framerusercontent.com/images/6ihF55l3mkFuIxe9YBBEyHYFBw.svg",
+    "tags": [
+      "IoT",
+      "SaaS",
+      "Telemetry",
+      "Fleet Tech"
+    ],
+    "bgClass": "bg-surface-neutral",
+    "imagePosition": "object-top",
+    "client": "Velinked",
+    "role": "Team Leader & IoT Engineer",
+    "timeline": "2025",
+    "liveUrl": "https://hellyoshaqiqieee.framer.ai/projects/fleetmanagement",
+    "images": [
+      "https://framerusercontent.com/images/6ihF55l3mkFuIxe9YBBEyHYFBw.svg"
+    ],
+    "featured": true,
+    "sortOrder": 6
+  },
+  {
+    "slug": "driver-dashboard",
+    "title": "Driver Behavior & Telemetry Dashboard",
+    "description": "Interactive dashboard for vehicle operators displaying behavioral analytics, speeds, and trips.",
+    "longDescription": "An interface built for drivers in a fleet to view their driving safety scores, review historical trips, and receive alerts regarding dangerous behaviors like sudden acceleration or hard braking.\n\nI designed and engineered this responsive dashboard, translating raw telemetry events into actionable score indicators for drivers.",
+    "image": "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png",
+    "tags": [
+      "Web App",
+      "Analytics",
+      "IoT",
+      "UI Design"
+    ],
+    "bgClass": "bg-surface-warm",
+    "imagePosition": "object-center",
+    "client": "Fleet Management",
+    "role": "UI Developer",
+    "timeline": "2025",
+    "liveUrl": "https://hellyoshaqiqieee.framer.ai/",
+    "images": [
+      "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
+    ],
+    "featured": false,
+    "sortOrder": 7
   }
 ]
