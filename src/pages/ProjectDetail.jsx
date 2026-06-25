@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { m } from 'framer-motion'
 import { ArrowLeft, ArrowUpRight } from '../components/Icons'
 import Meta from '../components/Meta'
+import projectsData from '../data/projects.json'
 
 const Hu = [0.23, 1, 0.32, 1]
 
@@ -69,33 +70,16 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const [project, setProject] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  const loadProject = useCallback(async () => {
-    if (!slug) return
-    setLoading(true)
-    setError(null)
-    try {
-      const res = await fetch(`/api/projects/${encodeURIComponent(slug)}`)
-      if (res.status === 404) {
-        setProject(null)
-        setLoading(false)
-        return
-      }
-      if (!res.ok) throw new Error(`Project fetch failed (${res.status})`)
-      const data = await res.json()
-      setProject(data)
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setLoading(false)
-    }
-  }, [slug])
+  const [error] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    loadProject()
-  }, [slug, loadProject])
+    if (slug) {
+      const found = projectsData.find(p => p.slug === slug)
+      setProject(found || null)
+      setLoading(false)
+    }
+  }, [slug])
 
   if (loading) {
     return <DetailSkeleton />

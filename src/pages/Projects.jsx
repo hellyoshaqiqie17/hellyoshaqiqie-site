@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from '../components/Icons'
 import Meta from '../components/Meta'
+import projectsData from '../data/projects.json'
 
 const Hu = [0.23, 1, 0.32, 1]
 
@@ -72,28 +73,9 @@ function LoadingGrid() {
 }
 
 export default function Projects() {
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  async function loadProjects() {
-    setLoading(true)
-    setError(null)
-    try {
-      const res = await fetch('/api/projects')
-      if (!res.ok) throw new Error(`Projects fetch failed (${res.status})`)
-      const data = await res.json()
-      setProjects(data)
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    loadProjects()
-  }, [])
+  const [projects] = useState(projectsData)
+  const [loading] = useState(false)
+  const [error] = useState(null)
 
   return (
     <>

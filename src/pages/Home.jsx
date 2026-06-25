@@ -21,6 +21,11 @@ import {
   PiAgentIcon
 } from '../components/Icons'
 import GithubSnake3D from '../components/GithubSnake3D'
+import pageSettingsData from '../data/page_settings.json'
+import testimonialsData from '../data/testimonials.json'
+import projectsData from '../data/projects.json'
+import achievementsData from '../data/achievements.json'
+import githubData from '../data/github.json'
 
 const Hu = [0.23, 1, 0.32, 1]
 
@@ -119,9 +124,9 @@ function ProgressiveImage({ src, alt, imgClassName = '', loading = 'lazy', fetch
 function HeroSection() {
   const { openContactDialog } = useContactDialog()
   const [activeIdx, setActiveIdx] = useState(0)
-  const [testimonials, setTestimonials] = useState([])
-  const [pageSettings, setPageSettings] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [testimonials] = useState(testimonialsData)
+  const [pageSettings] = useState(pageSettingsData)
+  const [loading] = useState(false)
 
   const numTestimonials = testimonials.length
   const currentTestimonial = numTestimonials > 0 ? testimonials[activeIdx] : null
@@ -133,32 +138,6 @@ function HeroSection() {
     }, 5000)
     return () => clearInterval(timer)
   }, [numTestimonials])
-
-  useEffect(() => {
-    let active = true
-    async function loadData() {
-      try {
-        const [settingsRes, testRes] = await Promise.all([
-          fetch('/api/page-settings'),
-          fetch('/api/testimonials')
-        ])
-        if (!active) return
-        
-        if (settingsRes.ok) {
-          setPageSettings(await settingsRes.json())
-        }
-        if (testRes.ok) {
-          setTestimonials(await testRes.json())
-        }
-      } catch (err) {
-        console.error('Error fetching hero data', err)
-      } finally {
-        if (active) setLoading(false)
-      }
-    }
-    loadData()
-    return () => { active = false }
-  }, [])
 
   return (
     <section className="grid grid-cols-1 xl:grid-cols-[1.2fr_1fr] gap-12 xl:gap-20 items-start">
@@ -448,25 +427,9 @@ function LoadingGrid() {
 // Featured Projects List (vd)
 // ----------------------------------------------------
 function FeaturedProjects() {
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    async function loadProjects() {
-      try {
-        const res = await fetch('/api/projects?featured=1')
-        if (!res.ok) throw new Error(`Fetch error (${res.status})`)
-        const data = await res.json()
-        setProjects(data.filter(p => p.featured))
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadProjects()
-  }, [])
+  const [projects] = useState(() => projectsData.filter(p => p.featured))
+  const [loading] = useState(false)
+  const [error] = useState(null)
 
   return (
     <section>
@@ -548,57 +511,8 @@ function AchievementCard({ achievement, index }) {
 }
 
 function Achievements() {
-  const [achievements, setAchievements] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    async function loadAchievements() {
-      try {
-        const res = await fetch('/api/achievements')
-        if (res.ok) {
-          setAchievements(await res.json())
-        } else {
-          // fallback inline achievements
-          const fallback = [
-            {
-              "id": 1,
-              "year": "2025",
-              "title": "1st Place Winner",
-              "competition": "Business Model Canvas Competition HMTI 2025",
-              "institution": "Kalimantan Institute of Technology"
-            },
-            {
-              "id": 2,
-              "year": "2025",
-              "title": "2nd Place Winner",
-              "competition": "BEFound 2025 Business Model Canvas Competition",
-              "institution": "University of Brawijaya"
-            },
-            {
-              "id": 3,
-              "year": "2025",
-              "title": "First Honorable Mention",
-              "competition": "Business Model Canvas Competition HIMASTAN 2025",
-              "institution": "Surabaya State University"
-            },
-            {
-              "id": 4,
-              "year": "2024",
-              "title": "Gold Medalist",
-              "competition": "FIKSI 2024 Competition of Technology Category",
-              "institution": "Kemendikbudristek"
-            }
-          ]
-          setAchievements(fallback)
-        }
-      } catch (err) {
-        console.error('Error fetching achievements', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadAchievements()
-  }, [])
+  const [achievements] = useState(achievementsData)
+  const [loading] = useState(false)
 
   if (loading || achievements.length === 0) return null
 
@@ -635,25 +549,9 @@ const lightThemeColors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']
 const darkThemeColors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
 
 function GitHubContributions() {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [data] = useState(githubData)
+  const [loading] = useState(false)
   const gridContainerRef = useRef(null)
-
-  useEffect(() => {
-    async function loadConts() {
-      try {
-        const res = await fetch('/api/github/contributions')
-        if (res.ok) {
-          setData(await res.json())
-        }
-      } catch (err) {
-        console.error('Error fetching contributions', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadConts()
-  }, [])
 
   if (loading || !data || !data.weeks || data.weeks.length === 0) return null
 
