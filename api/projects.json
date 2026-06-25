@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "isometricon",
+    "title": "Isometricon — AI 3D Icons Generator",
+    "description": "AI-powered 3D icon generator with pay-as-you-go billing for designers and product teams.",
+    "longDescription": "Isometricon is an AI-powered 3D icon generator for designers and developers who need production-ready assets without a full 3D pipeline. Users describe what they need in plain language and receive stylized isometric icons ready for product UI, marketing, and presentations.\n\nAs CTO, I led the full product stack — from the Next.js application and billing (Polar, Mayar) to generation pipelines powered by Fal.ai, Gemini, and Replicate. Storage runs on Cloudflare R2 with Supabase and Clerk for auth and data. The model is pay-as-you-go so teams generate on demand without paying for unused subscription capacity.\n\nThe goal was speed without sacrificing craft: a fast generation flow, consistent visual style across outputs, and infrastructure that scales with real usage instead of fixed overhead.",
+    "image": "https://utfs.io/f/octNiMKDR9jHTzKrxckwtrO7alVYQ5R8fvACbHFMXSDPgdUh",
+    "tags": [
+      "SaaS",
+      "AI",
+      "3D",
+      "Next.js"
+    ],
+    "bgClass": "bg-surface-neutral",
+    "imagePosition": "object-top",
+    "client": "Isometricon",
+    "role": "CTO & Product Lead",
+    "timeline": "2024 – Present",
+    "liveUrl": "https://isometricon.com",
+    "images": [
+      "https://utfs.io/f/octNiMKDR9jH7Q4bFEiGjCfIWPsqm6nLDcF2E4HovVRgx7lX",
+      "https://utfs.io/f/octNiMKDR9jHAOSwb0C0peQyC1FUsVLcgGwOr7JD2M6Xuq4k",
+      "https://utfs.io/f/octNiMKDR9jHEygEXnoM6mWBQiDgHRzePV52SZyxjqk9bpF8"
+    ],
+    "featured": true,
+    "sortOrder": 1
+  },
+  {
+    "slug": "absenin-id",
+    "title": "Absenin.id — QR & Face-ID Attendance Platform",
+    "description": "Digital attendance platform with QR and Face ID verification, location lock, and a full HR dashboard.",
+    "longDescription": "Absenin.id is a digital attendance platform for teams that need more than a simple check-in. Employees verify presence through QR codes or Face ID, with location lock so check-ins only count when someone is on site. HR gets a real-time dashboard to track attendance, exceptions, and team coverage.\n\nI built the product end-to-end — UI on Next.js, backend on Convex, authentication with Clerk, and face matching through AWS Rekognition. Mobile-first flows were a priority: check-in had to feel fast on a phone, while employers still get trustworthy, auditable records.\n\nThe result replaces manual logs and informal messaging with a system teams can run daily without friction — accurate presence data employers can trust.",
+    "image": "https://utfs.io/f/octNiMKDR9jHBc4WGlyNKvtDE8s7gZXrbcUQTa0imS6d4Puz",
+    "tags": [
+      "SaaS",
+      "Mobile",
+      "Face ID",
+      "HR Tech"
+    ],
+    "bgClass": "bg-surface-purple",
+    "imagePosition": "object-center",
+    "client": "Absenin.id",
+    "role": "Full-Stack Developer",
+    "timeline": "2025 – Present",
+    "liveUrl": "https://absenin.id",
+    "images": [
+      "https://utfs.io/f/octNiMKDR9jHNagYZunO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
+      "https://utfs.io/f/octNiMKDR9jHNagYZunO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
+      "https://utfs.io/f/octNiMKDR9jHBLUxnCyNKvtDE8s7gZXrbcUQTa0imS6d4Puz"
+    ],
+    "featured": true,
+    "sortOrder": 2
+  },
+  {
+    "slug": "voucher-kalanaraspa",
+    "title": "Kalanara Spa — Digital Voucher & Booking",
+    "description": "E-commerce voucher site for purchasing and redeeming Kalanara Spa service packages online.",
+    "longDescription": "Kalanara Spa needed a straightforward way for customers to buy service vouchers online — browse packages, pay digitally, and redeem at the spa without phone back-and-forth.\n\nI designed and built the voucher website around that flow: clear service listings, a simple purchase path, and branding aligned with a wellness business rather than a generic template store.\n\nThe site at voucher.kalanaraspa.com gives the spa an owned digital channel for promotions and prepaid packages, separate from walk-in-only bookings.",
+    "image": "https://utfs.io/f/octNiMKDR9jHtSJDVgO7T24FX6Y1uhMbIdpHfOGUWwKJijRD",
+    "tags": [
+      "E-Commerce",
+      "Web Design",
+      "Payments"
+    ],
+    "bgClass": "bg-surface-neutral",
+    "imagePosition": "object-top",
+    "client": "Kalanara Spa",
+    "role": "Design & Development",
+    "timeline": "2025",
+    "liveUrl": "https://voucher.kalanaraspa.com",
+    "images": [
+      "https://utfs.io/f/octNiMKDR9jHEf1P7Z6oM6mWBQiDgHRzePV52SZyxjqk9bpF",
+      "https://utfs.io/f/octNiMKDR9jHgwmkOgQpbAFrLEhitVOyZ94BUlKkWRs07u6o",
+      "https://utfs.io/f/octNiMKDR9jHgcRbxXQpbAFrLEhitVOyZ94BUlKkWRs07u6o",
+      "https://utfs.io/f/octNiMKDR9jHtqKm5RnO7T24FX6Y1uhMbIdpHfOGUWwKJijR",
+      "https://utfs.io/f/octNiMKDR9jHOX85GVu4PVo0X8mWtALuiSMKp2sYUCr5eRqh",
+      "https://utfs.io/f/octNiMKDR9jHOvwuT74PVo0X8mWtALuiSMKp2sYUCr5eRqhE"
+    ],
+    "featured": true,
+    "sortOrder": 3
+  },
+  {
+    "slug": "termul",
+    "title": "Termul — Terminal Ultra for Manage a Hundred Projects",
+    "description": "Termul treats workspaces as first-class citizens, allowing you to organize terminals by project with persistent sessions, snapshots, and a clean tabbed interface.",
+    "longDescription": "I've Working for Termul's Landing Page",
+    "image": "https://utfs.io/f/octNiMKDR9jH7LIdpiGjCfIWPsqm6nLDcF2E4HovVRgx7lXU",
+    "tags": [
+      "Desktop App"
+    ],
+    "bgClass": "bg-surface-neutral",
+    "imagePosition": "object-top",
+    "client": "Termul",
+    "role": "Design Engineer",
+    "timeline": "3 Days",
+    "liveUrl": "https://termul.dev",
+    "images": [
+      "https://utfs.io/f/octNiMKDR9jHNsh900nO2MlVFUWX0EZuBb5i78HeSQfxLc9a",
+      "https://utfs.io/f/octNiMKDR9jHU7dfIv36NPc4mvehaf0liyV1G7rZEqLA2XzI",
+      "https://utfs.io/f/octNiMKDR9jHhlmY3UFV18d6Vo5B4lRTMuckhiGeJmKA2sES",
+      "https://utfs.io/f/octNiMKDR9jHn4FQLnEt03dNxEHDLFoZbXUIA82eGQupjimM"
+    ],
+    "featured": true,
+    "sortOrder": 4
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "year": "2025",
+    "title": "1st Place Winner",
+    "competition": "Business Model Canvas Competition HMTI 2025",
+    "institution": "Kalimantan Institute of Technology"
+  },
+  {
+    "id": 2,
+    "year": "2025",
+    "title": "2nd Place Winner",
+    "competition": "BEFound 2025 Business Model Canvas Competition",
+    "institution": "University of Brawijaya"
+  },
+  {
+    "id": 3,
+    "year": "2025",
+    "title": "First Honorable Mention",
+    "competition": "Business Model Canvas Competition HIMASTAN 2025",
+    "institution": "Surabaya State University"
+  },
+  {
+    "id": 4,
+    "year": "2024",
+    "title": "Gold Medalist",
+    "competition": "FIKSI 2024 Competition of Technology Category",
+    "institution": "Kemendikbudristek"
+  },
+  {
+    "id": 5,
+    "year": "2024",
+    "title": "Finalist",
+    "competition": "LKS 2024 East Java Competition of AI",
+    "institution": "Kemendikbudristek"
+  },
+  {
+    "id": 6,
+    "year": "2023",
+    "title": "Finalist",
+    "competition": "FIKSI 2023 Competition of Technology Category",
+    "institution": "Kemendikbudristek"
+  },
+  {
+    "id": 7,
+    "year": "2021",
+    "title": "2nd Place Winner",
+    "competition": "Technology Innovation Award (Kasanova)",
+    "institution": "Tulungagung Government"
+  }
+]

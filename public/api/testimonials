@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "avatar": "https://utfs.io/f/octNiMKDR9jHU8FnIP36NPc4mvehaf0liyV1G7rZEqLA2XzI",
+    "name": "Wildan Lazuardi",
+    "role": "Senior Graphic Designer | Content Creator",
+    "quote": "If you have an idea but don't know how to make it happen, just reach out to Faiz. He will literally bring your idea to life, beyond expectation. Truly amazing working on several projects with him.",
+    "sortOrder": 0
+  },
+  {
+    "id": 2,
+    "avatar": "https://utfs.io/f/octNiMKDR9jHMBE2ISbbZ0U7gtP2kHrlN46wxmCRy9AXpGhT",
+    "name": "Ujang Abdus Salam",
+    "role": "Founder of Wazapin.com",
+    "quote": "Faiz is incredibly creative and market-savvy. He has a knack for turning ordinary ideas into practical, engaging solutions. Thanks to his great storytelling, he can easily explain concepts in a way that connects with what people actually need.",
+    "sortOrder": 1
+  },
+  {
+    "id": 3,
+    "avatar": "https://utfs.io/f/octNiMKDR9jHz1ebPHAWscGbe4A6v1hpxw9aOoTU5YE72mNI",
+    "name": "Ginanjar Noviawan",
+    "role": "Founder at Pawbytes.io",
+    "quote": "Brilliant execution and communication. The final UI was pixel-perfect and dev-ready. Will definitely collaborate again on future projects.",
+    "sortOrder": 2
+  },
+  {
+    "id": 4,
+    "avatar": "https://utfs.io/f/octNiMKDR9jHozueFfwKDR9jHma5BzOIZboxYPGuwKUXeEs8",
+    "name": "James",
+    "role": "Lead Product Designer",
+    "quote": "A true artist wrapped in a developer's mindset. Faiz gets both the aesthetic nuance and the technical implementation right every single time.",
+    "sortOrder": 3
+  }
+]
