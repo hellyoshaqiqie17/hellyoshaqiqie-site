@@ -378,8 +378,9 @@ export default function GithubSnake3D({ weeks, containerRef }) {
           const r1 = (i === 0) ? baseRadius * 1.1 : baseRadius * (1.0 - (i / snakeSegments.length) * 0.4)
           const r2 = baseRadius * (1.0 - ((i + 1) / snakeSegments.length) * 0.4)
           
-          // Use average diameter, minus a small margin so the flat line never sticks out under the glossy sphere
-          ctx.lineWidth = (r1 + r2) * 0.95 
+          // Use the diameter of the SMALLER sphere (r2) minus a small margin
+          // This guarantees the flat line cap will completely hide under the glossy sphere, eliminating any flickering matte halos
+          ctx.lineWidth = r2 * 1.85
 
           ctx.beginPath()
           ctx.moveTo(p1.x, p1.y)
