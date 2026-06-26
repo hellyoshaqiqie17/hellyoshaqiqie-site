@@ -996,8 +996,8 @@ export default function Home() {
       <main className="space-y-32">
         <HeroSection />
         <FeaturedProjects />
-        <FeaturedJourneys />
         <Achievements />
+        <FeaturedJourneys />
         <GitHubContributions />
         <ToolsIUse />
         <AboutMe />
