@@ -269,8 +269,10 @@ export default function GithubSnake3D({ weeks, containerRef }) {
               createExplosion(screen.x, screen.y, cell.color)
             }
 
-            // Grow snake
-            snakeLength += 1
+            // Grow snake (cap at max length of 4)
+            if (snakeLength < 4) {
+              snakeLength += 1
+            }
           }
 
           // Shift segments array
