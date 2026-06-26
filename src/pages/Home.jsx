@@ -18,7 +18,8 @@ import {
   CursorIcon,
   GoogleAIStudioIcon,
   HermesAgentsIcon,
-  PiAgentIcon
+  PiAgentIcon,
+  GithubLogo
 } from '../components/Icons'
 import GithubSnake3D from '../components/GithubSnake3D'
 import pageSettingsData from '../data/page_settings.json'
@@ -185,7 +186,7 @@ function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={revealDelay(150)}
-            className="pt-2"
+            className="pt-2 flex flex-wrap items-center gap-4"
           >
             <button
               type="button"
@@ -195,6 +196,16 @@ function HeroSection() {
               <PaperPlaneTilt size={20} weight="regular" />
               <span>Discuss a Project</span>
             </button>
+            
+            <a
+              href="https://github.com/hellyoshaqiqie17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-x-2 text-white px-6 py-4 rounded-full font-medium btn-embossed"
+            >
+              <GithubLogo size={20} weight="regular" />
+              <span>GitHub</span>
+            </a>
           </m.div>
         </div>
 
@@ -823,7 +834,7 @@ function AboutMe() {
             <m.p variants={aboutItemVariants} className="text-[16px] leading-relaxed text-muted mb-10 max-w-lg">
               I am a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
             </m.p>
-            <m.div variants={aboutItemVariants}>
+            <m.div variants={aboutItemVariants} className="flex flex-wrap items-center gap-4">
               <button
                  type="button"
                  onClick={openContactDialog}
@@ -831,6 +842,15 @@ function AboutMe() {
               >
                 Discuss a Project
               </button>
+              <a
+                 href="https://github.com/hellyoshaqiqie17"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="inline-flex items-center gap-x-2 text-white px-8 py-3.5 rounded-full font-medium text-[15px] btn-embossed focus:outline-none"
+              >
+                <GithubLogo size={20} weight="regular" />
+                <span>GitHub</span>
+              </a>
             </m.div>
           </div>
 
