@@ -5,7 +5,7 @@ const ThemeContext = createContext(null)
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() => {
     if (typeof window === 'undefined') return 'light'
-    return localStorage.getItem('faiz-theme') === 'dark' ? 'dark' : 'light'
+    return localStorage.getItem('hellyos-theme') === 'dark' ? 'dark' : 'light'
   })
 
   const updateTheme = useCallback((newTheme) => {
@@ -24,14 +24,14 @@ export function ThemeProvider({ children }) {
   }, [theme, updateTheme])
 
   const setTheme = useCallback((newTheme) => {
-    localStorage.setItem('faiz-theme', newTheme)
+    localStorage.setItem('hellyos-theme', newTheme)
     setThemeState(newTheme)
   }, [])
 
   const toggleTheme = useCallback(() => {
     setThemeState((prev) => {
       const next = prev === 'light' ? 'dark' : 'light'
-      localStorage.setItem('faiz-theme', next)
+      localStorage.setItem('hellyos-theme', next)
       return next
     });
   }, [])

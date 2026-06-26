@@ -119,11 +119,30 @@ export default function ProjectDetail() {
     )
   }
 
+  const projectKeywords = `${project.slug.replace(/-/g, ', ')}, ${project.title}, ${project.client ? project.client + ', ' : ''}${project.tags.join(', ')}, hellyoshaqiqie, hellyos ageng haqiqie, hellyos, haqiqie, project, portfolio, software`
+
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": project.title,
+    "description": project.description,
+    "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
+    "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
+    "applicationCategory": "WebApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Hellyos Ageng Haqiqie",
+      "url": "https://www.hellyoshaqiqie.my.id"
+    }
+  }
+
   return (
     <>
       <Meta
         title={project.title}
         description={project.description}
+        keywords={projectKeywords}
+        schemaData={projectSchema}
         path={`/project/${project.slug}`}
         image={project.image}
       />

@@ -156,7 +156,7 @@ function HeroSection() {
               ) : (
                 <ProgressiveImage
                   src={pageSettings.avatarImage}
-                  alt="Faiz Avatar"
+                  alt="Hellyos Ageng Haqiqie Avatar"
                   imgClassName="absolute inset-0 w-full h-full object-cover rounded-xl"
                   loading="eager"
                   fetchPriority="high"
@@ -241,7 +241,7 @@ function HeroSection() {
           ) : (
             <ProgressiveImage
               src={pageSettings.heroImageTop}
-              alt="Faiz Intifada hero top layout"
+              alt="Hellyos Ageng Haqiqie hero top layout"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
               loading="eager"
               fetchPriority="high"
