@@ -524,8 +524,11 @@ function AchievementCard({ achievement, index }) {
 function Achievements() {
   const [achievements] = useState(achievementsData)
   const [loading] = useState(false)
+  const [showAll, setShowAll] = useState(false)
 
   if (loading || achievements.length === 0) return null
+
+  const displayedAchievements = showAll ? achievements : achievements.slice(0, 6)
 
   return (
     <section>
@@ -536,12 +539,24 @@ function Achievements() {
             Selected awards, technological innovations, and business model canvas accolades.
           </p>
         </div>
+        {achievements.length > 6 && (
+          <button
+            type="button"
+            onClick={() => setShowAll(!showAll)}
+            className="flex items-center gap-x-2 text-[15px] font-medium text-muted hover:text-foreground theme-transition group"
+          >
+            <span>{showAll ? 'Show less' : 'View all'}</span>
+            <ArrowRight size={16} className={`text-muted group-hover:text-foreground theme-transition transition-transform ${showAll ? '-rotate-90' : ''}`} />
+          </button>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {achievements.slice(0, 6).map((ach, idx) => (
-          <AchievementCard key={ach.id} achievement={ach} index={idx} />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out">
+        <AnimatePresence mode="popLayout">
+          {displayedAchievements.map((ach, idx) => (
+            <AchievementCard key={ach.id} achievement={ach} index={idx} />
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   )
