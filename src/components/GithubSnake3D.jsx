@@ -349,6 +349,26 @@ export default function GithubSnake3D({ weeks, containerRef }) {
       ctx.shadowOffsetY = 4.5
       ctx.shadowOffsetX = 1.5
 
+      // Draw continuous body line connecting segments
+      if (segmentCoords.length > 1) {
+        ctx.beginPath()
+        ctx.moveTo(segmentCoords[0].x, segmentCoords[0].y)
+        for (let i = 1; i < segmentCoords.length; i++) {
+          ctx.lineTo(segmentCoords[i].x, segmentCoords[i].y)
+        }
+        
+        ctx.lineCap = 'round'
+        ctx.lineJoin = 'round'
+        
+        // Set line width to connect the spheres seamlessly
+        const avgR = segmentCoords[0].size / 2.2
+        ctx.lineWidth = avgR * 1.5
+        
+        // Base color for the snake body connection
+        ctx.strokeStyle = '#16a34a' 
+        ctx.stroke()
+      }
+
       // Draw glossy 3D spheres for each body segment
       segmentCoords.forEach((coords, idx) => {
         const isHead = idx === 0
