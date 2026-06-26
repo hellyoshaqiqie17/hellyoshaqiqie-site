@@ -4,7 +4,7 @@
     "title": "VORCE — Workforce Intelligence & Operations Platform",
     "description": "An end-to-end workforce intelligence and business operations platform combining employee directories, attendance tracking, task management, and desktop device analytics.",
     "longDescription": "VORCE is an integrated, end-to-end workforce intelligence and business operations platform designed to help organizations streamline employee management, monitor work activities, and extract real-time operational insights. I developed the platform end-to-end, starting from the responsive Next.js landing page to building the comprehensive web dashboard, and integrating the complete mobile and desktop telemetry systems.\n\nAt its core, VORCE unites GPS/Face ID attendance tracking, shift scheduling, task coordination, OCR receipt reimbursement, and organizational knowledge databases into a single responsive portal. By integrating device telemetry from the VLinked desktop agent, the platform's intelligence engine aggregates raw system activity into higher-level workforce signals. This generates real-time analytics for focus ratios, productivity scores, workload levels, and behavioral trends, presenting an executive view of team performance while maintaining data privacy and security.",
-    "image": "/assets/vorce_platform_mockup.png",
+    "image": "/assets/vorce_platform_mockup.svg",
     "tags": [
       "Next.js / React",
       "TypeScript",
@@ -18,7 +18,7 @@
     "timeline": "2025",
     "liveUrl": "https://vorce.id",
     "images": [
-      "/assets/vorce_platform_mockup.png"
+      "/assets/vorce_platform_mockup.svg"
     ],
     "featured": true,
     "sortOrder": 1
@@ -28,7 +28,7 @@
     "title": "VLinked — Desktop Monitoring Agent",
     "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
     "longDescription": "VLinked Desktop Agent is a lightweight, cross-platform desktop monitoring agent developed as part of the VORCE ecosystem. It runs silently on macOS, Windows, and Linux machines to collect essential telemetry metrics, enabling companies to track employee device health, app-specific usage, and active work times.\n\nAs the Lead Desktop Developer, I built the agent using Electron, ensuring high-efficiency monitoring without high system overhead. Key implementations included secure OAuth token persistence via the OS keychain (DPAPI/safeStorage), background tracking systems using systeminformation and powerMonitor for idle-time checking, and a sandboxed IPC renderer architecture. All metric updates stream directly to the centralized VORCE API, serving as the single point of entry to ensure absolute data consistency and system security.",
-    "image": "/assets/vlinked_cards_mockup.png",
+    "image": "/assets/vlinked_cards_mockup.svg",
     "tags": [
       "Electron",
       "Desktop App",
@@ -42,7 +42,7 @@
     "timeline": "2025",
     "liveUrl": "https://vorce.id/vlinked",
     "images": [
-      "/assets/vlinked_cards_mockup.png"
+      "/assets/vlinkedshowcase.svg"
     ],
     "featured": true,
     "sortOrder": 2
