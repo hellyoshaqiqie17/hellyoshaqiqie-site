@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { OverlayScrollbars } from 'overlayscrollbars'
 import { LazyMotion } from 'framer-motion'
@@ -8,14 +8,14 @@ import { ContactDialogProvider } from './context/ContactDialogContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-// Pages
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
-import Coaching from './pages/Coaching'
-import Journeys from './pages/Journeys'
-import JourneyDetail from './pages/JourneyDetail'
-import NotFound from './pages/NotFound'
+// Lazy Pages (Code Splitting)
+const Home = lazy(() => import('./pages/Home'))
+const Projects = lazy(() => import('./pages/Projects'))
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const Coaching = lazy(() => import('./pages/Coaching'))
+const Journeys = lazy(() => import('./pages/Journeys'))
+const JourneyDetail = lazy(() => import('./pages/JourneyDetail'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Framer motion features loader
 const loadFeatures = () => import('./framerFeatures').then(res => res.default)
@@ -82,15 +82,21 @@ function AppContent() {
         element={
           <Layout>
             <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/coaching" element={<Coaching />} />
-              <Route path="/project/:slug" element={<ProjectDetail />} />
-              <Route path="/journeys" element={<Journeys />} />
-              <Route path="/journey/:slug" element={<JourneyDetail />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            }>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/coaching" element={<Coaching />} />
+                <Route path="/project/:slug" element={<ProjectDetail />} />
+                <Route path="/journeys" element={<Journeys />} />
+                <Route path="/journey/:slug" element={<JourneyDetail />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </Layout>
         }
       />

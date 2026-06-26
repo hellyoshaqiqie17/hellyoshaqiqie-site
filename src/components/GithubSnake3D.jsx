@@ -101,9 +101,14 @@ export default function GithubSnake3D({ weeks, containerRef }) {
 
     // 7. BFS Pathfinder to find nearest uneaten contribution cell
     const findPathToFood = (startCol, startRow) => {
-      const queue = [{ col: startCol, row: startRow, path: [] }]
-      const visited = new Set()
-      visited.add(`${startCol},${startRow}`)
+      const queue = [{ col: startCol, row: startRow }]
+      
+      const maxCells = numCols * numRows;
+      const parent = new Int32Array(maxCells).fill(-1);
+      const visited = new Uint8Array(maxCells);
+      
+      const startIndex = startCol * numRows + startRow;
+      visited[startIndex] = 1;
 
       const directions = [
         { dCol: 0, dRow: -1 }, // Up
@@ -112,40 +117,48 @@ export default function GithubSnake3D({ weeks, containerRef }) {
         { dCol: 1, dRow: 0 }   // Right
       ]
 
+      let targetIndex = -1;
+
+      const bodyCells = new Uint8Array(maxCells);
+      for (let i = 0; i < snakeSegments.length - 1; i++) {
+        const seg = snakeSegments[i];
+        bodyCells[seg.col * numRows + seg.row] = 1;
+      }
+
       while (queue.length > 0) {
         const curr = queue.shift()
         const cell = getCell(curr.col, curr.row)
 
         if (cell && cell.count > 0 && !cell.eaten) {
-          // Found food!
-          return curr.path
+          targetIndex = curr.col * numRows + curr.row;
+          break;
         }
 
-        // Shuffle directions to create organic variations
         const shuffledDirs = [...directions].sort(() => Math.random() - 0.5)
 
         for (const dir of shuffledDirs) {
           const nextCol = curr.col + dir.dCol
           const nextRow = curr.row + dir.dRow
-          const key = `${nextCol},${nextRow}`
 
-          if (
-            nextCol >= 0 && nextCol < numCols &&
-            nextRow >= 0 && nextRow < numRows &&
-            !visited.has(key)
-          ) {
-            // Avoid running into own body (except tail which moves out of the way)
-            const isBody = snakeSegments.slice(0, -1).some(seg => seg.col === nextCol && seg.row === nextRow)
-            if (!isBody) {
-              visited.add(key)
-              queue.push({
-                col: nextCol,
-                row: nextRow,
-                path: [...curr.path, { col: nextCol, row: nextRow }]
-              })
+          if (nextCol >= 0 && nextCol < numCols && nextRow >= 0 && nextRow < numRows) {
+            const nextIndex = nextCol * numRows + nextRow;
+            if (visited[nextIndex] === 0 && bodyCells[nextIndex] === 0) {
+              visited[nextIndex] = 1;
+              parent[nextIndex] = curr.col * numRows + curr.row;
+              queue.push({ col: nextCol, row: nextRow });
             }
           }
         }
+      }
+
+      if (targetIndex !== -1) {
+        const foundPath = [];
+        let currIdx = targetIndex;
+        while (currIdx !== startIndex) {
+          foundPath.push({ col: Math.floor(currIdx / numRows), row: currIdx % numRows });
+          currIdx = parent[currIdx];
+        }
+        return foundPath.reverse();
       }
 
       return null // No food found
@@ -239,74 +252,70 @@ export default function GithubSnake3D({ weeks, containerRef }) {
     }
 
     // 11. Frame updates
-    const update = () => {
+    const update = (dt) => {
       // Handle movement progress
-      if (moveProgress < 1.0) {
-        moveProgress += moveSpeed
-        if (moveProgress >= 1.0) {
-          moveProgress = 1.0
+      const speedPerMs = 0.08 / 16.666;
+      moveProgress += speedPerMs * dt;
+      
+      // Handle multiple steps if dt is large (e.g. lag spike) or initial state
+      while (moveProgress >= 1.0) {
+        // Carry over the remainder for perfect sub-pixel motion without stuttering!
+        moveProgress -= 1.0;
+        
+        // Arrived at target. Update snake body segments
+        currentGridPos = { ...targetGridPos }
+        
+        const cell = getCell(currentGridPos.col, currentGridPos.row)
+        let eatenFood = false
+
+        if (cell && cell.count > 0 && !cell.eaten) {
+          cell.eaten = true
+          eatenFood = true
           
-          // Arrived at target. Update snake body segments
-          currentGridPos = { ...targetGridPos }
-          
-          const cell = getCell(currentGridPos.col, currentGridPos.row)
-          let eatenFood = false
-
-          if (cell && cell.count > 0 && !cell.eaten) {
-            cell.eaten = true
-            eatenFood = true
-            
-            // Fade out cell element dynamically
-            if (cell.domElement) {
-              cell.domElement.style.opacity = '0.15'
-              cell.domElement.style.transform = 'scale(0.85)'
-              cell.domElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease'
-            }
-
-            // Explode particles
-            const screen = cellPositions.find(pos => pos.col === currentGridPos.col && pos.row === currentGridPos.row)
-            if (screen) {
-              createExplosion(screen.x, screen.y, cell.color)
-            }
-
-            // Grow snake (cap at max length of 4)
-            if (snakeLength < 4) {
-              snakeLength += 1
-            }
+          // Fade out cell element dynamically
+          if (cell.domElement) {
+            cell.domElement.style.opacity = '0.15'
+            cell.domElement.style.transform = 'scale(0.85)'
+            cell.domElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease'
           }
 
-          // Shift segments array
-          snakeSegments.unshift({ ...currentGridPos })
-          while (snakeSegments.length > snakeLength) {
-            snakeSegments.pop()
+          // Explode particles
+          const screen = cellPositions.find(pos => pos.col === currentGridPos.col && pos.row === currentGridPos.row)
+          if (screen) {
+            createExplosion(screen.x, screen.y, cell.color)
           }
 
-          resetContributionsIfNecessary()
+          // Grow snake (cap at max length of 4)
+          if (snakeLength < 4) {
+            snakeLength += 1
+          }
         }
-      }
 
-      // If sitting at a cell, choose next move
-      if (moveProgress >= 1.0) {
-        // Cooldown between movements
-        if (searchCooldown > 0) {
-          searchCooldown--
+        // Shift segments array
+        snakeSegments.unshift({ ...currentGridPos })
+        while (snakeSegments.length > snakeLength) {
+          snakeSegments.pop()
+        }
+
+        resetContributionsIfNecessary()
+        
+        // Immediately select next target without 1-frame micro stutters!
+        path = findPathToFood(currentGridPos.col, currentGridPos.row)
+        
+        let nextStep = null
+        if (path && path.length > 0) {
+          nextStep = path[0]
         } else {
-          // Re-evaluate path to food
-          path = findPathToFood(currentGridPos.col, currentGridPos.row)
-          
-          let nextStep = null
-          if (path && path.length > 0) {
-            nextStep = path[0]
-          } else {
-            // No food path, wander randomly
-            nextStep = getWanderTarget(currentGridPos.col, currentGridPos.row)
-          }
+          // No food path, wander randomly
+          nextStep = getWanderTarget(currentGridPos.col, currentGridPos.row)
+        }
 
-          if (nextStep) {
-            targetGridPos = nextStep
-            moveProgress = 0.0
-            searchCooldown = 1 // frames gap
-          }
+        if (nextStep) {
+          targetGridPos = nextStep
+        } else {
+          // Failsafe if completely stuck
+          moveProgress = 1.0;
+          break;
         }
       }
 
@@ -356,32 +365,42 @@ export default function GithubSnake3D({ weeks, containerRef }) {
         segmentCoords.push(coords)
       }
 
-      // Draw shadow for whole snake first to make it cohesive
-      ctx.save()
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.4)'
-      ctx.shadowBlur = 6
-      ctx.shadowOffsetY = 4.5
-      ctx.shadowOffsetX = 1.5
+      // Get base radius from first segment
+      const baseRadius = segmentCoords[0].size / 2.2;
+      const getRadius = (idx) => {
+        if (idx <= 0) return baseRadius * 1.1;
+        if (idx >= snakeSegments.length) return 0;
+        return baseRadius * (1.0 - (idx / snakeSegments.length) * 0.4);
+      }
 
-      // Draw continuous body line connecting segments, tapering the thickness matching the spheres
+      // Draw continuous body line connecting segments
       if (segmentCoords.length > 1) {
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
-        ctx.strokeStyle = '#16a34a' 
-
+        
+        // 1. Draw manual drop shadow line
+        ctx.save()
+        ctx.translate(1.5, 4.5)
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.25)'
         for (let i = 0; i < segmentCoords.length - 1; i++) {
           const p1 = segmentCoords[i]
           const p2 = segmentCoords[i + 1]
-          
-          // Calculate tapered radii to perfectly match the 3D spheres
-          const baseRadius = p1.size / 2.2
-          const r1 = (i === 0) ? baseRadius * 1.1 : baseRadius * (1.0 - (i / snakeSegments.length) * 0.4)
-          const r2 = baseRadius * (1.0 - ((i + 1) / snakeSegments.length) * 0.4)
-          
-          // Use the diameter of the SMALLER sphere (r2) minus a small margin
-          // This guarantees the flat line cap will completely hide under the glossy sphere, eliminating any flickering matte halos
+          const r2 = getRadius(i + 1) * (1 - moveProgress) + getRadius(i) * moveProgress;
           ctx.lineWidth = r2 * 1.85
+          ctx.beginPath()
+          ctx.moveTo(p1.x, p1.y)
+          ctx.lineTo(p2.x, p2.y)
+          ctx.stroke()
+        }
+        ctx.restore()
 
+        // 2. Draw actual green body line
+        ctx.strokeStyle = '#16a34a' 
+        for (let i = 0; i < segmentCoords.length - 1; i++) {
+          const p1 = segmentCoords[i]
+          const p2 = segmentCoords[i + 1]
+          const r2 = getRadius(i + 1) * (1 - moveProgress) + getRadius(i) * moveProgress;
+          ctx.lineWidth = r2 * 1.85
           ctx.beginPath()
           ctx.moveTo(p1.x, p1.y)
           ctx.lineTo(p2.x, p2.y)
@@ -392,38 +411,46 @@ export default function GithubSnake3D({ weeks, containerRef }) {
       // Draw glossy 3D spheres for each body segment
       segmentCoords.forEach((coords, idx) => {
         const isHead = idx === 0
-        // Taper segments
-        const baseRadius = coords.size / 2.2
-        const r = isHead ? baseRadius * 1.1 : baseRadius * (1.0 - (idx / snakeSegments.length) * 0.4)
+        let r = 0;
+        if (isHead) {
+          r = getRadius(0);
+        } else {
+          r = getRadius(idx) * (1 - moveProgress) + getRadius(idx - 1) * moveProgress;
+        }
 
-        if (r <= 0) return
+        if (r <= 0.1) return
 
+        // 1. Draw shadow for the sphere
+        ctx.save()
+        ctx.translate(1.5, 4.5)
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'
+        ctx.beginPath()
+        ctx.arc(coords.x, coords.y, r, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.restore()
+
+        // 2. Draw actual sphere
         ctx.beginPath()
         ctx.arc(coords.x, coords.y, r, 0, Math.PI * 2)
 
-        // Radial gradient for 3D glossy sphere look
-        // The inner circle (specular light source highlight) is offset to the top-left
         const grad = ctx.createRadialGradient(
           coords.x - r * 0.35, coords.y - r * 0.35, r * 0.05,
           coords.x, coords.y, r
         )
         
-        // Colors mapping:
-        // Glossy dark/neon styling
         if (isHead) {
-          grad.addColorStop(0, '#f8fafc') // glossy white shine
-          grad.addColorStop(0.25, '#818cf8') // Indigo midtone
-          grad.addColorStop(1, '#312e81') // Deep indigo base
+          grad.addColorStop(0, '#f8fafc')
+          grad.addColorStop(0.25, '#818cf8')
+          grad.addColorStop(1, '#312e81')
         } else {
-          grad.addColorStop(0, '#bef264') // lime light shine
-          grad.addColorStop(0.3, '#22c55e') // green midtone
-          grad.addColorStop(1, '#14532d') // Dark green base
+          grad.addColorStop(0, '#bef264')
+          grad.addColorStop(0.3, '#22c55e')
+          grad.addColorStop(1, '#14532d')
         }
 
         ctx.fillStyle = grad
         ctx.fill()
       })
-      ctx.restore()
 
       // C. Draw glowing eyes on head segment (pointing in moving direction)
       if (segmentCoords.length > 0) {
@@ -477,8 +504,12 @@ export default function GithubSnake3D({ weeks, containerRef }) {
       }
     }
 
-    const tick = () => {
-      update()
+    let lastTime = performance.now();
+    const tick = (time) => {
+      const dt = Math.min(time - lastTime, 50);
+      lastTime = time;
+      
+      update(dt)
       draw()
       animationFrameId = requestAnimationFrame(tick)
     }

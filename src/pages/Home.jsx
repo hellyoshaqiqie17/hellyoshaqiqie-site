@@ -21,13 +21,15 @@ import {
   PiAgentIcon,
   GithubLogo
 } from '../components/Icons'
-import GithubSnake3D from '../components/GithubSnake3D'
 import pageSettingsData from '../data/page_settings.json'
 import testimonialsData from '../data/testimonials.json'
 import projectsData from '../data/projects.json'
 import journeysData from '../data/journeys.json'
 import achievementsData from '../data/achievements.json'
 import githubData from '../data/github.json'
+
+// Lazy load heavy 3D component
+const GithubSnake3D = React.lazy(() => import('../components/GithubSnake3D'))
 
 const Hu = [0.23, 1, 0.32, 1]
 
@@ -737,8 +739,16 @@ function GitHubContributions() {
                   />
                 ))
               )}
-              {/* 3D Snake Canvas overlay */}
-              <GithubSnake3D weeks={data.weeks} containerRef={gridContainerRef} />
+                {/* Interactive 3D Github Snake Graph - Lazy Loaded for Performance */}
+            {data.weeks && data.weeks.length > 0 && (
+              <React.Suspense fallback={
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full animate-spin opacity-50"></div>
+                </div>
+              }>
+                <GithubSnake3D weeks={data.weeks} containerRef={gridContainerRef} />
+              </React.Suspense>
+            )}
             </div>
           </div>
 
