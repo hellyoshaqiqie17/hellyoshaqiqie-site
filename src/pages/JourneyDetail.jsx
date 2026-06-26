@@ -207,9 +207,16 @@ export default function JourneyDetail() {
           <h2 className="text-2xl font-semibold text-foreground mb-6">The Journey</h2>
           
           <div className="text-lg text-muted space-y-6">
-            {journey.content.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="leading-relaxed">{paragraph}</p>
-            ))}
+            {journey.content.split('\n\n').map((paragraph, index) => {
+              if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                return (
+                  <h3 key={index} className="text-xl font-semibold text-foreground mt-10 mb-4">
+                    {paragraph.replace(/\*\*/g, '')}
+                  </h3>
+                )
+              }
+              return <p key={index} className="leading-relaxed">{paragraph}</p>
+            })}
           </div>
 
           {/* Additional Content Images */}
