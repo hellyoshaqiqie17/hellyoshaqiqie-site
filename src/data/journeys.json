@@ -6,7 +6,12 @@
     "competition": "Indonesia Green Jobs Initiative Competition 2026",
     "institution": "Inovasi Muda | Green Jobs Incubation",
     "image": "/assets/IMJ_6152.JPG",
-    "tags": ["Sustainability", "Pitching", "Green Economy", "IoT"],
+    "tags": [
+      "Sustainability",
+      "Pitching",
+      "Green Economy",
+      "IoT"
+    ],
     "bgClass": "bg-surface-blue",
     "sections": [
       {
@@ -75,7 +80,11 @@
     "competition": "Business Plan Careerday UNY",
     "institution": "Universitas Negeri Yogyakarta",
     "image": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop",
-    "tags": ["Business Plan", "Startup", "Pitching"],
+    "tags": [
+      "Business Plan",
+      "Startup",
+      "Pitching"
+    ],
     "bgClass": "bg-surface-purple",
     "sections": [
       {
@@ -93,6 +102,75 @@
           {
             "type": "text",
             "content": "Berkat analisis pasar yang tajam dan simulasi proyeksi keuangan yang realistis, tim kami berhasil memukau juri dan membawa pulang piala Juara 2. Pengalaman berharga ini melatih kami untuk selalu berpikir kritis dari sudut pandang investor."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "fiksi-2024-gold-medalist",
+    "title": "Gold Medalist in Digital Technology - FIKSI 2024",
+    "date": "2024-09-29",
+    "competition": "Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) 2024",
+    "institution": "Puspresnas, Ministry of Education and Culture",
+    "image": "/assets/fiksi2024.png",
+    "tags": [
+      "Digital Technology",
+      "Gold Medalist",
+      "National Competition",
+      "Innovation"
+    ],
+    "bgClass": "bg-surface-purple",
+    "sections": [
+      {
+        "heading": "Background",
+        "items": [
+          {
+            "type": "text",
+            "content": "We competed in the Digital Technology category at the prestigious FIKSI 2024, presenting a cutting-edge technological solution aimed at driving digital transformation. Our innovation showcased the seamless integration of software and hardware."
+          }
+        ]
+      },
+      {
+        "heading": "The Innovation",
+        "items": [
+          {
+            "type": "text",
+            "content": "Our project was selected from thousands of nationwide submissions, and through rigorous judging rounds, we managed to secure the Gold Medal. The solution was highly praised for its technical complexity, business viability, and potential societal impact."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "fiksi-2023-finalist",
+    "title": "Finalist in Digital Technology - FIKSI 2023",
+    "date": "2023-09-28",
+    "competition": "Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) 2023",
+    "institution": "Puspresnas, Ministry of Education and Culture",
+    "image": "/assets/fiksi2023.jpeg",
+    "tags": [
+      "Digital Technology",
+      "Finalist",
+      "National Competition"
+    ],
+    "bgClass": "bg-surface-blue",
+    "sections": [
+      {
+        "heading": "Background",
+        "items": [
+          {
+            "type": "text",
+            "content": "This was our debut at FIKSI in the Digital Technology category. We developed a unique digital product that aimed to solve real-world problems through automation and user-centric design."
+          }
+        ]
+      },
+      {
+        "heading": "The Experience",
+        "items": [
+          {
+            "type": "text",
+            "content": "Being recognized as a National Finalist was a significant milestone. It provided us with immense learning experiences, invaluable feedback from expert judges, and the motivation to push our technological boundaries even further for the next year."
           }
         ]
       }
