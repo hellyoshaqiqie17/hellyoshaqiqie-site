@@ -933,7 +933,7 @@ function AboutMe() {
               Building modern platforms and automation systems.
             </m.h2>
             <m.p variants={aboutItemVariants} className="text-[16px] leading-relaxed text-muted mb-10 max-w-lg">
-              I am a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
+              I am a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. Currently studying Robotics & Artificial Intelligence Engineering at Airlangga University, I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
             </m.p>
             <m.div variants={aboutItemVariants} className="flex flex-wrap items-center gap-4">
               <button
@@ -972,7 +972,7 @@ function AboutMe() {
                 <MapPin size={24} className="text-foreground" weight="regular" />
               </div>
               <div>
-                <p className="text-[17px] font-medium text-foreground">Tulungagung, East Java, Indonesia</p>
+                <p className="text-[17px] font-medium text-foreground">Surabaya, East Java, Indonesia</p>
               </div>
             </m.div>
 
