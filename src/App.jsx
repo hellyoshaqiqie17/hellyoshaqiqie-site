@@ -13,6 +13,8 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Coaching from './pages/Coaching'
+import Journeys from './pages/Journeys'
+import JourneyDetail from './pages/JourneyDetail'
 import NotFound from './pages/NotFound'
 
 // Framer motion features loader
@@ -85,6 +87,8 @@ function AppContent() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/coaching" element={<Coaching />} />
               <Route path="/project/:slug" element={<ProjectDetail />} />
+              <Route path="/journeys" element={<Journeys />} />
+              <Route path="/journey/:slug" element={<JourneyDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

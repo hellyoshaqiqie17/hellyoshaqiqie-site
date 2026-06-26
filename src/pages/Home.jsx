@@ -25,6 +25,7 @@ import GithubSnake3D from '../components/GithubSnake3D'
 import pageSettingsData from '../data/page_settings.json'
 import testimonialsData from '../data/testimonials.json'
 import projectsData from '../data/projects.json'
+import journeysData from '../data/journeys.json'
 import achievementsData from '../data/achievements.json'
 import githubData from '../data/github.json'
 
@@ -521,6 +522,114 @@ function AchievementCard({ achievement, index }) {
   )
 }
 
+// ----------------------------------------------------
+// Featured Journeys List
+// ----------------------------------------------------
+function JourneyCard({ slug, title, image, tags, bgClass, imagePosition = 'object-top', index }) {
+  return (
+    <m.div
+      initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, ease: Hu, delay: index * 0.1 }}
+    >
+      <Link
+        to={`/journey/${slug}`}
+        className="group block cursor-pointer active:scale-[0.98] transition-transform duration-200 ease-out"
+      >
+        <div className={`overflow-hidden ${getBgClass(bgClass)} aspect-[4/3] rounded-[1rem] relative mb-4 transition-shadow duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-elevated theme-transition`}>
+          <img
+            src={image}
+            alt={title}
+            className={`w-full h-full object-cover ${imagePosition} transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]`}
+          />
+          <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:bg-black/[0.03]" />
+        </div>
+        <div className="flex flex-col gap-y-0.5 px-1 mt-1">
+          <h3 className="text-base font-semibold text-foreground transition-colors duration-200 ease-out group-hover:text-muted">
+            {title}
+          </h3>
+          <span className="text-[14px] font-medium text-muted">
+            {tags.join(', ')}
+          </span>
+        </div>
+      </Link>
+    </m.div>
+  )
+}
+
+function FeaturedJourneys() {
+  const [journeys] = useState(() => journeysData.slice(0, 3))
+  
+  if (journeys.length === 0) return null
+
+  return (
+    <section>
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground">My Journey</h2>
+          <p className="mt-2 text-[15px] font-medium text-muted">
+            Stories and detailed highlights from my recent milestones.
+          </p>
+        </div>
+        <Link
+          to="/journeys"
+          className="flex items-center gap-x-2 text-[15px] font-medium text-muted hover:text-foreground theme-transition group"
+        >
+          <span>View all stories</span>
+          <ArrowRight size={16} className="text-muted group-hover:text-foreground theme-transition" />
+        </Link>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {journeys.map((journey, idx) => (
+          <JourneyCard
+            key={journey.slug}
+            index={idx}
+            slug={journey.slug}
+            title={journey.title}
+            image={journey.image}
+            tags={journey.tags}
+            bgClass={journey.bgClass}
+            imagePosition={journey.imagePosition}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ----------------------------------------------------
+// Achievements Widget (replacing YouTube Videos)
+// ----------------------------------------------------
+function AchievementCard({ achievement, index }) {
+  return (
+    <m.div
+      initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, ease: Hu, delay: index * 0.08 }}
+      className="group relative border border-border rounded-2xl p-6 bg-card/60 backdrop-blur-md theme-transition hover:border-indigo-500/40 hover:shadow-elevated"
+    >
+      <div className="flex justify-between items-start gap-4 mb-3">
+        <span className="text-[12px] font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-500/10 px-2.5 py-1 rounded-full">
+          {achievement.year}
+        </span>
+        <Sparkle size={18} className="text-muted/70 group-hover:text-indigo-500 transition-colors duration-300" />
+      </div>
+      <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-indigo-500 transition-colors duration-200">
+        {achievement.title}
+      </h3>
+      <p className="text-[14px] font-medium text-foreground leading-snug mb-1">
+        {achievement.competition}
+      </p>
+      <p className="text-[13px] text-muted font-medium">
+        {achievement.institution}
+      </p>
+    </m.div>
+  )
+}
+
 function Achievements() {
   const [achievements] = useState(achievementsData)
   const [loading] = useState(false)
@@ -917,6 +1026,7 @@ export default function Home() {
       <main className="space-y-32">
         <HeroSection />
         <FeaturedProjects />
+        <FeaturedJourneys />
         <Achievements />
         <GitHubContributions />
         <ToolsIUse />
