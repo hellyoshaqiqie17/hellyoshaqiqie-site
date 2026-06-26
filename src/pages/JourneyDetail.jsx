@@ -248,7 +248,7 @@ export default function JourneyDetail() {
                   
                   if (item.type === 'image') {
                     return (
-                      <div key={itemIdx} className={`w-full max-w-2xl rounded-2xl overflow-hidden bg-surface relative shadow-sm theme-transition my-2 group border border-border ${item.indent ? 'md:ml-16 w-[calc(100%-4rem)]' : ''}`}>
+                      <div key={itemIdx} className={`w-full max-w-md rounded-2xl overflow-hidden bg-surface relative shadow-sm theme-transition my-2 group border border-border ${item.indent ? 'md:ml-16 w-[calc(100%-4rem)]' : ''}`}>
                         <img
                           src={item.src}
                           alt={`${journey.title} documentation`}

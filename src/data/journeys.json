@@ -44,11 +44,6 @@
             "content": "Tokenizes verified carbon credits into digital assets, creating a transparent marketplace for secure and traceable carbon credit transactions."
           },
           {
-            "type": "image",
-            "src": "/assets/foto2.jpeg",
-            "indent": true
-          },
-          {
             "type": "text",
             "content": "Together, these components provide an end-to-end solution that supports environmental conservation, ESG initiatives, and the transition toward a sustainable green economy."
           }
@@ -64,6 +59,10 @@
           {
             "type": "text",
             "content": "Furthermore, we were praised for presenting a practical, scalable, and impactful solution aimed at advancing transparency and digital transformation within the carbon market. This achievement reflects not only the technical innovation behind ClimatiX, but also our team's ability to communicate complex architectural ideas effectively to industry experts and judges."
+          },
+          {
+            "type": "image",
+            "src": "/assets/foto2.jpeg"
           }
         ]
       }
