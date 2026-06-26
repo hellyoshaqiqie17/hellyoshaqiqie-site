@@ -202,82 +202,67 @@ export default function JourneyDetail() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6, ease: Hu }}
-          className="max-w-[900px] mx-auto mb-32"
+          className="max-w-4xl mx-auto mb-32"
         >
-          {journey.sections && journey.sections.map((section, sectionIdx) => {
-            
-            // If there's no heading and it's just an image, render it full width
-            if (!section.heading && section.items.length === 1 && section.items[0].type === 'image') {
-              return (
-                <div key={sectionIdx} className="w-full my-16 rounded-[12px] overflow-hidden bg-surface relative shadow-sm theme-transition group">
-                  <img
-                    src={section.items[0].src}
-                    alt={`${journey.title} documentation`}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              );
-            }
-
-            return (
-              <div key={sectionIdx} className="flex flex-col md:flex-row gap-6 md:gap-[40px] py-12 md:py-16 border-t border-black/5 dark:border-white/10 first:border-0 first:pt-0">
-                
-                {/* Left Column: Heading (240px width on desktop) */}
-                <div className="w-full md:w-[240px] flex-shrink-0">
-                  {section.heading && (
-                    <h2 className="text-[26px] leading-[39px] tracking-[-0.52px] font-medium text-slate-900 dark:text-white md:sticky md:top-24">
-                      {section.heading}
-                    </h2>
-                  )}
-                </div>
-
-                {/* Right Column: Content */}
-                <div className="flex-1 flex flex-col gap-10">
-                  {section.items.map((item, itemIdx) => {
-                    if (item.type === 'text') {
-                      return (
-                        <p key={itemIdx} className="text-[16px] leading-[28.8px] text-slate-600 dark:text-slate-300 font-normal">
-                          {item.content}
-                        </p>
-                      )
-                    }
-                    
-                    if (item.type === 'list-item') {
-                      return (
-                        <div key={itemIdx} className="flex flex-row gap-4 md:gap-[24px] items-start">
-                          <div className="flex-shrink-0 w-[40px] h-[40px] rounded-full bg-[#FAE9E1] dark:bg-[#3f2a1b] flex items-center justify-center text-[#A15830] dark:text-[#f3a45c] font-medium text-[16px]">
-                            {item.number}
-                          </div>
-                          <div className="flex flex-col gap-2">
-                            <h4 className="text-[18px] font-medium text-slate-900 dark:text-white leading-[32.4px] tracking-[-0.36px]">
-                              {item.title}
-                            </h4>
-                            <p className="text-[16px] leading-[28.8px] text-slate-600 dark:text-slate-300 font-normal">
-                              {item.content}
-                            </p>
-                          </div>
-                        </div>
-                      )
-                    }
-                    
-                    if (item.type === 'image') {
-                      return (
-                        <div key={itemIdx} className="w-full rounded-[12px] overflow-hidden bg-surface relative shadow-sm theme-transition my-4 group">
-                          <img
-                            src={item.src}
-                            alt={`${journey.title} documentation`}
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                      )
-                    }
-                    
-                    return null;
-                  })}
-                </div>
+          {journey.sections && journey.sections.map((section, sectionIdx) => (
+            <div key={sectionIdx} className="flex flex-col md:flex-row gap-6 md:gap-10 py-12 md:py-16 border-t border-black/5 dark:border-white/10 first:border-0 first:pt-0">
+              
+              {/* Left Column: Heading (w-60 = 240px) */}
+              <div className="w-full md:w-60 flex-shrink-0">
+                {section.heading && (
+                  <h2 className="text-2xl font-medium text-slate-900 dark:text-white md:sticky md:top-24">
+                    {section.heading}
+                  </h2>
+                )}
               </div>
-            );
-          })}
+
+              {/* Right Column: Content */}
+              <div className="flex-1 flex flex-col gap-10">
+                {section.items.map((item, itemIdx) => {
+                  if (item.type === 'text') {
+                    return (
+                      <p key={itemIdx} className="text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-300 font-normal">
+                        {item.content}
+                      </p>
+                    )
+                  }
+                  
+                  if (item.type === 'list-item') {
+                    return (
+                      <div key={itemIdx} className="flex flex-row gap-4 md:gap-6 items-start">
+                        {/* Number Circle (w-10 = 40px) */}
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-950 flex items-center justify-center text-orange-800 dark:text-orange-400 font-medium text-base">
+                          {item.number}
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <h4 className="text-lg font-medium text-slate-900 dark:text-white">
+                            {item.title}
+                          </h4>
+                          <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300 font-normal">
+                            {item.content}
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  }
+                  
+                  if (item.type === 'image') {
+                    return (
+                      <div key={itemIdx} className="w-full max-w-2xl rounded-2xl overflow-hidden bg-surface relative shadow-sm theme-transition my-2 group border border-border">
+                        <img
+                          src={item.src}
+                          alt={`${journey.title} documentation`}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    )
+                  }
+                  
+                  return null;
+                })}
+              </div>
+            </div>
+          ))}
         </m.div>
       </m.main>
     </>
