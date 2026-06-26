@@ -49,6 +49,54 @@
     "sortOrder": 2
   },
   {
+    "slug": "fleet-management",
+    "title": "Smart Fleet Management (Velinked)",
+    "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT.",
+    "longDescription": "Velinked is an innovative fleet management solution leveraging IoT technology to provide comprehensive vehicle tracking, remote control, and driver behavior monitoring. The platform integrates advanced features that empower fleet managers to optimize vehicle usage, reduce operational costs, and ensure vehicle security while promoting responsible driving practices.\n\nAs Team Leader & IoT Engineer, I developed the tracking systems and behaviour scoring algorithms, building end-to-end telemetry systems.",
+    "image": "/assets/velinked.svg",
+    "tags": [
+      "IoT",
+      "SaaS",
+      "Telemetry",
+      "Fleet Tech"
+    ],
+    "bgClass": "bg-surface-neutral",
+    "imagePosition": "object-top",
+    "client": "Velinked",
+    "role": "Team Leader & IoT Engineer",
+    "timeline": "2025",
+    "liveUrl": "https://www.hellyoshaqiqie.my.id/projects/fleetmanagement",
+    "images": [
+      "/assets/velinked.svg"
+    ],
+    "featured": true,
+    "sortOrder": 3
+  },
+  {
+    "slug": "driver-dashboard",
+    "title": "Driver Behavior & Telemetry Dashboard",
+    "description": "Interactive dashboard for vehicle operators displaying behavioral analytics, speeds, and trips.",
+    "longDescription": "An interface built for drivers in a fleet to view their driving safety scores, review historical trips, and receive alerts regarding dangerous behaviors like sudden acceleration or hard braking.\n\nI designed and engineered this responsive dashboard, translating raw telemetry events into actionable score indicators for drivers.",
+    "image": "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png",
+    "tags": [
+      "Web App",
+      "Analytics",
+      "IoT",
+      "UI Design"
+    ],
+    "bgClass": "bg-surface-warm",
+    "imagePosition": "object-center",
+    "client": "Fleet Management",
+    "role": "UI Developer",
+    "timeline": "2025",
+    "liveUrl": "https://www.hellyoshaqiqie.my.id/",
+    "images": [
+      "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
+    ],
+    "featured": false,
+    "sortOrder": 4
+  },
+  {
     "slug": "dermdoc",
     "title": "DermDoc \u2014 Skin Scan & Consult App",
     "description": "Skin disease scan and consultant mobile app powered by deep learning.",
@@ -119,53 +167,5 @@
     ],
     "featured": true,
     "sortOrder": 7
-  },
-  {
-    "slug": "fleet-management",
-    "title": "Smart Fleet Management (Velinked)",
-    "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT.",
-    "longDescription": "Velinked is an innovative fleet management solution leveraging IoT technology to provide comprehensive vehicle tracking, remote control, and driver behavior monitoring. The platform integrates advanced features that empower fleet managers to optimize vehicle usage, reduce operational costs, and ensure vehicle security while promoting responsible driving practices.\n\nAs Team Leader & IoT Engineer, I developed the tracking systems and behaviour scoring algorithms, building end-to-end telemetry systems.",
-    "image": "/assets/velinked.svg",
-    "tags": [
-      "IoT",
-      "SaaS",
-      "Telemetry",
-      "Fleet Tech"
-    ],
-    "bgClass": "bg-surface-neutral",
-    "imagePosition": "object-top",
-    "client": "Velinked",
-    "role": "Team Leader & IoT Engineer",
-    "timeline": "2025",
-    "liveUrl": "https://www.hellyoshaqiqie.my.id/projects/fleetmanagement",
-    "images": [
-      "/assets/velinked.svg"
-    ],
-    "featured": true,
-    "sortOrder": 3
-  },
-  {
-    "slug": "driver-dashboard",
-    "title": "Driver Behavior & Telemetry Dashboard",
-    "description": "Interactive dashboard for vehicle operators displaying behavioral analytics, speeds, and trips.",
-    "longDescription": "An interface built for drivers in a fleet to view their driving safety scores, review historical trips, and receive alerts regarding dangerous behaviors like sudden acceleration or hard braking.\n\nI designed and engineered this responsive dashboard, translating raw telemetry events into actionable score indicators for drivers.",
-    "image": "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png",
-    "tags": [
-      "Web App",
-      "Analytics",
-      "IoT",
-      "UI Design"
-    ],
-    "bgClass": "bg-surface-warm",
-    "imagePosition": "object-center",
-    "client": "Fleet Management",
-    "role": "UI Developer",
-    "timeline": "2025",
-    "liveUrl": "https://www.hellyoshaqiqie.my.id/",
-    "images": [
-      "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
-    ],
-    "featured": false,
-    "sortOrder": 4
   }
 ]
