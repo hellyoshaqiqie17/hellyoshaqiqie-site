@@ -96,20 +96,20 @@
             "content": "Led the Velinked project, serving as Project Manager and chief presenter. Velinked pairs two custom IoT devices—VeMonitor (GPS/telematics) and VeControl (remote engine shut-off)—with a dual-platform ecosystem:"
           },
           {
-            "type": "text",
-            "content": "• **Web dashboard (fleet owners):** real-time vehicle location & engine data, driver-behavior analytics, expense oversight, remote vehicle control, and attendance management."
+            "type": "list-item",
+            "number": "1",
+            "title": "Web dashboard (fleet owners)",
+            "content": "Real-time vehicle location & engine data, driver-behavior analytics, expense oversight, remote vehicle control, and attendance management."
           },
           {
-            "type": "text",
-            "content": "• **Mobile app (drivers):** one-tap expense uploads, online leave requests, and live status updates."
+            "type": "list-item",
+            "number": "2",
+            "title": "Mobile app (drivers)",
+            "content": "One-tap expense uploads, online leave requests, and live status updates."
           },
           {
             "type": "text",
             "content": "I spearheaded the business-model design, strategic roadmap, and user-centric product architecture, delivering a compelling pitch that outperformed entries from across the nation's vocational schools. This achievement sharpened my skills in product leadership, go-to-market strategy, and high-stakes technical storytelling."
-          },
-          {
-            "type": "image",
-            "src": "/assets/fiksi2024.png"
           }
         ]
       }
@@ -134,11 +134,11 @@
         "items": [
           {
             "type": "text",
-            "content": "Selected as a national finalist in the Digital Technology Business Plan category at FIKSI 2023, competing among top vocational students across Indonesia. I developed an IoT-based aquaculture solution with real-time water quality monitoring (pH, temperature, TDS), automated pumps, and adaptive control for different fish species. This experience strengthened my skills in business model development, strategic planning, and pitching innovative tech-driven ideas."
+            "content": "Selected as a national finalist in the Digital Technology Business Plan category at FIKSI 2023, competing among top vocational students across Indonesia."
           },
           {
-            "type": "image",
-            "src": "/assets/fiksi2023.jpeg"
+            "type": "text",
+            "content": "I developed an IoT-based aquaculture solution with real-time water quality monitoring (pH, temperature, TDS), automated pumps, and adaptive control for different fish species. This experience strengthened my skills in business model development, strategic planning, and pitching innovative tech-driven ideas."
           }
         ]
       }
