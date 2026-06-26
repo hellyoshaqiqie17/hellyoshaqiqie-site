@@ -42,6 +42,7 @@
     "timeline": "2025",
     "liveUrl": "https://vorce.id/vlinked",
     "images": [
+      "/assets/vlinked_cards_mockup.svg",
       "/assets/vlinkedshowcase.svg"
     ],
     "featured": true,
