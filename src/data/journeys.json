@@ -45,7 +45,8 @@
           },
           {
             "type": "image",
-            "src": "/assets/foto2.jpeg"
+            "src": "/assets/foto2.jpeg",
+            "indent": true
           },
           {
             "type": "text",
