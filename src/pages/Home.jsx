@@ -491,36 +491,6 @@ function FeaturedProjects() {
   )
 }
 
-// ----------------------------------------------------
-// Achievements Widget (replacing YouTube Videos)
-// ----------------------------------------------------
-function AchievementCard({ achievement, index }) {
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, ease: Hu, delay: index * 0.08 }}
-      className="group relative border border-border rounded-2xl p-6 bg-card/60 backdrop-blur-md theme-transition hover:border-indigo-500/40 hover:shadow-elevated"
-    >
-      <div className="flex justify-between items-start gap-4 mb-3">
-        <span className="text-[12px] font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-500/10 px-2.5 py-1 rounded-full">
-          {achievement.year}
-        </span>
-        <Sparkle size={18} className="text-muted/70 group-hover:text-indigo-500 transition-colors duration-300" />
-      </div>
-      <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-indigo-500 transition-colors duration-200">
-        {achievement.title}
-      </h3>
-      <p className="text-[14px] font-medium text-foreground leading-snug mb-1">
-        {achievement.competition}
-      </p>
-      <p className="text-[13px] text-muted font-medium">
-        {achievement.institution}
-      </p>
-    </m.div>
-  )
-}
 
 // ----------------------------------------------------
 // Featured Journeys List
