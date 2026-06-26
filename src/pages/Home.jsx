@@ -788,14 +788,14 @@ const toolsList = [
     bg: 'bg-card',
     imgClassName: 'border-0',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
-    rotate: -21
+    rotate: -24
   },
   {
     id: 'google-ai-studio',
     name: 'Google AI Studio',
     bg: 'bg-card',
     iconComponent: GoogleAIStudioIcon,
-    rotate: -15
+    rotate: -18
   },
   {
     id: 'hermes-agents',
@@ -803,42 +803,49 @@ const toolsList = [
     bg: 'bg-card',
     borderClass: 'border-4 border-surface',
     iconComponent: HermesAgentsIcon,
-    rotate: -9
-  },
-  {
-    id: 'davinci-resolve',
-    name: 'DaVinci Resolve',
-    bg: 'bg-card',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png',
-    rotate: -3
-  },
-  {
-    id: 'obsidian',
-    name: 'Obsidian',
-    bg: 'bg-card',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/1/10/2023_Obsidian_logo.svg',
-    rotate: 3
+    rotate: -12
   },
   {
     id: 'cursor',
     name: 'Cursor',
     bg: 'bg-card',
     iconComponent: CursorIcon,
-    rotate: 9
-  },
-  {
-    id: 'pi',
-    name: 'Pi Agent',
-    bg: 'bg-card',
-    iconComponent: PiAgentIcon,
-    rotate: 15
+    rotate: -6
   },
   {
     id: 'codex',
     name: 'Codex',
     bg: 'bg-card',
     icon: 'https://mh00j7jocs.ufs.sh/f/Qnr0iOx9K6xJvzLF0kt3OERfomb5VsYrNqh3BI4C2GiPLp7z',
-    rotate: 21
+    rotate: 0
+  },
+  {
+    id: 'vscode',
+    name: 'VS Code',
+    bg: 'bg-card',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',
+    rotate: 6
+  },
+  {
+    id: 'gcp',
+    name: 'Google Cloud',
+    bg: 'bg-card',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg',
+    rotate: 12
+  },
+  {
+    id: 'firebase',
+    name: 'Firebase',
+    bg: 'bg-card',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg',
+    rotate: 18
+  },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    bg: 'bg-card',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg',
+    rotate: 24
   }
 ]
 
