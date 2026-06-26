@@ -89,20 +89,27 @@
     "bgClass": "bg-surface-purple",
     "sections": [
       {
-        "heading": "Background",
+        "heading": "Velinked: Smart Fleet Management Ecosystem",
         "items": [
           {
             "type": "text",
-            "content": "We competed in the Digital Technology category at the prestigious FIKSI 2024, presenting a cutting-edge technological solution aimed at driving digital transformation. Our innovation showcased the seamless integration of software and hardware."
-          }
-        ]
-      },
-      {
-        "heading": "The Innovation",
-        "items": [
+            "content": "Led the Velinked project, serving as Project Manager and chief presenter. Velinked pairs two custom IoT devices—VeMonitor (GPS/telematics) and VeControl (remote engine shut-off)—with a dual-platform ecosystem:"
+          },
           {
             "type": "text",
-            "content": "Our project was selected from thousands of nationwide submissions, and through rigorous judging rounds, we managed to secure the Gold Medal. The solution was highly praised for its technical complexity, business viability, and potential societal impact."
+            "content": "• **Web dashboard (fleet owners):** real-time vehicle location & engine data, driver-behavior analytics, expense oversight, remote vehicle control, and attendance management."
+          },
+          {
+            "type": "text",
+            "content": "• **Mobile app (drivers):** one-tap expense uploads, online leave requests, and live status updates."
+          },
+          {
+            "type": "text",
+            "content": "I spearheaded the business-model design, strategic roadmap, and user-centric product architecture, delivering a compelling pitch that outperformed entries from across the nation's vocational schools. This achievement sharpened my skills in product leadership, go-to-market strategy, and high-stakes technical storytelling."
+          },
+          {
+            "type": "image",
+            "src": "/assets/fiksi2024.png"
           }
         ]
       }
@@ -123,20 +130,15 @@
     "bgClass": "bg-surface-blue",
     "sections": [
       {
-        "heading": "Background",
+        "heading": "Finalist in the FIKSI Competition in the field of Digital Technology 2023",
         "items": [
           {
             "type": "text",
-            "content": "This was our debut at FIKSI in the Digital Technology category. We developed a unique digital product that aimed to solve real-world problems through automation and user-centric design."
-          }
-        ]
-      },
-      {
-        "heading": "The Experience",
-        "items": [
+            "content": "Selected as a national finalist in the Digital Technology Business Plan category at FIKSI 2023, competing among top vocational students across Indonesia. I developed an IoT-based aquaculture solution with real-time water quality monitoring (pH, temperature, TDS), automated pumps, and adaptive control for different fish species. This experience strengthened my skills in business model development, strategic planning, and pitching innovative tech-driven ideas."
+          },
           {
-            "type": "text",
-            "content": "Being recognized as a National Finalist was a significant milestone. It provided us with immense learning experiences, invaluable feedback from expert judges, and the motivation to push our technological boundaries even further for the next year."
+            "type": "image",
+            "src": "/assets/fiksi2023.jpeg"
           }
         ]
       }
