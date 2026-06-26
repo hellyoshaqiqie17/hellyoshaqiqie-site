@@ -74,40 +74,6 @@
     ]
   },
   {
-    "slug": "2nd-place-careerday-uny-2026",
-    "title": "2nd Place Winner at Business Plan Careerday UNY",
-    "date": "2026-04-12",
-    "competition": "Business Plan Careerday UNY",
-    "institution": "Universitas Negeri Yogyakarta",
-    "image": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop",
-    "tags": [
-      "Business Plan",
-      "Startup",
-      "Pitching"
-    ],
-    "bgClass": "bg-surface-purple",
-    "sections": [
-      {
-        "heading": "Background",
-        "items": [
-          {
-            "type": "text",
-            "content": "Kami menyusun rencana bisnis yang matang untuk memecahkan masalah akses pendidikan karir di pedesaan. Kompetisi di UNY ini diikuti oleh puluhan universitas terkemuka di Indonesia."
-          }
-        ]
-      },
-      {
-        "heading": "Achievement",
-        "items": [
-          {
-            "type": "text",
-            "content": "Berkat analisis pasar yang tajam dan simulasi proyeksi keuangan yang realistis, tim kami berhasil memukau juri dan membawa pulang piala Juara 2. Pengalaman berharga ini melatih kami untuk selalu berpikir kritis dari sudut pandang investor."
-          }
-        ]
-      }
-    ]
-  },
-  {
     "slug": "fiksi-2024-gold-medalist",
     "title": "Gold Medalist in Digital Technology - FIKSI 2024",
     "date": "2024-09-29",
