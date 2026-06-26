@@ -205,11 +205,27 @@ export default function JourneyDetail() {
           className="max-w-3xl mx-auto mb-24"
         >
           <h2 className="text-2xl font-semibold text-foreground mb-6">The Journey</h2>
+          
           <div className="text-lg text-muted space-y-6">
             {journey.content.split('\n\n').map((paragraph, index) => (
               <p key={index} className="leading-relaxed">{paragraph}</p>
             ))}
           </div>
+
+          {/* Additional Content Images */}
+          {journey.contentImages && journey.contentImages.length > 0 && (
+            <div className="space-y-12 mt-12">
+              {journey.contentImages.map((img, idx) => (
+                <div key={idx} className="rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface aspect-[4/3] sm:aspect-video relative border border-border shadow-sm theme-transition">
+                  <img
+                    src={img}
+                    alt={`${journey.title} detail ${idx + 1}`}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </m.div>
       </m.main>
     </>
