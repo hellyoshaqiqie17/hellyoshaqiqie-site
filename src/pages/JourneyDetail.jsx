@@ -205,19 +205,19 @@ export default function JourneyDetail() {
           className="max-w-5xl mx-auto mb-32"
         >
           {journey.sections && journey.sections.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-24 last:mb-0 border-t border-border pt-12 first:border-0 first:pt-0">
+            <div key={sectionIdx} className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-24 last:mb-0 border-t border-border pt-12 first:border-0 first:pt-0">
               
               {/* Left Column: Heading */}
-              <div className="lg:col-span-3">
+              <div className="lg:w-1/4 flex-shrink-0">
                 {section.heading && (
-                  <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight sticky top-24">
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight lg:sticky lg:top-24">
                     {section.heading}
                   </h2>
                 )}
               </div>
 
               {/* Right Column: Content */}
-              <div className="lg:col-span-9 space-y-8">
+              <div className="lg:w-3/4 space-y-8">
                 {section.items.map((item, itemIdx) => {
                   if (item.type === 'text') {
                     return (
