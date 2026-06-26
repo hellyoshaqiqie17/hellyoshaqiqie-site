@@ -52,4 +52,10 @@ function mockApiPlugin() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), mockApiPlugin()],
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 100,
+    }
+  }
 })
