@@ -161,6 +161,8 @@ export default function GithubSnake3D({ weeks, containerRef }) {
       ]
       
       const shuffledDirs = [...directions].sort(() => Math.random() - 0.5)
+      
+      // Try to find a non-body cell first
       for (const dir of shuffledDirs) {
         const nextCol = startCol + dir.dCol
         const nextRow = startRow + dir.dRow
@@ -172,6 +174,16 @@ export default function GithubSnake3D({ weeks, containerRef }) {
           }
         }
       }
+
+      // Fallback: If trapped by its own body, just allow it to run over itself to avoid stalling forever
+      for (const dir of shuffledDirs) {
+        const nextCol = startCol + dir.dCol
+        const nextRow = startRow + dir.dRow
+        if (nextCol >= 0 && nextCol < numCols && nextRow >= 0 && nextRow < numRows) {
+          return { col: nextCol, row: nextRow }
+        }
+      }
+
       return null
     }
 
