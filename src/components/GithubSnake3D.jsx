@@ -363,24 +363,29 @@ export default function GithubSnake3D({ weeks, containerRef }) {
       ctx.shadowOffsetY = 4.5
       ctx.shadowOffsetX = 1.5
 
-      // Draw continuous body line connecting segments
+      // Draw continuous body line connecting segments, tapering the thickness matching the spheres
       if (segmentCoords.length > 1) {
-        ctx.beginPath()
-        ctx.moveTo(segmentCoords[0].x, segmentCoords[0].y)
-        for (let i = 1; i < segmentCoords.length; i++) {
-          ctx.lineTo(segmentCoords[i].x, segmentCoords[i].y)
-        }
-        
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
-        
-        // Set line width to connect the spheres seamlessly
-        const avgR = segmentCoords[0].size / 2.2
-        ctx.lineWidth = avgR * 1.5
-        
-        // Base color for the snake body connection
         ctx.strokeStyle = '#16a34a' 
-        ctx.stroke()
+
+        for (let i = 0; i < segmentCoords.length - 1; i++) {
+          const p1 = segmentCoords[i]
+          const p2 = segmentCoords[i + 1]
+          
+          // Calculate tapered radii to perfectly match the 3D spheres
+          const baseRadius = p1.size / 2.2
+          const r1 = (i === 0) ? baseRadius * 1.1 : baseRadius * (1.0 - (i / snakeSegments.length) * 0.4)
+          const r2 = baseRadius * (1.0 - ((i + 1) / snakeSegments.length) * 0.4)
+          
+          // Use average diameter, minus a small margin so the flat line never sticks out under the glossy sphere
+          ctx.lineWidth = (r1 + r2) * 0.95 
+
+          ctx.beginPath()
+          ctx.moveTo(p1.x, p1.y)
+          ctx.lineTo(p2.x, p2.y)
+          ctx.stroke()
+        }
       }
 
       // Draw glossy 3D spheres for each body segment
