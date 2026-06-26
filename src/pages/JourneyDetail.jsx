@@ -202,37 +202,62 @@ export default function JourneyDetail() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6, ease: Hu }}
-          className="max-w-3xl mx-auto mb-24"
+          className="max-w-5xl mx-auto mb-32"
         >
-          <h2 className="text-2xl font-semibold text-foreground mb-6">The Journey</h2>
-          
-          <div className="text-lg text-muted space-y-6">
-            {journey.content.split('\n\n').map((paragraph, index) => {
-              if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                return (
-                  <h3 key={index} className="text-xl font-semibold text-foreground mt-10 mb-4">
-                    {paragraph.replace(/\*\*/g, '')}
-                  </h3>
-                )
-              }
-              return <p key={index} className="leading-relaxed">{paragraph}</p>
-            })}
-          </div>
+          {journey.sections && journey.sections.map((section, sectionIdx) => (
+            <div key={sectionIdx} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-24 last:mb-0 border-t border-border pt-12 first:border-0 first:pt-0">
+              
+              {/* Left Column: Heading */}
+              <div className="lg:col-span-3">
+                {section.heading && (
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight sticky top-24">
+                    {section.heading}
+                  </h2>
+                )}
+              </div>
 
-          {/* Additional Content Images */}
-          {journey.contentImages && journey.contentImages.length > 0 && (
-            <div className="space-y-12 mt-12">
-              {journey.contentImages.map((img, idx) => (
-                <div key={idx} className="rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface aspect-[4/3] sm:aspect-video relative border border-border shadow-sm theme-transition">
-                  <img
-                    src={img}
-                    alt={`${journey.title} detail ${idx + 1}`}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              ))}
+              {/* Right Column: Content */}
+              <div className="lg:col-span-9 space-y-8">
+                {section.items.map((item, itemIdx) => {
+                  if (item.type === 'text') {
+                    return (
+                      <p key={itemIdx} className="text-[17px] leading-relaxed text-muted">
+                        {item.content}
+                      </p>
+                    )
+                  }
+                  
+                  if (item.type === 'list-item') {
+                    return (
+                      <div key={itemIdx} className="flex gap-x-5 gap-y-2 flex-col sm:flex-row mb-6">
+                        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#f0e8db] dark:bg-[#3f2a1b] flex items-center justify-center text-[#9c5f2b] dark:text-[#f3a45c] font-bold text-[15px] shadow-sm">
+                          {item.number}
+                        </div>
+                        <div className="mt-1 sm:mt-0">
+                          <h4 className="text-[18px] font-bold text-foreground mb-2">{item.title}</h4>
+                          <p className="text-[17px] leading-relaxed text-muted">{item.content}</p>
+                        </div>
+                      </div>
+                    )
+                  }
+                  
+                  if (item.type === 'image') {
+                    return (
+                      <div key={itemIdx} className="rounded-[1.5rem] overflow-hidden bg-surface relative border border-border shadow-sm theme-transition my-12 group">
+                        <img
+                          src={item.src}
+                          alt={`${journey.title} documentation`}
+                          className="w-full object-cover"
+                        />
+                      </div>
+                    )
+                  }
+                  
+                  return null;
+                })}
+              </div>
             </div>
-          )}
+          ))}
         </m.div>
       </m.main>
     </>

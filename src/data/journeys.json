@@ -8,18 +8,99 @@
     "image": "/assets/IMJ_6152.JPG",
     "tags": ["Sustainability", "Pitching", "Green Economy", "IoT"],
     "bgClass": "bg-surface-blue",
-    "contentImages": ["/assets/foto2.jpeg"],
-    "content": "ClimatiX is an integrated climate technology ecosystem we designed to improve transparency and trust in the carbon market. By combining the Internet of Things (IoT), Artificial Intelligence (AI), Cloud Computing, and Blockchain, our platform enables real-time environmental monitoring, intelligent carbon analytics, and transparent digital carbon credit trading.\n\nOur ecosystem consists of three interconnected platforms:\n\n1. ClimatiX Devices: Collects real-time environmental data from conservation areas using specialized IoT sensors.\n\n2. ClimatiX LandHub: Transforms raw sensor data into actionable insights through AI-powered analytics, enabling precise project monitoring and carbon estimation.\n\n3. ClimatiX GreenTrade: Tokenizes verified carbon credits into digital assets, creating a transparent marketplace for secure and traceable carbon credit transactions.\n\nTogether, these components provide an end-to-end solution that supports environmental conservation, ESG initiatives, and the transition toward a sustainable green economy.\n\n**Achievement – Best Presentation Award**\n\nWe were deeply honored when ClimatiX was recognized with the Best Presentation Award at the GreenJob Competition organized by Inovasi Muda. Our project was awarded for its innovative approach to integrating IoT, AI, and Blockchain into a unified carbon technology ecosystem.\n\nFurthermore, we were praised for presenting a practical, scalable, and impactful solution aimed at advancing transparency and digital transformation within the carbon market. This achievement reflects not only the technical innovation behind ClimatiX, but also our team's ability to communicate complex architectural ideas effectively to industry experts and judges."
+    "sections": [
+      {
+        "heading": "Background",
+        "items": [
+          {
+            "type": "text",
+            "content": "ClimatiX is an integrated climate technology ecosystem we designed to improve transparency and trust in the carbon market. By combining the Internet of Things (IoT), Artificial Intelligence (AI), Cloud Computing, and Blockchain, our platform enables real-time environmental monitoring, intelligent carbon analytics, and transparent digital carbon credit trading."
+          }
+        ]
+      },
+      {
+        "heading": "Goals & Platforms",
+        "items": [
+          {
+            "type": "text",
+            "content": "Our ecosystem consists of three interconnected platforms:"
+          },
+          {
+            "type": "list-item",
+            "number": "1",
+            "title": "ClimatiX Devices",
+            "content": "Collects real-time environmental data from conservation areas using specialized IoT sensors."
+          },
+          {
+            "type": "list-item",
+            "number": "2",
+            "title": "ClimatiX LandHub",
+            "content": "Transforms raw sensor data into actionable insights through AI-powered analytics, enabling precise project monitoring and carbon estimation."
+          },
+          {
+            "type": "list-item",
+            "number": "3",
+            "title": "ClimatiX GreenTrade",
+            "content": "Tokenizes verified carbon credits into digital assets, creating a transparent marketplace for secure and traceable carbon credit transactions."
+          },
+          {
+            "type": "text",
+            "content": "Together, these components provide an end-to-end solution that supports environmental conservation, ESG initiatives, and the transition toward a sustainable green economy."
+          }
+        ]
+      },
+      {
+        "heading": "Documentation",
+        "items": [
+          {
+            "type": "image",
+            "src": "/assets/foto2.jpeg"
+          }
+        ]
+      },
+      {
+        "heading": "Achievement",
+        "items": [
+          {
+            "type": "text",
+            "content": "We were deeply honored when ClimatiX was recognized with the Best Presentation Award at the GreenJob Competition organized by Inovasi Muda. Our project was awarded for its innovative approach to integrating IoT, AI, and Blockchain into a unified carbon technology ecosystem."
+          },
+          {
+            "type": "text",
+            "content": "Furthermore, we were praised for presenting a practical, scalable, and impactful solution aimed at advancing transparency and digital transformation within the carbon market. This achievement reflects not only the technical innovation behind ClimatiX, but also our team's ability to communicate complex architectural ideas effectively to industry experts and judges."
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "2nd-place-careerday-uny-2026",
     "title": "2nd Place Winner at Business Plan Careerday UNY",
-    "date": "2026-12-05",
+    "date": "2026-04-12",
     "competition": "Business Plan Careerday UNY",
-    "institution": "Yogyakarta State University",
-    "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1932&auto=format&fit=crop",
-    "tags": ["Business Plan", "Finance", "Strategy"],
+    "institution": "Universitas Negeri Yogyakarta",
+    "image": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop",
+    "tags": ["Business Plan", "Startup", "Pitching"],
     "bgClass": "bg-surface-purple",
-    "content": "Berpartisipasi dalam Business Plan Careerday di UNY memberikan banyak wawasan berharga. Kompetisi ini berfokus pada strategi bisnis dan kelayakan finansial dari ide yang diusulkan. \n\nIde kami berkisar pada platform digital yang memfasilitasi UMKM lokal. Tantangan terbesarnya adalah membuktikan model pendapatan yang solid kepada panel juri yang terdiri dari para ahli bisnis dan keuangan. \n\nMeskipun persaingan sangat ketat, kami berhasil meraih juara ke-2. Pengalaman ini benar-benar mempertajam insting bisnis saya!"
+    "sections": [
+      {
+        "heading": "Background",
+        "items": [
+          {
+            "type": "text",
+            "content": "Kami menyusun rencana bisnis yang matang untuk memecahkan masalah akses pendidikan karir di pedesaan. Kompetisi di UNY ini diikuti oleh puluhan universitas terkemuka di Indonesia."
+          }
+        ]
+      },
+      {
+        "heading": "Achievement",
+        "items": [
+          {
+            "type": "text",
+            "content": "Berkat analisis pasar yang tajam dan simulasi proyeksi keuangan yang realistis, tim kami berhasil memukau juri dan membawa pulang piala Juara 2. Pengalaman berharga ini melatih kami untuk selalu berpikir kritis dari sudut pandang investor."
+          }
+        ]
+      }
+    ]
   }
 ]
