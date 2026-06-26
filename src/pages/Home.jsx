@@ -219,15 +219,15 @@ function HeroSection() {
         >
           <div className="flex items-center gap-x-2 px-5 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:bg-surface theme-transition cursor-default">
             <GearSix size={18} className="text-muted" />
-            <span>IoT Product Strategy</span>
+            <span>Full-Stack Web App</span>
           </div>
           <div className="flex items-center gap-x-2 px-5 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:bg-surface theme-transition cursor-default">
             <BracketsCurly size={18} className="text-muted" />
-            <span>Automation Systems</span>
+            <span>Next.js / React</span>
           </div>
           <div className="flex items-center gap-x-2 px-5 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:bg-surface theme-transition cursor-default">
             <Code size={18} className="text-muted" />
-            <span>Golang / Python</span>
+            <span>TypeScript / Node.js</span>
           </div>
           <div className="flex items-center gap-x-2 px-5 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:bg-surface theme-transition cursor-default">
             <PenNib size={18} className="text-muted" />
