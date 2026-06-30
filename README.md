@@ -17,5 +17,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](file:///c:/hellyoshaqiqie/LICENSE) file for details.
+This project is dual-licensed under the MIT License and the Apache License 2.0.
+See the [LICENSE-MIT](file:///c:/hellyoshaqiqie/LICENSE-MIT) and [LICENSE-APACHE](file:///c:/hellyoshaqiqie/LICENSE-APACHE) files for details.
 
