@@ -7,7 +7,26 @@ export default function Coaching() {
 
   return (
     <>
-      <Meta title="Coaching" path="/coaching" />
+      <Meta
+        title="Coaching & Mentorship Sessions"
+        description="Book a coaching or mentorship session with Hellyos Ageng Haqiqie (Hellyoshaqiqie). Get guidance on full-stack development, AI engineering, IoT systems, startup strategy, and competition preparation."
+        keywords="hellyos ageng haqiqie coaching, hellyoshaqiqie mentorship, software engineering coaching, AI mentorship, startup coaching, competition coaching, Indonesia"
+        path="/coaching"
+        breadcrumbs={[{ name: 'Coaching', path: '/coaching' }]}
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Coaching & Mentorship — Hellyos Ageng Haqiqie',
+          'description': 'Book a coaching or mentorship session with Hellyos Ageng Haqiqie on full-stack development, AI engineering, IoT, and startup strategy.',
+          'url': 'https://www.hellyoshaqiqie.my.id/coaching',
+          'isPartOf': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+          },
+          'author': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+          }
+        }}
+      />
       <main className="flex min-h-[40vh] flex-col items-center justify-center py-20">
         <button
           type="button"

@@ -80,9 +80,33 @@ export default function Journeys() {
   return (
     <>
       <Meta
-        title="My Journey"
-        description="Detailed stories and highlights from my achievements and milestones."
+        title="My Journey — Achievements & Competition Milestones"
+        description="Detailed stories and highlights from Hellyos Ageng Haqiqie's (Hellyoshaqiqie) competition achievements, including Gold Medal at FIKSI 2024, Best Presentation at Green Jobs 2026, and more milestones."
+        keywords="hellyos ageng haqiqie achievements, hellyoshaqiqie journey, competition milestones, FIKSI 2024, gold medalist, Indonesia tech competitions"
         path="/journeys"
+        breadcrumbs={[{ name: 'Journeys', path: '/journeys' }]}
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': 'Journey & Achievements — Hellyos Ageng Haqiqie',
+          'description': 'Competition milestones, awards, and achievement stories of Hellyos Ageng Haqiqie.',
+          'url': 'https://www.hellyoshaqiqie.my.id/journeys',
+          'mainEntity': {
+            '@type': 'ItemList',
+            'itemListElement': journeys.map((j, idx) => ({
+              '@type': 'ListItem',
+              'position': idx + 1,
+              'name': j.title,
+              'url': `https://www.hellyoshaqiqie.my.id/journey/${j.slug}`
+            }))
+          },
+          'isPartOf': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+          },
+          'author': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+          }
+        }}
       />
       
       <main className="space-y-10 pb-8">

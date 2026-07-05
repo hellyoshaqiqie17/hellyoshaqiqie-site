@@ -119,20 +119,25 @@ export default function ProjectDetail() {
     )
   }
 
-  const projectKeywords = `${project.slug.replace(/-/g, ', ')}, ${project.title}, ${project.client ? project.client + ', ' : ''}${project.tags.join(', ')}, hellyoshaqiqie, hellyos ageng haqiqie, hellyos, haqiqie, project, portfolio, software`
+  const projectKeywords = `${project.slug.replace(/-/g, ', ')}, ${project.title}, ${project.client ? project.client + ', ' : ''}${project.tags.join(', ')}, hellyoshaqiqie, hellyos ageng haqiqie, hellyos, helyos, iyos, haqiqie, project, portfolio, case study, software engineering`
 
   const projectSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "CreativeWork",
     "name": project.title,
     "description": project.description,
     "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
     "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
-    "applicationCategory": "WebApplication",
+    "dateCreated": project.timeline || "2024",
+    "keywords": project.tags.join(', '),
+    "creator": {
+      "@id": "https://www.hellyoshaqiqie.my.id/#person"
+    },
     "author": {
-      "@type": "Person",
-      "name": "Hellyos Ageng Haqiqie",
-      "url": "https://www.hellyoshaqiqie.my.id"
+      "@id": "https://www.hellyoshaqiqie.my.id/#person"
+    },
+    "isPartOf": {
+      "@id": "https://www.hellyoshaqiqie.my.id/#website"
     }
   }
 
@@ -145,6 +150,10 @@ export default function ProjectDetail() {
         schemaData={projectSchema}
         path={`/project/${project.slug}`}
         image={project.image}
+        breadcrumbs={[
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path: `/project/${project.slug}` }
+        ]}
       />
       
       <m.main

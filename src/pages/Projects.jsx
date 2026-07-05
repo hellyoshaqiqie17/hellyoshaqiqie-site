@@ -80,9 +80,33 @@ export default function Projects() {
   return (
     <>
       <Meta
-        title="Design Projects"
-        description="Explore IoT product design case studies and selected project work by Hellyos Ageng Haqiqie."
+        title="All Projects — Case Studies & Design Portfolio"
+        description="Explore IoT product design case studies, AI/ML applications, and full-stack engineering projects by Hellyos Ageng Haqiqie (Hellyoshaqiqie). Featuring ClimatiX, VORCE, VLinked, DermDoc, Smart Fleet Management, and more."
+        keywords="hellyos ageng haqiqie projects, hellyoshaqiqie portfolio, case studies, IoT projects, AI projects, full-stack projects, web development, systems architecture"
         path="/projects"
+        breadcrumbs={[{ name: 'Projects', path: '/projects' }]}
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': 'All Projects by Hellyos Ageng Haqiqie',
+          'description': 'A comprehensive collection of software engineering, IoT, AI/ML, and full-stack development case studies by Hellyos Ageng Haqiqie.',
+          'url': 'https://www.hellyoshaqiqie.my.id/projects',
+          'mainEntity': {
+            '@type': 'ItemList',
+            'itemListElement': projects.map((proj, idx) => ({
+              '@type': 'ListItem',
+              'position': idx + 1,
+              'name': proj.title,
+              'url': `https://www.hellyoshaqiqie.my.id/project/${proj.slug}`
+            }))
+          },
+          'isPartOf': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+          },
+          'author': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+          }
+        }}
       />
       
       <main className="space-y-10 pb-8">

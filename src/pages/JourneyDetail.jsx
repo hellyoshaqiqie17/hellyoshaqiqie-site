@@ -117,11 +117,32 @@ export default function JourneyDetail() {
   return (
     <>
       <Meta
-        title={journey.title}
-        description={`My journey and achievement in ${journey.competition}`}
+        title={`${journey.title} — Achievement Story`}
+        description={`Read the full case study about Hellyos Ageng Haqiqie's (Hellyoshaqiqie) achievement: ${journey.title} at ${journey.competition}.`}
         keywords={keywords}
         path={`/journey/${journey.slug}`}
         image={journey.image}
+        breadcrumbs={[
+          { name: 'Journeys', path: '/journeys' },
+          { name: journey.title, path: `/journey/${journey.slug}` }
+        ]}
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          'name': journey.title,
+          'description': `Case study of Hellyos Ageng Haqiqie's achievement: ${journey.title} at ${journey.competition}.`,
+          'url': `https://www.hellyoshaqiqie.my.id/journey/${journey.slug}`,
+          'image': journey.image.startsWith('http') ? journey.image : `https://www.hellyoshaqiqie.my.id${journey.image}`,
+          'creator': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+          },
+          'author': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+          },
+          'isPartOf': {
+            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+          }
+        }}
       />
       
       <m.main

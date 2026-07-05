@@ -1,18 +1,21 @@
 export const contactLinks = [
   { id: 'email', href: 'mailto:hellyoshaqiqie9@gmail.com', label: 'Email Hellyos', external: false },
-  { id: 'instagram', href: 'https://instagram.com/hellyoshaqiqieeee/', label: 'Instagram DM', external: true }
+  { id: 'instagram', href: 'https://instagram.com/hellyoshaqiqieeee/', label: 'Instagram DM', external: true },
+  { id: 'linkedin', href: 'https://www.linkedin.com/in/hellyoshaqiqie/', label: 'LinkedIn', external: true }
 ]
 
 export const socialLinks = [
   { href: 'https://github.com/hellyoshaqiqie17', label: 'GitHub', icon: 'github' },
+  { href: 'https://www.linkedin.com/in/hellyoshaqiqie/', label: 'LinkedIn', icon: 'linkedin' },
   { href: 'https://instagram.com/hellyoshaqiqieeee/', label: 'Instagram', icon: 'instagram' },
   { href: 'https://medium.com/@hellyoshaqiqie9', label: 'Medium', icon: 'envelope' }
 ]
 
-
 export const navLinks = [
   { to: '/#about', label: 'About' },
-  { to: '/projects', label: 'Projects' }
+  { to: '/projects', label: 'Projects' },
+  { to: '/journeys', label: 'Journeys' },
+  { to: '/coaching', label: 'Coaching' }
 ]
 
 export const defaultImages = {
