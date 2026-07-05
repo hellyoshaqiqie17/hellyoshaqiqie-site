@@ -1,5 +1,29 @@
 [
   {
+    "slug": "climatix",
+    "title": "ClimatiX \u2014 Climate Tech & Carbon Credit Ecosystem",
+    "description": "An end-to-end climate technology ecosystem connecting IoT sensors, AI-powered carbon analytics, and blockchain tokenization to bring transparency to the carbon market.",
+    "longDescription": "ClimatiX is an end-to-end climate technology ecosystem designed to improve transparency, trust, and accessibility within the carbon credit market through the integration of modern digital technologies. It addresses the systemic issues in the voluntary carbon market—such as greenwashing, double counting, and opaque verification processes—by replacing manual, periodic audits with continuous, machine-certified environmental data.\n\nThe ecosystem consists of three integrated platforms: ClimatiX Devices (an IoT-based environmental monitoring system capturing temperature, humidity, soil moisture, and gas concentrations in conservation areas), ClimatiX LandHub (an intelligent monitoring dashboard providing real-time visualization, AI-powered carbon estimation, and project management insights), and ClimatiX GreenTrade (a blockchain-powered marketplace where verified carbon credits are tokenized using ERC-1155 smart contracts to ensure transparent ownership, digital trading, and secure transactions).\n\nBuilt on a modern technology stack, ClimatiX combines low-power LoRaWAN networks, MQTT telemetry protocols, Google Cloud Platform (Cloud Pub/Sub and Vertex AI), Firebase Firestore, and public smart contracts. Together, these technologies establish a secure, scalable data-to-token pipeline that supports ESG compliance and accelerates the transition to a global Net-Zero carbon economy.",
+    "image": "/climatix.svg",
+    "tags": [
+      "IoT / Telemetry",
+      "Blockchain / Web3",
+      "AI / Machine Learning",
+      "Google Cloud (GCP)"
+    ],
+    "bgClass": "bg-surface-blue",
+    "imagePosition": "object-center",
+    "client": "Green Jobs Incubation",
+    "role": "Software Architect & Lead Engineer",
+    "timeline": "2026",
+    "liveUrl": "https://www.hellyoshaqiqie.my.id/journey/best-presentation-green-jobs-2026",
+    "images": [
+      "/climatix.svg"
+    ],
+    "featured": true,
+    "sortOrder": 1
+  },
+  {
     "slug": "vorce-platform",
     "title": "VORCE \u2014 Workforce Intelligence & Operations Platform",
     "description": "An end-to-end workforce intelligence and business operations platform combining employee directories, attendance tracking, task management, and desktop device analytics.",
@@ -21,7 +45,7 @@
       "/assets/vorce_platform_mockup.svg"
     ],
     "featured": true,
-    "sortOrder": 1
+    "sortOrder": 2
   },
   {
     "slug": "vlinked-desktop-agent",
@@ -46,7 +70,7 @@
       "/assets/vlinkedshowcase.svg"
     ],
     "featured": true,
-    "sortOrder": 2
+    "sortOrder": 3
   },
   {
     "slug": "fleet-management",
@@ -70,7 +94,7 @@
       "/assets/velinked.svg"
     ],
     "featured": true,
-    "sortOrder": 3
+    "sortOrder": 4
   },
   {
     "slug": "driver-dashboard",
@@ -94,7 +118,7 @@
       "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
     ],
     "featured": true,
-    "sortOrder": 4
+    "sortOrder": 5
   },
   {
     "slug": "dermdoc",
@@ -118,7 +142,7 @@
       "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
     "featured": true,
-    "sortOrder": 5
+    "sortOrder": 6
   },
   {
     "slug": "smart-home",
@@ -142,7 +166,7 @@
       "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
     "featured": true,
-    "sortOrder": 6
+    "sortOrder": 7
   },
   {
     "slug": "smart-vehicle",
@@ -166,6 +190,6 @@
       "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
     ],
     "featured": true,
-    "sortOrder": 7
+    "sortOrder": 8
   }
 ]
