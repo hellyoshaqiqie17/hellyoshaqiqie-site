@@ -123,22 +123,46 @@ export default function ProjectDetail() {
 
   const projectSchema = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": project.title,
-    "description": project.description,
-    "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
-    "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
-    "dateCreated": project.timeline || "2024",
-    "keywords": project.tags.join(', '),
-    "creator": {
-      "@id": "https://www.hellyoshaqiqie.my.id/#person"
-    },
-    "author": {
-      "@id": "https://www.hellyoshaqiqie.my.id/#person"
-    },
-    "isPartOf": {
-      "@id": "https://www.hellyoshaqiqie.my.id/#website"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": `https://www.hellyoshaqiqie.my.id/project/${project.slug}#software`,
+        "name": project.title,
+        "description": project.description,
+        "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
+        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web, iOS, Android, Windows, macOS",
+        "author": {
+          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `https://www.hellyoshaqiqie.my.id/project/${project.slug}#work`,
+        "name": project.title,
+        "headline": project.title,
+        "description": project.longDescription,
+        "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
+        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
+        "dateCreated": project.timeline || "2024",
+        "keywords": project.tags.join(', '),
+        "creator": {
+          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+        },
+        "author": {
+          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+        },
+        "isPartOf": {
+          "@id": "https://www.hellyoshaqiqie.my.id/#website"
+        }
+      }
+    ]
   }
 
   return (
