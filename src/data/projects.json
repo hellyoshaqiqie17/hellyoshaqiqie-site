@@ -4,7 +4,7 @@
     "title": "ClimatiX \u2014 Climate Tech & Carbon Credit Ecosystem",
     "description": "An end-to-end climate technology ecosystem connecting IoT sensors, AI-powered carbon analytics, and blockchain tokenization to bring transparency to the carbon market.",
     "longDescription": "ClimatiX is an end-to-end climate technology ecosystem designed to improve transparency, trust, and accessibility within the carbon credit market through the integration of modern digital technologies. It addresses the systemic issues in the voluntary carbon market—such as greenwashing, double counting, and opaque verification processes—by replacing manual, periodic audits with continuous, machine-certified environmental data.\n\nThe ecosystem consists of three integrated platforms: ClimatiX Devices (an IoT-based environmental monitoring system capturing temperature, humidity, soil moisture, and gas concentrations in conservation areas), ClimatiX LandHub (an intelligent monitoring dashboard providing real-time visualization, AI-powered carbon estimation, and project management insights), and ClimatiX GreenTrade (a blockchain-powered marketplace where verified carbon credits are tokenized using ERC-1155 smart contracts to ensure transparent ownership, digital trading, and secure transactions).\n\nBuilt on a modern technology stack, ClimatiX combines low-power LoRaWAN networks, MQTT telemetry protocols, Google Cloud Platform (Cloud Pub/Sub and Vertex AI), Firebase Firestore, and public smart contracts. Together, these technologies establish a secure, scalable data-to-token pipeline that supports ESG compliance and accelerates the transition to a global Net-Zero carbon economy.",
-    "image": "/climatix.svg",
+    "image": "/climatix.webp",
     "tags": [
       "IoT / Telemetry",
       "Blockchain / Web3",
@@ -18,17 +18,41 @@
     "timeline": "2026",
     "liveUrl": "https://www.hellyoshaqiqie.my.id/journey/best-presentation-green-jobs-2026",
     "images": [
-      "/climatix.svg"
+      "/climatix.webp"
     ],
     "featured": true,
     "sortOrder": 1
+  },
+  {
+    "slug": "sms-vest",
+    "title": "SMS-Vest \u2014 Smart Marine Safety Vest Ecosystem",
+    "description": "An IoT-based smart safety vest and coastal base station ecosystem utilizing LoRa telemetry and AI diagnosis for traditional fishermen.",
+    "longDescription": "SMS-Vest (Smart Marine Safety Vest) is an innovative, low-cost safety ecosystem designed to protect traditional fishermen operating in GSM cellular dead zones. The project addresses the critical issue of maritime accidents and rescue delays by integrating wearable IoT technology with long-range radio networks and artificial intelligence.\n\nThe wearable vest is equipped with an ESP32 microcontroller, GPS u-blox NEO-M8N, MPU6050 accelerometer/gyroscope for fall and immobility detection, MAX30102 for heart rate and SpO₂ monitoring, DS18B20 for body/water temperature monitoring, and a water-immersion sensor. Telemetry data is transmitted via LoRa SX1262 (920 MHz) over distances of up to 25 km to a coastal gateway base station, bypassing the need for cellular networks. An AI-powered assistant (integrating the OpenAI API) processes the real-time physiological and environmental data on the base station server, identifying hypothermia risks, extreme fatigue, and emergency situations, immediately triggering automated rescue alerts with precise GPS coordinates for search and rescue operations.",
+    "image": "/assets/vest.webp",
+    "tags": [
+      "IoT / Telemetry",
+      "Next.js / React",
+      "AI / Machine Learning",
+      "Hardware / Firmware"
+    ],
+    "bgClass": "bg-surface-warm",
+    "imagePosition": "object-center",
+    "client": "PKM-KC",
+    "role": "Lead IoT & System Engineer",
+    "timeline": "2026",
+    "liveUrl": "https://www.hellyoshaqiqie.my.id/",
+    "images": [
+      "/assets/vest.webp"
+    ],
+    "featured": true,
+    "sortOrder": 2
   },
   {
     "slug": "vorce-platform",
     "title": "VORCE \u2014 Workforce Intelligence & Operations Platform",
     "description": "An end-to-end workforce intelligence and business operations platform combining employee directories, attendance tracking, task management, and desktop device analytics.",
     "longDescription": "VORCE is an integrated, end-to-end workforce intelligence and business operations platform designed to help organizations streamline employee management, monitor work activities, and extract real-time operational insights. I developed the platform end-to-end, starting from the responsive Next.js landing page to building the comprehensive web dashboard, and integrating the complete mobile and desktop telemetry systems.\n\nAt its core, VORCE unites GPS/Face ID attendance tracking, shift scheduling, task coordination, OCR receipt reimbursement, and organizational knowledge databases into a single responsive portal. By integrating device telemetry from the VLinked desktop agent, the platform's intelligence engine aggregates raw system activity into higher-level workforce signals. This generates real-time analytics for focus ratios, productivity scores, workload levels, and behavioral trends, presenting an executive view of team performance while maintaining data privacy and security.",
-    "image": "/assets/vorce_platform_mockup.svg",
+    "image": "/assets/vorce_platform_mockup.webp",
     "tags": [
       "Next.js / React",
       "TypeScript",
@@ -42,17 +66,17 @@
     "timeline": "2025",
     "liveUrl": "https://vorce.id/admin",
     "images": [
-      "/assets/vorce_platform_mockup.svg"
+      "/assets/vorce_platform_mockup.webp"
     ],
     "featured": true,
-    "sortOrder": 2
+    "sortOrder": 3
   },
   {
     "slug": "vlinked-desktop-agent",
     "title": "VLinked \u2014 Desktop Monitoring Agent",
     "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
     "longDescription": "VLinked Desktop Agent is a lightweight, cross-platform desktop monitoring agent developed as part of the VORCE ecosystem. It runs silently on macOS, Windows, and Linux machines to collect essential telemetry metrics, enabling companies to track employee device health, app-specific usage, and active work times.\n\nAs the Lead Desktop Developer, I built the agent using Electron, ensuring high-efficiency monitoring without high system overhead. Key implementations included secure OAuth token persistence via the OS keychain (DPAPI/safeStorage), background tracking systems using systeminformation and powerMonitor for idle-time checking, and a sandboxed IPC renderer architecture. All metric updates stream directly to the centralized VORCE API, serving as the single point of entry to ensure absolute data consistency and system security.",
-    "image": "/assets/vlinked_cards_mockup.svg",
+    "image": "/assets/vlinked_cards_mockup.webp",
     "tags": [
       "Electron",
       "Desktop App",
@@ -66,18 +90,18 @@
     "timeline": "2025",
     "liveUrl": "https://vorce.id/vlinked",
     "images": [
-      "/assets/vlinked_cards_mockup.svg",
-      "/assets/vlinkedshowcase.svg"
+      "/assets/vlinked_cards_mockup.webp",
+      "/assets/vlinkedshowcase.webp"
     ],
     "featured": true,
-    "sortOrder": 3
+    "sortOrder": 4
   },
   {
     "slug": "fleet-management",
     "title": "Smart Fleet Management (Velinked)",
     "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT.",
     "longDescription": "Velinked is an innovative fleet management solution leveraging IoT technology to provide comprehensive vehicle tracking, remote control, and driver behavior monitoring. The platform integrates advanced features that empower fleet managers to optimize vehicle usage, reduce operational costs, and ensure vehicle security while promoting responsible driving practices.\n\nAs Team Leader & IoT Engineer, I developed the tracking systems and behaviour scoring algorithms, building end-to-end telemetry systems.",
-    "image": "/assets/velinked.svg",
+    "image": "/assets/velinked.webp",
     "tags": [
       "IoT",
       "SaaS",
@@ -91,10 +115,10 @@
     "timeline": "2025",
     "liveUrl": "https://www.hellyoshaqiqie.my.id/projects/fleetmanagement",
     "images": [
-      "/assets/velinked.svg"
+      "/assets/velinked.webp"
     ],
     "featured": true,
-    "sortOrder": 4
+    "sortOrder": 5
   },
   {
     "slug": "driver-dashboard",
@@ -118,7 +142,7 @@
       "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
     ],
     "featured": true,
-    "sortOrder": 5
+    "sortOrder": 6
   },
   {
     "slug": "dermdoc",
@@ -142,7 +166,7 @@
       "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
     "featured": true,
-    "sortOrder": 6
+    "sortOrder": 7
   },
   {
     "slug": "smart-home",
@@ -166,7 +190,7 @@
       "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
     "featured": true,
-    "sortOrder": 7
+    "sortOrder": 8
   },
   {
     "slug": "smart-vehicle",
@@ -190,6 +214,6 @@
       "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
     ],
     "featured": true,
-    "sortOrder": 8
+    "sortOrder": 9
   }
 ]

@@ -5,7 +5,7 @@
     "date": "2026-05-06",
     "competition": "Indonesia Green Jobs Initiative Competition 2026",
     "institution": "Inovasi Muda | Green Jobs Incubation",
-    "image": "/assets/IMJ_6152.JPG",
+    "image": "/assets/IMJ_6152.webp",
     "tags": [
       "Sustainability",
       "Pitching",
@@ -67,7 +67,7 @@
           },
           {
             "type": "image",
-            "src": "/assets/foto2.jpeg"
+            "src": "/assets/foto2.webp"
           }
         ]
       }
@@ -79,7 +79,7 @@
     "date": "2024-09-29",
     "competition": "Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) 2024",
     "institution": "Puspresnas, Ministry of Education and Culture",
-    "image": "/assets/fiksi2024.png",
+    "image": "/assets/fiksi2024.webp",
     "tags": [
       "Digital Technology",
       "Gold Medalist",
@@ -121,7 +121,7 @@
     "date": "2023-09-28",
     "competition": "Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) 2023",
     "institution": "Puspresnas, Ministry of Education and Culture",
-    "image": "/assets/fiksi2023.jpeg",
+    "image": "/assets/fiksi2023.webp",
     "tags": [
       "Digital Technology",
       "Finalist",

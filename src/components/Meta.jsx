@@ -6,7 +6,7 @@ const SITE_NAME = 'Hellyos Ageng Haqiqie — Portfolio'
 const defaultTitle = 'Hellyos Ageng Haqiqie — Full-Stack Software Engineer, AI Engineer & Systems Architect | Robotics & Artificial Intelligence | Portfolio Indonesia'
 const defaultDescription = 'Official portfolio of Hellyos Ageng Haqiqie (Hellyoshaqiqie / Iyos / Helyos). Full-Stack Software Engineer, AI Engineer & Systems Architect specializing in Robotics, Artificial Intelligence, IoT, and Cloud Computing. Studying Robotics & AI Engineering at Universitas Airlangga, Surabaya, Indonesia.'
 const defaultKeywords = 'hellyos, hellyos ageng haqiqie, hellyoshaqiqie, helyos, helios, iyos, haqiqie, haqiqi, ageng, hellyos haqiqie, hellyos ageng, full-stack software engineer, ai engineer, systems architect, robotics, artificial intelligence, iot, web platforms, automation systems, portfolio, indonesia, universitas airlangga'
-const defaultImage = `${SITE_URL}/fotoku.png`
+const defaultImage = `${SITE_URL}/fotoku.webp`
 
 function setMetaTag(selector, attr, value) {
   let el = document.querySelector(selector)
