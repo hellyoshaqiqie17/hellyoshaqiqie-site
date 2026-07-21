@@ -7,6 +7,13 @@
     "institution": "Inovasi Muda | Green Jobs Incubation"
   },
   {
+    "id": 4,
+    "year": "2024",
+    "title": "Gold Medalist",
+    "competition": "FIKSI 2024 Competition of Technology Category",
+    "institution": "Kementerian Pendidikan dan Kebudayaan"
+  },
+  {
     "id": 9,
     "year": "2026",
     "title": "2nd Place Winner",
@@ -35,18 +42,18 @@
     "institution": "University of Brawijaya"
   },
   {
+    "id": 7,
+    "year": "2021",
+    "title": "2nd Place Winner",
+    "competition": "Technology Innovation Award (Kasanova)",
+    "institution": "Tulungagung Government"
+  },
+  {
     "id": 3,
     "year": "2025",
     "title": "First Honorable Mention",
     "competition": "Business Model Canvas Competition HIMASTAN 2025",
     "institution": "Surabaya State University"
-  },
-  {
-    "id": 4,
-    "year": "2024",
-    "title": "Gold Medalist",
-    "competition": "FIKSI 2024 Competition of Technology Category",
-    "institution": "Kementerian Pendidikan dan Kebudayaan"
   },
   {
     "id": 5,
@@ -61,12 +68,5 @@
     "title": "Finalist",
     "competition": "FIKSI 2023 Competition of Technology Category",
     "institution": "Ministry of Education and Culture"
-  },
-  {
-    "id": 7,
-    "year": "2021",
-    "title": "2nd Place Winner",
-    "competition": "Technology Innovation Award (Kasanova)",
-    "institution": "Tulungagung Government"
   }
 ]
