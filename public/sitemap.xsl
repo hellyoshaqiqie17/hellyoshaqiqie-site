@@ -525,6 +525,7 @@
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/projects'">Katalog Proyek Lengkap</xsl:when>
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/coaching'">Layanan Coaching &amp; Mentoring</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-platform')">VORCE — Workforce Intelligence</xsl:when>
+                  <xsl:when test="contains(sitemap:loc, '/project/vorce-hr-management')">VORCE — Workforce &amp; HR Management</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vlinked-desktop-agent')">vLinked — Desktop Control Agent</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/dermdoc')">DermDoc — AI Dermatologi</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/smart-home')">Smart Home — IoT Ecosystem</xsl:when>

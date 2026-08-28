@@ -72,6 +72,31 @@
     "sortOrder": 3
   },
   {
+    "slug": "vorce-hr-management",
+    "title": "VORCE — Enterprise Workforce & HR Management Platform",
+    "description": "An enterprise-grade hybrid HR platform combining GPS/Face ID attendance, real-time leaves, OCR-powered reimbursements, tasks, and performance tracking.",
+    "longDescription": "VORCE HR Management is an enterprise-grade hybrid workforce management and human resource ecosystem designed to streamline business operations and synchronize employee activities. Built to scale, the system marks a transition from a legacy REST API architecture to a high-performance Hybrid (REST API + Firebase Firestore) model.\n\nUnder this hybrid schema, all transactional writes and complex business validations—such as check-ins, check-outs, leave applications, and reimbursement workflows—are processed securely through REST API controllers. This ensures the backend remains the absolute source of truth. Simultaneously, the platform utilizes real-time Firestore listeners to instantly stream updates back to the web dashboard and mobile app, bypassing polling and GET APIs to provide an instantaneous user experience.\n\nThe platform integrates several specialized modules:\n• Presence & Shift Management: GPS geocoding coordinates, Face ID logins, and shift schedules synced via Firestore.\n• Leave & Time-Off Requests: A decentralized CRUD system where files (such as medical certificates) are uploaded, and leave data is synchronized using strict ISO8601 timestamps.\n• OCR-Powered Reimbursements: Integrates a Cloud Run extraction endpoint to scan receipts via OCR, automatically parsing metadata and posting real-time reimbursement claims with Firebase Web SDK.\n• Task & Collaboration: Supports multi-assignee task distribution, sub-task attachments, and real-time status changes handled directly through Firestore documents.\n• Personal AI Assistant (Mitsu AI): User-scoped chat histories, markdown-formatted prompt responses, and a secure transaction-safe system to transfer credit tokens between employee profile documents.",
+    "image": "/assets/vorceku.png",
+    "tags": [
+      "Next.js / React",
+      "Firebase / Firestore",
+      "REST API",
+      "Cloud Run (OCR)"
+    ],
+    "bgClass": "bg-surface-purple",
+    "imagePosition": "object-center",
+    "client": "VORCE",
+    "role": "Lead Systems Integrator & Full-Stack Developer",
+    "timeline": "2026",
+    "liveUrl": "https://vorce.id",
+    "images": [
+      "/assets/vorceku.png",
+      "/assets/vorce_hr_image.png"
+    ],
+    "featured": true,
+    "sortOrder": 4
+  },
+  {
     "slug": "vlinked-desktop-agent",
     "title": "VLinked \u2014 Desktop Monitoring Agent",
     "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
@@ -94,7 +119,7 @@
       "/assets/vlinkedshowcase.webp"
     ],
     "featured": true,
-    "sortOrder": 4
+    "sortOrder": 5
   },
   {
     "slug": "fleet-management",
@@ -118,7 +143,7 @@
       "/assets/velinked.webp"
     ],
     "featured": true,
-    "sortOrder": 5
+    "sortOrder": 6
   },
   {
     "slug": "driver-dashboard",
@@ -142,7 +167,7 @@
       "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
     ],
     "featured": true,
-    "sortOrder": 6
+    "sortOrder": 7
   },
   {
     "slug": "dermdoc",
@@ -166,7 +191,7 @@
       "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
     "featured": true,
-    "sortOrder": 7
+    "sortOrder": 8
   },
   {
     "slug": "smart-home",
@@ -190,7 +215,7 @@
       "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
     "featured": true,
-    "sortOrder": 8
+    "sortOrder": 9
   },
   {
     "slug": "smart-vehicle",
@@ -214,6 +239,6 @@
       "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
     ],
     "featured": true,
-    "sortOrder": 9
+    "sortOrder": 10
   }
 ]
