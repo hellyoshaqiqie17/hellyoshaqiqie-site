@@ -131,16 +131,16 @@ export default function JourneyDetail() {
           '@type': 'CreativeWork',
           'name': journey.title,
           'description': `Case study of Hellyos Ageng Haqiqie's achievement: ${journey.title} at ${journey.competition}.`,
-          'url': `https://www.hellyoshaqiqie.my.id/journey/${journey.slug}`,
-          'image': journey.image.startsWith('http') ? journey.image : `https://www.hellyoshaqiqie.my.id${journey.image}`,
+          'url': `https://www.hellyoshaqiqie.id/journey/${journey.slug}`,
+          'image': journey.image.startsWith('http') ? journey.image : `https://www.hellyoshaqiqie.id${journey.image}`,
           'creator': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+            '@id': 'https://www.hellyoshaqiqie.id/#person'
           },
           'author': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+            '@id': 'https://www.hellyoshaqiqie.id/#person'
           },
           'isPartOf': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+            '@id': 'https://www.hellyoshaqiqie.id/#website'
           }
         }}
       />

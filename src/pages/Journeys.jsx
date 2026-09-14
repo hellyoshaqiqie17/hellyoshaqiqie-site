@@ -4,8 +4,6 @@ import { ArrowLeft } from '../components/Icons'
 import Meta from '../components/Meta'
 import journeysData from '../data/journeys.json'
 
-const Hu = [0.23, 1, 0.32, 1]
-
 // ----------------------------------------------------
 // Journey Card Helper 
 // ----------------------------------------------------
@@ -90,21 +88,21 @@ export default function Journeys() {
           '@type': 'CollectionPage',
           'name': 'Journey & Achievements — Hellyos Ageng Haqiqie',
           'description': 'Competition milestones, awards, and achievement stories of Hellyos Ageng Haqiqie.',
-          'url': 'https://www.hellyoshaqiqie.my.id/journeys',
+          'url': 'https://www.hellyoshaqiqie.id/journeys',
           'mainEntity': {
             '@type': 'ItemList',
             'itemListElement': journeys.map((j, idx) => ({
               '@type': 'ListItem',
               'position': idx + 1,
               'name': j.title,
-              'url': `https://www.hellyoshaqiqie.my.id/journey/${j.slug}`
+              'url': `https://www.hellyoshaqiqie.id/journey/${j.slug}`
             }))
           },
           'isPartOf': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+            '@id': 'https://www.hellyoshaqiqie.id/#website'
           },
           'author': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+            '@id': 'https://www.hellyoshaqiqie.id/#person'
           }
         }}
       />

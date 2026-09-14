@@ -15,6 +15,8 @@ const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Coaching = lazy(() => import('./pages/Coaching'))
 const Journeys = lazy(() => import('./pages/Journeys'))
 const JourneyDetail = lazy(() => import('./pages/JourneyDetail'))
+const CurriculumVitae = lazy(() => import('./pages/CurriculumVitae'))
+const Portfolio = lazy(() => import('./pages/Portfolio'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Framer motion features loader
@@ -91,6 +93,8 @@ function AppContent() {
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/coaching" element={<Coaching />} />
+                <Route path="/cv" element={<CurriculumVitae />} />
+                <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/project/:slug" element={<ProjectDetail />} />
                 <Route path="/journeys" element={<Journeys />} />
                 <Route path="/journey/:slug" element={<JourneyDetail />} />

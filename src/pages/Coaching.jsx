@@ -18,12 +18,12 @@ export default function Coaching() {
           '@type': 'WebPage',
           'name': 'Coaching & Mentorship — Hellyos Ageng Haqiqie',
           'description': 'Book a coaching or mentorship session with Hellyos Ageng Haqiqie on full-stack development, AI engineering, IoT, and startup strategy.',
-          'url': 'https://www.hellyoshaqiqie.my.id/coaching',
+          'url': 'https://www.hellyoshaqiqie.id/coaching',
           'isPartOf': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+            '@id': 'https://www.hellyoshaqiqie.id/#website'
           },
           'author': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+            '@id': 'https://www.hellyoshaqiqie.id/#person'
           }
         }}
       />

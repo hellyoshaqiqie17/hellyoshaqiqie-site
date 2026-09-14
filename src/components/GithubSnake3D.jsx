@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function GithubSnake3D({ weeks, containerRef }) {
   const canvasRef = useRef(null)
-  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (!weeks || weeks.length === 0 || !containerRef.current) return
@@ -51,8 +50,6 @@ export default function GithubSnake3D({ weeks, containerRef }) {
     let currentGridPos = { ...snakeSegments[0] }
     let targetGridPos = { ...snakeSegments[0] }
     let moveProgress = 1.0 // 1.0 means sitting at currentGridPos, awaiting new target
-    let moveSpeed = 0.08 // speed of linear interpolation (progress increment per frame)
-    let searchCooldown = 0
     let path = []
 
     // 5. Particles state
@@ -266,11 +263,9 @@ export default function GithubSnake3D({ weeks, containerRef }) {
         currentGridPos = { ...targetGridPos }
         
         const cell = getCell(currentGridPos.col, currentGridPos.row)
-        let eatenFood = false
 
         if (cell && cell.count > 0 && !cell.eaten) {
           cell.eaten = true
-          eatenFood = true
           
           // Fade out cell element dynamically
           if (cell.domElement) {

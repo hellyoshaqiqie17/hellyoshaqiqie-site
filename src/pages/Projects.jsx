@@ -4,8 +4,6 @@ import { ArrowLeft } from '../components/Icons'
 import Meta from '../components/Meta'
 import projectsData from '../data/projects.json'
 
-const Hu = [0.23, 1, 0.32, 1]
-
 // ----------------------------------------------------
 // Project Card Helper (derived from Home.jsx)
 // ----------------------------------------------------
@@ -90,21 +88,21 @@ export default function Projects() {
           '@type': 'CollectionPage',
           'name': 'All Projects by Hellyos Ageng Haqiqie',
           'description': 'A comprehensive collection of software engineering, IoT, AI/ML, and full-stack development case studies by Hellyos Ageng Haqiqie.',
-          'url': 'https://www.hellyoshaqiqie.my.id/projects',
+          'url': 'https://www.hellyoshaqiqie.id/projects',
           'mainEntity': {
             '@type': 'ItemList',
             'itemListElement': projects.map((proj, idx) => ({
               '@type': 'ListItem',
               'position': idx + 1,
               'name': proj.title,
-              'url': `https://www.hellyoshaqiqie.my.id/project/${proj.slug}`
+              'url': `https://www.hellyoshaqiqie.id/project/${proj.slug}`
             }))
           },
           'isPartOf': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#website'
+            '@id': 'https://www.hellyoshaqiqie.id/#website'
           },
           'author': {
-            '@id': 'https://www.hellyoshaqiqie.my.id/#person'
+            '@id': 'https://www.hellyoshaqiqie.id/#person'
           }
         }}
       />

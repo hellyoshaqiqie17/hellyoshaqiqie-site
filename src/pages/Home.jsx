@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { m, AnimatePresence } from 'framer-motion'
 import { useContactDialog } from '../context/ContactDialogContext'
@@ -8,17 +8,14 @@ import {
   Briefcase,
   Code,
   BracketsCurly,
-  FigmaLogo,
   Sparkle,
   PenNib,
-  Quotes,
   MapPin,
   PaperPlaneTilt,
   GearSix,
   CursorIcon,
   GoogleAIStudioIcon,
   HermesAgentsIcon,
-  PiAgentIcon,
   GithubLogo
 } from '../components/Icons'
 import pageSettingsData from '../data/page_settings.json'

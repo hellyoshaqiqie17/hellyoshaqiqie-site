@@ -126,15 +126,15 @@ export default function ProjectDetail() {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "@id": `https://www.hellyoshaqiqie.my.id/project/${project.slug}#software`,
+        "@id": `https://www.hellyoshaqiqie.id/project/${project.slug}#software`,
         "name": project.title,
         "description": project.description,
-        "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
-        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
+        "url": `https://www.hellyoshaqiqie.id/project/${project.slug}`,
+        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.id${project.image}`,
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web, iOS, Android, Windows, macOS",
         "author": {
-          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+          "@id": "https://www.hellyoshaqiqie.id/#person"
         },
         "offers": {
           "@type": "Offer",
@@ -144,22 +144,22 @@ export default function ProjectDetail() {
       },
       {
         "@type": "CreativeWork",
-        "@id": `https://www.hellyoshaqiqie.my.id/project/${project.slug}#work`,
+        "@id": `https://www.hellyoshaqiqie.id/project/${project.slug}#work`,
         "name": project.title,
         "headline": project.title,
         "description": project.longDescription,
-        "url": `https://www.hellyoshaqiqie.my.id/project/${project.slug}`,
-        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.my.id${project.image}`,
+        "url": `https://www.hellyoshaqiqie.id/project/${project.slug}`,
+        "image": project.image.startsWith('http') ? project.image : `https://www.hellyoshaqiqie.id${project.image}`,
         "dateCreated": project.timeline || "2024",
         "keywords": project.tags.join(', '),
         "creator": {
-          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+          "@id": "https://www.hellyoshaqiqie.id/#person"
         },
         "author": {
-          "@id": "https://www.hellyoshaqiqie.my.id/#person"
+          "@id": "https://www.hellyoshaqiqie.id/#person"
         },
         "isPartOf": {
-          "@id": "https://www.hellyoshaqiqie.my.id/#website"
+          "@id": "https://www.hellyoshaqiqie.id/#website"
         }
       }
     ]

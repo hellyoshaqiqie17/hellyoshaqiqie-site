@@ -452,7 +452,7 @@
           <header>
             <div class="header-top">
               <h1>Sitemap &amp; Direktori</h1>
-              <span class="domain-tag">hellyoshaqiqie.my.id</span>
+              <span class="domain-tag">hellyoshaqiqie.id</span>
             </div>
             <p class="description">
               Halaman ini menyediakan indeks terstruktur dari seluruh konten, studi kasus, dan rute utama yang tersedia di portfolio Hellyos Ageng Haqiqie. Dibuat otomatis untuk membantu mesin pencari melakukan indeksasi.
@@ -498,9 +498,9 @@
               <!-- Map variables for clean design -->
               <xsl:variable name="cleanPath">
                 <xsl:choose>
-                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/'">/</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/'">/</xsl:when>
                   <xsl:otherwise>
-                    <xsl:value-of select="substring-after(sitemap:loc, 'https://www.hellyoshaqiqie.my.id')"/>
+                    <xsl:value-of select="substring-after(sitemap:loc, 'https://www.hellyoshaqiqie.id')"/>
                   </xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
@@ -521,9 +521,9 @@
 
               <xsl:variable name="pageTitle">
                 <xsl:choose>
-                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/'">Beranda &amp; Portfolio Utama</xsl:when>
-                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/projects'">Katalog Proyek Lengkap</xsl:when>
-                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.my.id/coaching'">Layanan Coaching &amp; Mentoring</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/'">Beranda &amp; Portfolio Utama</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/projects'">Katalog Proyek Lengkap</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/coaching'">Layanan Coaching &amp; Mentoring</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-platform')">VORCE — Workforce Intelligence</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-hr-management')">VORCE — Workforce &amp; HR Management</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vlinked-desktop-agent')">vLinked — Desktop Control Agent</xsl:when>
@@ -578,7 +578,7 @@
 
           <footer>
             <span>Direktori XML Sitemap</span>
-            <a href="https://www.hellyoshaqiqie.my.id" class="home-btn">
+            <a href="https://www.hellyoshaqiqie.id" class="home-btn">
               Kembali ke Portfolio Utama
             </a>
           </footer>

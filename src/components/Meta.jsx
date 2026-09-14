@@ -1,27 +1,12 @@
 import { useEffect } from 'react'
 
-const SITE_URL = 'https://www.hellyoshaqiqie.my.id'
+const SITE_URL = 'https://www.hellyoshaqiqie.id'
 const SITE_NAME = 'Hellyos Ageng Haqiqie — Portfolio'
 
 const defaultTitle = 'Hellyos Ageng Haqiqie — Full-Stack Software Engineer, AI Engineer & Systems Architect | Robotics & Artificial Intelligence | Portfolio Indonesia'
 const defaultDescription = 'Official portfolio of Hellyos Ageng Haqiqie (Hellyoshaqiqie / Iyos / Helyos). Full-Stack Software Engineer, AI Engineer & Systems Architect specializing in Robotics, Artificial Intelligence, IoT, and Cloud Computing. Studying Robotics & AI Engineering at Universitas Airlangga, Surabaya, Indonesia.'
 const defaultKeywords = 'hellyos, hellyos ageng haqiqie, hellyoshaqiqie, helyos, helios, iyos, haqiqie, haqiqi, ageng, hellyos haqiqie, hellyos ageng, full-stack software engineer, ai engineer, systems architect, robotics, artificial intelligence, iot, web platforms, automation systems, portfolio, indonesia, universitas airlangga'
 const defaultImage = `${SITE_URL}/fotoku.webp`
-
-function setMetaTag(selector, attr, value) {
-  let el = document.querySelector(selector)
-  if (!el) {
-    el = document.createElement('meta')
-    const [attrName, attrVal] = Object.entries(
-      selector.match(/\[([^=]+)="([^"]+)"\]/)
-        ? { [selector.match(/\[([^=]+)="/)[1]]: selector.match(/="([^"]+)"/)[1] }
-        : {}
-    )[0] || []
-    if (attrName) el.setAttribute(attrName, attrVal)
-    document.head.appendChild(el)
-  }
-  el.setAttribute(attr, value)
-}
 
 export default function Meta({
   title,

@@ -110,3 +110,107 @@
   border-color: rgba(51, 65, 85, 0.3) !important;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35) !important;
 }
+
+/* ===== CV / Portfolio Viewer Styles ===== */
+.cv-viewer-section {
+  animation: cvFadeIn 0.5s ease-out;
+}
+
+@keyframes cvFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cv-viewer-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cv-viewer-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-foreground);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.cv-viewer-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border: none;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+              background 0.3s ease;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.cv-download-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.cv-download-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.cv-viewer-embed-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cv-viewer-embed-wrapper:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.cv-viewer-embed {
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: none;
+  display: block;
+  background-color: #fff;
+}
+
+.dark .cv-viewer-embed-wrapper {
+  border-color: rgba(51, 65, 85, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dark .cv-viewer-embed-wrapper:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .cv-viewer-title {
+    font-size: 1.75rem;
+  }
+
+  .cv-viewer-embed {
+    height: 70vh;
+    min-height: 400px;
+  }
+}
+

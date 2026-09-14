@@ -15,7 +15,9 @@ export const navLinks = [
   { to: '/#about', label: 'About' },
   { to: '/projects', label: 'Projects' },
   { to: '/journeys', label: 'Journeys' },
-  { to: '/coaching', label: 'Coaching' }
+  { to: '/coaching', label: 'Coaching' },
+  { to: '/cv', label: 'CV' },
+  { to: '/portfolio', label: 'Portfolio' }
 ]
 
 export const defaultImages = {
