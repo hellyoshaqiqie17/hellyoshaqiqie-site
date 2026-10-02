@@ -178,8 +178,8 @@ function HeroSection() {
             Full-Stack Software Engineer &amp; Systems Architect. Specializing in{' '}
             <span className="text-muted inline-flex items-center">
               Web Platforms
-            </span>,{' '}
-            Robotics &amp; AI (TRKB UNAIR), and Automation Systems.
+            </span>{' '}
+            and Automation systems.
           </m.h2>
 
           <m.div
