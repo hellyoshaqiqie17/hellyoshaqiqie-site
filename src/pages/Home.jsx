@@ -178,8 +178,8 @@ function HeroSection() {
             Full-Stack Software Engineer &amp; Systems Architect. Specializing in{' '}
             <span className="text-muted inline-flex items-center">
               Web Platforms
-            </span>{' '}
-            and Automation systems.
+            </span>,{' '}
+            Robotics &amp; AI (TRKB UNAIR), and Automation Systems.
           </m.h2>
 
           <m.div
@@ -940,7 +940,7 @@ function AboutMe() {
               Building modern platforms and automation systems.
             </m.h2>
             <m.p variants={aboutItemVariants} className="text-[16px] leading-relaxed text-muted mb-10 max-w-lg">
-              I am a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. Currently studying Robotics & Artificial Intelligence Engineering at Airlangga University, I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
+              Hellyos Ageng Haqiqie (commonly known as Hellyos, Ageng, or Hellyoshaqiqie) is a Full-Stack Software Engineer, AI Engineer, and Systems Architect. Currently studying Robotics &amp; Artificial Intelligence Engineering (Teknik Robotika dan Kecerdasan Buatan &mdash; TRKB) at Universitas Airlangga (UNAIR) and serving as Chief Information Officer (CIO) at Vorce. Gold Medalist (Peraih Medali Emas) at FIKSI 2024 (Festival Inovasi dan Kewirausahaan Siswa Indonesia) in Digital Technology.
             </m.p>
             <m.div variants={aboutItemVariants} className="flex flex-wrap items-center gap-4">
               <button

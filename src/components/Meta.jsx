@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 const SITE_URL = 'https://www.hellyoshaqiqie.id'
 const SITE_NAME = 'Hellyos Ageng Haqiqie — Portfolio'
 
-const defaultTitle = 'Hellyos Ageng Haqiqie — Full-Stack Software Engineer, AI Engineer & Systems Architect | Robotics & Artificial Intelligence | Portfolio Indonesia'
-const defaultDescription = 'Official portfolio of Hellyos Ageng Haqiqie (Hellyoshaqiqie / Iyos / Helyos). Full-Stack Software Engineer, AI Engineer & Systems Architect specializing in Robotics, Artificial Intelligence, IoT, and Cloud Computing. Studying Robotics & AI Engineering at Universitas Airlangga, Surabaya, Indonesia.'
-const defaultKeywords = 'hellyos, hellyos ageng haqiqie, hellyoshaqiqie, helyos, helios, iyos, haqiqie, haqiqi, ageng, hellyos haqiqie, hellyos ageng, full-stack software engineer, ai engineer, systems architect, robotics, artificial intelligence, iot, web platforms, automation systems, portfolio, indonesia, universitas airlangga'
+const defaultTitle = 'Hellyos Ageng Haqiqie (Hellyos) — Full-Stack & AI Engineer | TRKB UNAIR'
+const defaultDescription = 'Website resmi Hellyos Ageng Haqiqie (Hellyos / Hellyoshaqiqie / Ageng / Haqiqie / Helios). Mahasiswa Teknik Robotika dan Kecerdasan Buatan (TRKB) Universitas Airlangga (UNAIR), CIO di Vorce, dan Gold Medalist FIKSI 2024. Portofolio Full-Stack, AI & IoT.'
+const defaultKeywords = 'hellyos, ageng, hellyos ageng, hellyoshaqiqie, haqiqie, helios, helyos, iyos, hellyos haqiqie, ageng haqiqie, FIKSI 2024, fiksi puspresnas, fiksi teknologi digital, TRKB, TRKB UNAIR, Teknik Robotika dan Kecerdasan Buatan, Teknik Robotika dan Kecerdasan Buatan UNAIR, full-stack software engineer, ai engineer, systems architect, vorce, chief information officer vorce, sms-vest, climatix, velinked, portfolio indonesia, universitas airlangga'
 const defaultImage = `${SITE_URL}/fotoku.webp`
 
 export default function Meta({

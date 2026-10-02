@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/:path*",
@@ -36,7 +38,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets|climatix\\.svg|favicon\\.ico|fotoku\\.png|icons\\.svg|robots\\.txt|sitemap\\.xml|sitemap\\.xsl).*)",
+      "source": "/((?!assets|.*\\.(?:png|jpg|jpeg|webp|svg|ico|pdf|xml|xsl|txt|json)).*)",
       "destination": "/index.html"
     }
   ]

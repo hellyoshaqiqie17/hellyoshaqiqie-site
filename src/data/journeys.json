@@ -78,13 +78,17 @@
     "title": "Gold Medalist in Digital Technology - FIKSI 2024",
     "date": "2024-09-29",
     "competition": "Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) 2024",
-    "institution": "Puspresnas, Ministry of Education and Culture",
+    "institution": "Puspresnas, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek)",
     "image": "/assets/fiksi2024.webp",
     "tags": [
-      "Digital Technology",
+      "FIKSI 2024",
       "Gold Medalist",
-      "National Competition",
-      "Innovation"
+      "Digital Technology",
+      "TRKB",
+      "Teknik Robotika dan Kecerdasan Buatan",
+      "Velinked",
+      "Puspresnas Kemendikbud",
+      "National Competition"
     ],
     "bgClass": "bg-surface-purple",
     "sections": [
@@ -93,23 +97,27 @@
         "items": [
           {
             "type": "text",
-            "content": "Led the Velinked project, serving as Project Manager and chief presenter. Velinked pairs two custom IoT devices—VeMonitor (GPS/telematics) and VeControl (remote engine shut-off)—with a dual-platform ecosystem:"
+            "content": "Hellyos Ageng Haqiqie led the Velinked project as Project Manager, Chief Presenter, and Lead IoT Engineer. Developed as an innovative telematics solution for commercial vehicles, Velinked won the Gold Medal (Medali Emas) in Digital Technology at FIKSI 2024 (Festival Inovasi dan Kewirausahaan Siswa Indonesia) organized by Puspresnas, Kemendikbudristek RI. This foundational engineering work strongly connects to Hellyos's focus in Teknik Robotika dan Kecerdasan Buatan (TRKB) at Universitas Airlangga."
+          },
+          {
+            "type": "text",
+            "content": "Velinked pairs two custom IoT devices—VeMonitor (GPS/telematics tracking) and VeControl (remote engine shut-off & safety)—with an intelligent dual-platform software ecosystem:"
           },
           {
             "type": "list-item",
             "number": "1",
             "title": "Web dashboard (fleet owners)",
-            "content": "Real-time vehicle location & engine data, driver-behavior analytics, expense oversight, remote vehicle control, and attendance management."
+            "content": "Real-time vehicle location & engine data, AI driver-behavior analytics, fuel expense oversight, remote vehicle control, and automated attendance management."
           },
           {
             "type": "list-item",
             "number": "2",
             "title": "Mobile app (drivers)",
-            "content": "One-tap expense uploads, online leave requests, and live status updates."
+            "content": "One-tap expense uploads, online leave requests, digital task dispatching, and live status updates."
           },
           {
             "type": "text",
-            "content": "I spearheaded the business-model design, strategic roadmap, and user-centric product architecture, delivering a compelling pitch that outperformed entries from across the nation's vocational schools. This achievement sharpened my skills in product leadership, go-to-market strategy, and high-stakes technical storytelling."
+            "content": "Hellyos spearheaded the technical architecture, business-model design, and product roadmap, delivering a pitch that outperformed national finalists across Indonesia. This milestone solidified Hellyos Ageng Haqiqie's leadership in high-stakes technological innovation, embedded systems, and enterprise software engineering."
           }
         ]
       }
