@@ -39,7 +39,7 @@ const pages = [
     path: '/projects',
     title: 'Projects & Case Studies | Hellyos Ageng Haqiqie',
     description: 'Explore full-stack software engineering, AI/ML systems, and IoT case studies by Hellyos Ageng Haqiqie (Hellyos / Hellyoshaqiqie). Including ClimatiX, VORCE, SMS-Vest, and Velinked.',
-    keywords: 'hellyos ageng haqiqie projects, hellyoshaqiqie portfolio, case studies, IoT projects, AI projects, full-stack projects, TRKB, teknik robotika dan kecerdasan buatan, universitas airlangga, vorce, climatix, sms-vest',
+    keywords: 'hellyos ageng haqiqie projects, hellyoshaqiqie portfolio, case studies, IoT projects, AI projects, full-stack projects, universitas airlangga, vorce, climatix, sms-vest',
     image: DEFAULT_IMAGE,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -70,7 +70,7 @@ const pages = [
         </nav>
         <header>
           <h1 style="font-size:2.5rem;font-weight:700;margin-bottom:0.5rem">All Projects &amp; Engineering Case Studies</h1>
-          <p style="font-size:1.15rem;color:#64748b">Complete archive of Full-Stack Web Platforms, AI Systems, IoT Networks, and Robotics Architecture by Hellyos Ageng Haqiqie (Hellyos / TRKB UNAIR).</p>
+          <p style="font-size:1.15rem;color:#64748b">Complete archive of Full-Stack Web Platforms, AI Systems, IoT Networks, and Robotics Architecture by Hellyos Ageng Haqiqie.</p>
         </header>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;margin-top:2rem">
           ${projects.map(p => `
@@ -96,7 +96,7 @@ const pages = [
     path: '/journeys',
     title: 'My Journey & Milestones | Hellyos Ageng Haqiqie',
     description: 'Competition achievements, hackathons, and milestones of Hellyos Ageng Haqiqie (Hellyos), including Gold Medalist FIKSI 2024 Digital Technology by Kemendikbudristek & Best Presentation Green Jobs 2026.',
-    keywords: 'hellyos journey, FIKSI 2024, fiksi kemendikbud, gold medalist fiksi 2024, festival inovasi dan kewirausahaan siswa indonesia, TRKB UNAIR, teknik robotika dan kecerdasan buatan, hellyos ageng haqiqie, green jobs 2026',
+    keywords: 'hellyos journey, FIKSI 2024, fiksi kemendikbud, gold medalist fiksi 2024, festival inovasi dan kewirausahaan siswa indonesia, hellyos ageng haqiqie, green jobs 2026',
     image: DEFAULT_IMAGE,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -153,8 +153,8 @@ const pages = [
   {
     path: '/cv',
     title: 'Curriculum Vitae (CV) | Hellyos Ageng Haqiqie',
-    description: 'Official Curriculum Vitae (CV) & Resume of Hellyos Ageng Haqiqie (Hellyos). Full-Stack Software Engineer, AI Engineer, Chief Information Officer at Vorce, Robotics & AI Engineering (TRKB) at Universitas Airlangga.',
-    keywords: 'hellyos cv, hellyos ageng haqiqie cv, hellyoshaqiqie resume, hellyos resume, TRKB UNAIR cv, teknik robotika dan kecerdasan buatan resume, full stack software engineer resume, ai engineer cv, vorce cio resume',
+    description: 'Official Curriculum Vitae (CV) & Resume of Hellyos Ageng Haqiqie (Hellyos). Full-Stack Software Engineer, AI Engineer, Chief Information Officer at Vorce, Robotics & AI Engineering at Universitas Airlangga.',
+    keywords: 'hellyos cv, hellyos ageng haqiqie cv, hellyoshaqiqie resume, hellyos resume, unair cv, robotics and artificial intelligence engineering resume, full stack software engineer resume, ai engineer cv, vorce cio resume',
     image: DEFAULT_IMAGE,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -179,7 +179,7 @@ const pages = [
           <h1 style="font-size:2.5rem;font-weight:700">Curriculum Vitae</h1>
           <p style="font-size:1.15rem;color:#64748b;margin-top:0.5rem">Hellyos Ageng Haqiqie &mdash; Full-Stack Software Engineer, AI Engineer &amp; Systems Architect</p>
           <p style="font-size:1rem;color:#475569;margin-top:0.5rem">
-            Teknik Robotika dan Kecerdasan Buatan (TRKB) &bull; Universitas Airlangga (UNAIR) &bull; Chief Information Officer at Vorce &bull; Gold Medalist FIKSI 2024
+            Robotics &amp; Artificial Intelligence Engineering &bull; Universitas Airlangga (UNAIR) &bull; Chief Information Officer at Vorce &bull; Gold Medalist FIKSI 2024
           </p>
           <div style="margin-top:1.5rem">
             <a href="/assets/Hellyos Ageng Haqiqie_CV.pdf" download style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:#fff;border-radius:9999px;text-decoration:none;font-weight:600">
@@ -196,8 +196,8 @@ const pages = [
   {
     path: '/portfolio',
     title: 'Portfolio Document | Hellyos Ageng Haqiqie',
-    description: 'Official comprehensive design & engineering portfolio of Hellyos Ageng Haqiqie (Hellyos / Hellyoshaqiqie). Full-Stack Web Development, AI, IoT, TRKB UNAIR, and Cloud Computing.',
-    keywords: 'hellyos portfolio, hellyos ageng haqiqie portfolio, hellyoshaqiqie portfolio pdf, TRKB UNAIR, teknik robotika dan kecerdasan buatan, portfolio software engineer, vorce, climatix, sms-vest',
+    description: 'Official comprehensive design & engineering portfolio of Hellyos Ageng Haqiqie (Hellyos / Hellyoshaqiqie). Full-Stack Web Development, AI, IoT, Universitas Airlangga, and Cloud Computing.',
+    keywords: 'hellyos portfolio, hellyos ageng haqiqie portfolio, hellyoshaqiqie portfolio pdf, universitas airlangga, robotics and artificial intelligence engineering, portfolio software engineer, vorce, climatix, sms-vest',
     image: DEFAULT_IMAGE,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -236,8 +236,8 @@ const pages = [
   {
     path: '/coaching',
     title: 'Coaching & Mentorship | Hellyos Ageng Haqiqie',
-    description: 'Book 1-on-1 mentorship and coaching sessions with Hellyos Ageng Haqiqie (Hellyos). Topics include Full-Stack Web Development, AI Engineering, IoT Systems, TRKB UNAIR, and National Competition Strategy (FIKSI).',
-    keywords: 'hellyos coaching, hellyos ageng haqiqie mentorship, FIKSI coaching, TRKB mentor, full stack coaching, AI engineering mentor, startup mentoring',
+    description: 'Book 1-on-1 mentorship and coaching sessions with Hellyos Ageng Haqiqie (Hellyos). Topics include Full-Stack Web Development, AI Engineering, IoT Systems, Universitas Airlangga, and National Competition Strategy (FIKSI).',
+    keywords: 'hellyos coaching, hellyos ageng haqiqie mentorship, FIKSI coaching, robotics and ai engineering mentor, full stack coaching, AI engineering mentor, startup mentoring',
     image: DEFAULT_IMAGE,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
@@ -275,8 +275,8 @@ const pages = [
 for (const p of projects) {
   const pPath = `/project/${p.slug}`
   const pTitle = `${p.title} | Hellyos Ageng Haqiqie`
-  const pDesc = p.description || `Case study on ${p.title} engineered by Hellyos Ageng Haqiqie (Hellyos / TRKB UNAIR).`
-  const pKeywords = `${p.slug.replace(/-/g, ', ')}, ${p.title}, ${p.tags.join(', ')}, hellyos, hellyos ageng haqiqie, hellyoshaqiqie, TRKB, teknik robotika dan kecerdasan buatan, software engineering, case study`
+  const pDesc = p.description || `Case study on ${p.title} engineered by Hellyos Ageng Haqiqie.`
+  const pKeywords = `${p.slug.replace(/-/g, ', ')}, ${p.title}, ${p.tags.join(', ')}, hellyos, hellyos ageng haqiqie, hellyoshaqiqie, robotics and artificial intelligence engineering, software engineering, case study`
   const pImg = p.image.startsWith('http') ? p.image : `${SITE_URL}${p.image}`
 
   pages.push({
@@ -356,8 +356,8 @@ for (const p of projects) {
 for (const j of journeys) {
   const jPath = `/journey/${j.slug}`
   const jTitle = `${j.title} | Hellyos Ageng Haqiqie`
-  const jDesc = `Achievement story: ${j.title} at ${j.competition} by Hellyos Ageng Haqiqie (Hellyos / TRKB UNAIR).`
-  const jKeywords = `${j.slug.replace(/-/g, ', ')}, ${j.title}, ${j.tags.join(', ')}, hellyos, hellyos ageng haqiqie, hellyoshaqiqie, FIKSI 2024, TRKB, teknik robotika dan kecerdasan buatan, puspresnas kemendikbud`
+  const jDesc = `Achievement story: ${j.title} at ${j.competition} by Hellyos Ageng Haqiqie.`
+  const jKeywords = `${j.slug.replace(/-/g, ', ')}, ${j.title}, ${j.tags.join(', ')}, hellyos, hellyos ageng haqiqie, hellyoshaqiqie, FIKSI 2024, puspresnas kemendikbud`
   const jImg = j.image.startsWith('http') ? j.image : `${SITE_URL}${j.image}`
 
   const sectionsHtml = (j.sections || []).map(sec => `
