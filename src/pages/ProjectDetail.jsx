@@ -66,6 +66,27 @@ function DetailSkeleton() {
   )
 }
 
+function renderParagraphWithLinks(text) {
+  const urlRegex = /(https?:\/\/[^\s)]+)/g
+  const parts = text.split(urlRegex)
+  return parts.map((part, i) => {
+    if (part.match(/^https?:\/\//)) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground underline underline-offset-4 font-medium hover:opacity-80 transition-opacity"
+        >
+          {part}
+        </a>
+      )
+    }
+    return part
+  })
+}
+
 export default function ProjectDetail() {
   const { slug } = useParams()
   const [project, setProject] = useState(null)
@@ -283,7 +304,7 @@ export default function ProjectDetail() {
           <div className="text-lg text-muted space-y-6">
             {project.longDescription.split(/\n\n+/).filter(Boolean).map((para, pIdx) => (
               <p key={pIdx} className="leading-relaxed">
-                {para.trim()}
+                {renderParagraphWithLinks(para.trim())}
               </p>
             ))}
           </div>

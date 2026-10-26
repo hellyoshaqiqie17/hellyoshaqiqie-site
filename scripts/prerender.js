@@ -500,4 +500,4 @@ for (const p of pages) {
   console.log(`✓ Pre-rendered: ${p.path} -> ${p.path}/index.html & ${p.path}.html`)
 }
 
-console.log('✓ All 18 static subpages pre-rendered successfully with unique canonicals, meta, and schema!')
+console.log(`✓ All ${pages.length} static subpages pre-rendered successfully with unique canonicals, meta, and schema!`)
