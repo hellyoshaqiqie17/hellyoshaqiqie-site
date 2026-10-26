@@ -250,13 +250,15 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
+            <Link to="/project/mitra-megah-interior-3d-cad" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageTop}
-              alt="Hellyos Ageng Haqiqie hero top layout"
+              alt="Mitra Megah Interior 3D CAD Mockup"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
               loading="eager"
               fetchPriority="high"
             />
+          </Link>
           )}
         </m.div>
         
@@ -269,11 +271,13 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
+            <Link to="/project/vorce-platform" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageMiddle}
               alt="Design engineer work layout"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
             />
+          </Link>
           )}
         </m.div>
 
@@ -286,11 +290,13 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
+            <Link to="/project/vlinked-desktop-agent" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageBottom}
               alt="Design engineer portfolio detail"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
             />
+          </Link>
           )}
         </m.div>
       </div>
