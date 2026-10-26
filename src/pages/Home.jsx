@@ -271,10 +271,10 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
-            <Link to="/project/vorce-hr-management" className="block w-full h-full relative group">
+            <Link to="/project/vlinked-desktop-agent" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageMiddle}
-              alt="VORCE — Enterprise Workforce & HR Management Platform"
+              alt="VLinked — Desktop Monitoring Agent"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
             />
           </Link>
@@ -290,10 +290,10 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
-            <Link to="/project/vlinked-desktop-agent" className="block w-full h-full relative group">
+            <Link to="/project/vorce-hr-management" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageBottom}
-              alt="Design engineer portfolio detail"
+              alt="VORCE — Enterprise Workforce & HR Management Platform"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
             />
           </Link>
