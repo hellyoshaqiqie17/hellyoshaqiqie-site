@@ -46,7 +46,7 @@ export default function Footer() {
               key={href}
               href={href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               aria-label={label}
               className="hover:text-foreground theme-transition focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-card rounded-sm"
             >

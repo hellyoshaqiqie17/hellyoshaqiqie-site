@@ -285,6 +285,33 @@ export default function JourneyDetail() {
             </div>
           ))}
         </m.div>
+
+        {/* Related Stories Internal Links */}
+        <section aria-label="More Stories" className="pt-16 border-t border-border">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-semibold text-foreground">More Achievement Stories</h2>
+            <Link to="/journeys" className="text-[14px] font-medium text-muted hover:text-foreground theme-transition">
+              View all &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {journeysData
+              .filter((j) => j.slug !== journey.slug)
+              .map((rel) => (
+                <Link
+                  key={rel.slug}
+                  to={`/journey/${rel.slug}`}
+                  className="group rounded-2xl border border-border bg-surface/50 p-5 hover:border-foreground/30 theme-transition block space-y-1.5"
+                >
+                  <p className="text-[12px] font-semibold text-muted">{rel.date}</p>
+                  <h3 className="text-base font-semibold text-foreground group-hover:text-muted theme-transition">
+                    {rel.title}
+                  </h3>
+                  <p className="text-[14px] text-muted">{rel.competition}</p>
+                </Link>
+              ))}
+          </div>
+        </section>
       </m.main>
     </>
   )

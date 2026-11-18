@@ -89,7 +89,7 @@
     "client": "PKM-KC",
     "role": "Lead IoT & System Engineer",
     "timeline": "2026",
-    "liveUrl": "https://www.hellyoshaqiqie.id/",
+    "liveUrl": "",
     "images": [
       "/assets/vest.webp"
     ],
@@ -148,8 +148,8 @@
   {
     "slug": "fleet-management",
     "title": "Smart Fleet Management (Velinked)",
-    "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT.",
-    "longDescription": "Velinked is an innovative fleet management solution leveraging IoT technology to provide comprehensive vehicle tracking, remote control, and driver behavior monitoring. The platform integrates advanced features that empower fleet managers to optimize vehicle usage, reduce operational costs, and ensure vehicle security while promoting responsible driving practices.\n\nAs Team Leader & IoT Engineer, I developed the tracking systems and behaviour scoring algorithms, building end-to-end telemetry systems.",
+    "description": "Comprehensive vehicle fleet management and driver behavior tracking platform leveraging IoT hardware (VeMonitor & VeControl), web analytics, and mobile workflows.",
+    "longDescription": "Velinked is an end-to-end fleet management ecosystem engineered to unify vehicle tracking, remote engine control, and driver safety analytics using custom IoT hardware and real-time cloud dashboards.\n\nDeveloped as our Gold Medal-winning innovation at FIKSI 2024 (Festival Inovasi dan Kewirausahaan Siswa Indonesia), the system pairs two custom hardware units—VeMonitor for continuous GPS, speed, and engine telemetry, and VeControl for authorized remote engine immobilization—with a dual-platform software suite.\n\nOn the software layer, fleet managers access a centralized web console displaying live vehicle locations, trip histories, automated driver behavior safety scores, operational expense tracking, and employee attendance management. Drivers use a companion mobile interface to submit expenses, request leave, and monitor vehicle status updates in real time. As Team Leader & IoT Engineer, I led the hardware-to-cloud telemetry pipeline, driver behavior scoring logic, and system architecture.",
     "image": "/assets/velinked.webp",
     "tags": [
       "IoT",
@@ -162,7 +162,7 @@
     "client": "Velinked",
     "role": "Team Leader & IoT Engineer",
     "timeline": "2025",
-    "liveUrl": "https://www.hellyoshaqiqie.id/projects/fleetmanagement",
+    "liveUrl": "",
     "images": [
       "/assets/velinked.webp"
     ],
@@ -172,8 +172,8 @@
   {
     "slug": "driver-dashboard",
     "title": "Driver Behavior & Telemetry Dashboard",
-    "description": "Interactive dashboard for vehicle operators displaying behavioral analytics, speeds, and trips.",
-    "longDescription": "An interface built for drivers in a fleet to view their driving safety scores, review historical trips, and receive alerts regarding dangerous behaviors like sudden acceleration or hard braking.\n\nI designed and engineered this responsive dashboard, translating raw telemetry events into actionable score indicators for drivers.",
+    "description": "Interactive web and mobile interface for fleet vehicle operators displaying driving safety scores, trip analytics, speed diagnostics, and operational workflows.",
+    "longDescription": "The Driver Behavior & Telemetry Dashboard is a specialized companion interface within the fleet management ecosystem designed to give vehicle operators transparent feedback on road safety and daily trip operations.\n\nBuilt to translate high-frequency IoT telemetry events from on-board vehicle sensors into clear visual indicators, the dashboard surfaces trip logs, speed profiles, and instant safety alerts for harsh braking, rapid acceleration, and aggressive cornering events. Beyond telemetry analytics, the portal streamlines day-to-day operational tasks for drivers, including one-tap expense reimbursement uploads, shift readiness checks, and online leave submissions synchronized directly with the fleet operator's management console.",
     "image": "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png",
     "tags": [
       "Web App",
@@ -186,7 +186,7 @@
     "client": "Fleet Management",
     "role": "UI Developer",
     "timeline": "2025",
-    "liveUrl": "https://www.hellyoshaqiqie.id/",
+    "liveUrl": "",
     "images": [
       "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
     ],
@@ -196,13 +196,13 @@
   {
     "slug": "dermdoc",
     "title": "DermDoc — Skin Scan & Consult App",
-    "description": "Skin disease scan and consultant mobile app powered by deep learning.",
-    "longDescription": "DermDoc is a revolutionary application that aims to provide a complete user experience for dermatological needs. It features skin disease scanner APIs powered by 3 state-of-the-art Deep Learning classification models. The app predicts with considerably high accuracy if a user is suffering from Melanoma (the most fatal type of skin cancer) or other cancer types (basal cell carcinoma and 7 other types), as well as common allergies.\n\nAs Team Leader and ML Lead, I designed the product end-to-end, integrated medication database and doctor-appointment booking APIs, and built the mobile app scanner functionality to make skin cancer awareness and consulting easily accessible.",
+    "description": "AI-powered dermatological screening and consultation application utilizing deep learning classification models to evaluate skin lesions and connect patients with specialists.",
+    "longDescription": "DermDoc is a health-technology application built to make preliminary dermatological screening and specialist consultation accessible via mobile devices. Its core diagnostic pipeline integrates three deep learning image classification models trained on dermatological datasets to assist users in evaluating suspicious skin conditions.\n\nThe scanner analyzes user-captured skin imagery to screen across critical categories including Melanoma, basal cell carcinoma, multiple common carcinoma/lesion classes, and allergic dermatological reactions. Beyond automated computer vision inference, the application connects screening results with a structured medication reference database and a doctor appointment booking workflow.\n\nAs Team Leader and Machine Learning Lead, I architected the end-to-end product workflow, coordinated computer vision model evaluation and API integration, and led mobile interface engineering to ensure fast image upload, clear risk-guidance presentation, and seamless transition from scan to clinical consultation.",
     "image": "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png",
     "tags": [
       "AI / ML",
       "Mobile App",
-      "DermNet",
+      "Computer Vision",
       "Health Tech"
     ],
     "bgClass": "bg-surface-purple",
@@ -210,7 +210,7 @@
     "client": "DermDoc",
     "role": "Team Leader & ML Lead",
     "timeline": "2024",
-    "liveUrl": "https://www.hellyoshaqiqie.id/projects/DermDoc",
+    "liveUrl": "",
     "images": [
       "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
@@ -220,8 +220,8 @@
   {
     "slug": "smart-home",
     "title": "Smart Home Dashboard",
-    "description": "A comprehensive IoT dashboard for real-time monitoring and control of smart home automation systems.",
-    "longDescription": "A powerful IoT smart home dashboard that consolidates status, controls, and environmental parameters in a single, user-friendly portal. It integrates microcontrollers with a real-time database, enabling remote operations, scheduling, and device status alerts.\n\nI built the dashboard frontend and backend APIs to support instant commands and live telemetry streams, making device automation seamless and responsive.",
+    "description": "A comprehensive IoT web dashboard for real-time monitoring, scheduling, and low-latency remote control of smart home automation hardware.",
+    "longDescription": "The Smart Home Dashboard is an integrated IoT web portal built to unify residential environmental monitoring, appliance automation, and status alerts inside a responsive real-time interface.\n\nDesigned around bidirectional synchronization between microcontroller nodes and a cloud real-time database, the platform allows homeowners to monitor room sensors, toggle relays and connected fixtures remotely, configure automated schedules, and receive immediate device state alerts. I engineered both the frontend control interface and the supporting backend API endpoints, focusing on responsive command latency, clean visual state feedback, and reliable synchronization between edge IoT hardware and web clients.",
     "image": "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png",
     "tags": [
       "IoT",
@@ -234,7 +234,7 @@
     "client": "Smart Home",
     "role": "IoT Engineer & Developer",
     "timeline": "2023",
-    "liveUrl": "https://www.hellyoshaqiqie.id/projects/IoT-smart-home",
+    "liveUrl": "",
     "images": [
       "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
@@ -244,8 +244,8 @@
   {
     "slug": "smart-vehicle",
     "title": "Smart Vehicle App",
-    "description": "Mobile application enabling vehicle telemetry data gathering, control, and remote monitoring.",
-    "longDescription": "Developed and implemented a smart vehicle application allowing users to control and monitor vehicles remotely. It integrates hardware sensors that stream vehicle health indices, location, and lock status, communicating with the IoT cloud to provide drivers with real-time feedback and control.\n\nMy role was developing the C firmware for the hardware interfaces and scripting the telemetry gathering pipeline in Python, connecting vehicle telemetry to mobile clients.",
+    "description": "Connected vehicle mobile and embedded telemetry system integrating C hardware firmware, Python cloud pipelines, and real-time remote vehicle monitoring.",
+    "longDescription": "The Smart Vehicle App is an early connected-mobility platform designed to stream live vehicle diagnostics, GPS coordinates, and lock status between embedded hardware and a mobile companion interface.\n\nUsing low-level C firmware on the in-vehicle microcontroller interfacing with hardware sensors, the system samples telemetry packets and relays them through a Python-based telemetry ingestion pipeline to the cloud. Drivers can inspect real-time vehicle health indices, track parking/transit locations, and trigger remote locking controls directly from their mobile device. This project laid the embedded C firmware and hardware-to-cloud integration foundation that later inspired more advanced automotive and marine IoT ecosystems.",
     "image": "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png",
     "tags": [
       "IoT",
@@ -258,7 +258,7 @@
     "client": "Smart Vehicle",
     "role": "Developer & Firmware Engineer",
     "timeline": "2021",
-    "liveUrl": "https://www.hellyoshaqiqie.id/",
+    "liveUrl": "",
     "images": [
       "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
     ],

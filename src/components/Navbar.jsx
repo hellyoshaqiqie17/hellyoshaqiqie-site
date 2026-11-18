@@ -56,6 +56,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between mb-16 sm:mb-24" aria-label="Main">
       <Link
         to="/"
+        aria-label="Hellyos Ageng Haqiqie — Home"
         className="text-2xl font-semibold tracking-tight text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-card rounded-sm active:scale-95 transition-transform duration-200 ease-out"
       >
         Hola!

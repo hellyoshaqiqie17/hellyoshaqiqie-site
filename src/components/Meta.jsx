@@ -1,11 +1,13 @@
 import { useEffect } from 'react'
 
 const SITE_URL = 'https://www.hellyoshaqiqie.id'
-const SITE_NAME = 'Hellyos Ageng Haqiqie — Portfolio'
+const SITE_NAME = 'Hellyos'
 
-const defaultTitle = 'Hellyos Ageng Haqiqie — Full-Stack Software Engineer, AI Engineer & Systems Architect | Robotics & Artificial Intelligence | Portfolio Indonesia'
-const defaultDescription = 'Official portfolio of Hellyos Ageng Haqiqie (Hellyoshaqiqie / Iyos / Helyos). Full-Stack Software Engineer, AI Engineer & Systems Architect specializing in Robotics, Artificial Intelligence, IoT, and Cloud Computing. Studying Robotics & AI Engineering at Universitas Airlangga, Surabaya, Indonesia.'
-const defaultKeywords = 'hellyos, hellyos ageng haqiqie, hellyoshaqiqie, helyos, helios, iyos, haqiqie, haqiqi, ageng, hellyos haqiqie, hellyos ageng, full-stack software engineer, ai engineer, systems architect, robotics, artificial intelligence, iot, web platforms, automation systems, portfolio, indonesia, universitas airlangga'
+const defaultTitle = 'Hellyos — Hellyos Ageng Haqiqie | Software & AI Engineer'
+const defaultDescription =
+  'Official website and portfolio of Hellyos (Hellyos Ageng Haqiqie) — Full-Stack Software Engineer, AI Engineer & Systems Architect at Universitas Airlangga, Surabaya.'
+const defaultKeywords =
+  'hellyos, hellyos ageng haqiqie, hellyoshaqiqie, helyos, helios, iyos, haqiqie, haqiqi, ageng, hellyos haqiqie, hellyos ageng, full-stack software engineer, ai engineer, systems architect, robotics, artificial intelligence, iot, web platforms, automation systems, portfolio, indonesia, universitas airlangga'
 const defaultImage = `${SITE_URL}/fotoku.webp`
 
 export default function Meta({
@@ -19,34 +21,38 @@ export default function Meta({
   breadcrumbs
 }) {
   useEffect(() => {
-    const fullTitle = title ? `${title} | Hellyos Ageng Haqiqie` : defaultTitle
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`
+    const fullTitle = title
+      ? title.includes('Hellyos Ageng Haqiqie')
+        ? title
+        : `${title} | Hellyos Ageng Haqiqie`
+      : defaultTitle
     const fullDesc = description || defaultDescription
     const fullKeywords = keywords || defaultKeywords
-    const fullUrl = `${SITE_URL}${path.startsWith('/') ? path : '/' + path}`
+    const fullUrl = `${SITE_URL}${normalizedPath}`
     const fullImage = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : defaultImage
+    const ogType =
+      normalizedPath === '/'
+        ? 'profile'
+        : normalizedPath.startsWith('/project/') || normalizedPath.startsWith('/journey/')
+          ? 'article'
+          : 'website'
 
-    // Title
     document.title = fullTitle
 
-    // Meta: description
-    let descMeta = document.querySelector('meta[name="description"]')
-    if (!descMeta) {
-      descMeta = document.createElement('meta')
-      descMeta.setAttribute('name', 'description')
-      document.head.appendChild(descMeta)
+    const upsertMeta = (attrName, attrVal, content) => {
+      let el = document.querySelector(`meta[${attrName}="${attrVal}"]`)
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute(attrName, attrVal)
+        document.head.appendChild(el)
+      }
+      el.setAttribute('content', content)
     }
-    descMeta.setAttribute('content', fullDesc)
 
-    // Meta: keywords
-    let kwMeta = document.querySelector('meta[name="keywords"]')
-    if (!kwMeta) {
-      kwMeta = document.createElement('meta')
-      kwMeta.setAttribute('name', 'keywords')
-      document.head.appendChild(kwMeta)
-    }
-    kwMeta.setAttribute('content', fullKeywords)
+    upsertMeta('name', 'description', fullDesc)
+    upsertMeta('name', 'keywords', fullKeywords)
 
-    // Canonical
     let canonical = document.querySelector('link[rel="canonical"]')
     if (!canonical) {
       canonical = document.createElement('link')
@@ -55,56 +61,39 @@ export default function Meta({
     }
     canonical.setAttribute('href', fullUrl)
 
-    // Robots
-    let robots = document.querySelector('meta[name="robots"]')
-    if (noIndex) {
-      if (!robots) {
-        robots = document.createElement('meta')
-        robots.setAttribute('name', 'robots')
-        document.head.appendChild(robots)
-      }
-      robots.setAttribute('content', 'noindex,nofollow')
-    } else if (robots) {
-      robots.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
+    upsertMeta(
+      'name',
+      'robots',
+      noIndex
+        ? 'noindex,nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    )
+
+    // Open Graph
+    upsertMeta('property', 'og:site_name', SITE_NAME)
+    upsertMeta('property', 'og:title', fullTitle)
+    upsertMeta('property', 'og:description', fullDesc)
+    upsertMeta('property', 'og:url', fullUrl)
+    upsertMeta('property', 'og:type', ogType)
+    upsertMeta('property', 'og:image', fullImage)
+
+    if (ogType !== 'profile') {
+      document
+        .querySelectorAll('meta[property^="profile:"]')
+        .forEach((el) => el.remove())
     }
 
-    // Open Graph tags
-    const ogTags = {
-      'meta[property="og:title"]': fullTitle,
-      'meta[property="og:description"]': fullDesc,
-      'meta[property="og:url"]': fullUrl,
-      'meta[property="og:image"]': fullImage,
-      'meta[property="og:site_name"]': SITE_NAME
-    }
-    for (const [selector, value] of Object.entries(ogTags)) {
-      let el = document.querySelector(selector)
-      if (!el) {
-        el = document.createElement('meta')
-        const prop = selector.match(/property="([^"]+)"/)?.[1]
-        if (prop) el.setAttribute('property', prop)
-        document.head.appendChild(el)
-      }
-      el.setAttribute('content', value)
+    // Twitter Card
+    upsertMeta('name', 'twitter:title', fullTitle)
+    upsertMeta('name', 'twitter:description', fullDesc)
+    upsertMeta('name', 'twitter:image', fullImage)
+
+    // ProfilePage JSON-LD only applies to the root homepage
+    if (normalizedPath !== '/') {
+      document.querySelector('script#profilepage-ld')?.remove()
     }
 
-    // Twitter Card tags
-    const twitterTags = {
-      'meta[name="twitter:title"]': fullTitle,
-      'meta[name="twitter:description"]': fullDesc,
-      'meta[name="twitter:image"]': fullImage
-    }
-    for (const [selector, value] of Object.entries(twitterTags)) {
-      let el = document.querySelector(selector)
-      if (!el) {
-        el = document.createElement('meta')
-        const name = selector.match(/name="([^"]+)"/)?.[1]
-        if (name) el.setAttribute('name', name)
-        document.head.appendChild(el)
-      }
-      el.setAttribute('content', value)
-    }
-
-    // Dynamic JSON-LD: Page-specific schema
+    // Page-specific Schema
     let scriptMeta = document.querySelector('script#dynamic-json-ld')
     if (schemaData) {
       if (!scriptMeta) {
@@ -118,37 +107,32 @@ export default function Meta({
       scriptMeta.remove()
     }
 
-    // Dynamic JSON-LD: BreadcrumbList
+    // BreadcrumbList Schema (always single source of truth)
     let breadcrumbScript = document.querySelector('script#breadcrumb-json-ld')
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      const breadcrumbSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${SITE_URL}/`
-          },
-          ...breadcrumbs.map((crumb, idx) => ({
-            '@type': 'ListItem',
-            position: idx + 2,
-            name: crumb.name,
-            item: `${SITE_URL}${crumb.path}`
-          }))
-        ]
-      }
-      if (!breadcrumbScript) {
-        breadcrumbScript = document.createElement('script')
-        breadcrumbScript.id = 'breadcrumb-json-ld'
-        breadcrumbScript.type = 'application/ld+json'
-        document.head.appendChild(breadcrumbScript)
-      }
-      breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema)
-    } else if (breadcrumbScript) {
-      breadcrumbScript.remove()
+    if (!breadcrumbScript) {
+      breadcrumbScript = document.createElement('script')
+      breadcrumbScript.id = 'breadcrumb-json-ld'
+      breadcrumbScript.type = 'application/ld+json'
+      document.head.appendChild(breadcrumbScript)
     }
+    const items =
+      breadcrumbs && breadcrumbs.length > 0
+        ? [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+            ...breadcrumbs.map((crumb, idx) => ({
+              '@type': 'ListItem',
+              position: idx + 2,
+              name: crumb.name,
+              item: `${SITE_URL}${crumb.path}`
+            }))
+          ]
+        : [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` }]
+
+    breadcrumbScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: items
+    })
   }, [title, description, keywords, schemaData, path, noIndex, image, breadcrumbs])
 
   return null

@@ -1,118 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.hellyoshaqiqie.id/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>Hellyos Ageng Haqiqie — Full-Stack Software Engineer &amp; AI Systems Architect</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/projects</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>Projects &amp; Case Studies | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/journeys</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.hellyoshaqiqie.id/coaching</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>My Journey &amp; Milestones | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/cv</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>Curriculum Vitae (CV) | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/portfolio</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>Portfolio Document | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/coaching</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/fotoku.webp</image:loc>
+      <image:title>Coaching &amp; Mentorship | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/project/mitra-megah-interior-3d-cad</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/megah-interior-mockup.webp</image:loc>
+      <image:title>Mitra Megah Interior — 3D Spatial CAD &amp; Material Configurator | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/project/climatix</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.hellyoshaqiqie.id/project/sms-vest</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.hellyoshaqiqie.id/project/vorce-platform</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/climatix.webp</image:loc>
+      <image:title>ClimatiX — Climate Tech &amp; Carbon Credit Ecosystem | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/project/vorce-hr-management</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/vorcehr.webp</image:loc>
+      <image:title>VORCE — Enterprise Workforce &amp; HR Management Platform | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/project/sms-vest</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/vest.webp</image:loc>
+      <image:title>SMS-Vest — Smart Marine Safety Vest Ecosystem | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/project/vorce-platform</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/vorce_platform_mockup.webp</image:loc>
+      <image:title>VORCE — Workforce Intelligence &amp; Operations Platform | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/project/vlinked-desktop-agent</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/vlinked_cards_mockup.webp</image:loc>
+      <image:title>VLinked — Desktop Monitoring Agent | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/project/fleet-management</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/velinked.webp</image:loc>
+      <image:title>Smart Fleet Management (Velinked) | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.hellyoshaqiqie.id/project/driver-dashboard</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.hellyoshaqiqie.id/project/fleet-management</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.hellyoshaqiqie.id/project/driver-dashboard</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.hellyoshaqiqie.id/project/dermdoc</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/project/smart-home</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/project/smart-vehicle</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/journey/best-presentation-green-jobs-2026</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/IMJ_6152.webp</image:loc>
+      <image:title>Best Presentation at Indonesia Green Jobs Initiative Competition | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/journey/fiksi-2024-gold-medalist</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2024-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/fiksi2024.webp</image:loc>
+      <image:title>Gold Medalist in Digital Technology - FIKSI 2024 | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.hellyoshaqiqie.id/journey/fiksi-2023-finalist</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2023-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hellyoshaqiqie.id/assets/fiksi2023.webp</image:loc>
+      <image:title>Finalist in Digital Technology - FIKSI 2023 | Hellyos Ageng Haqiqie</image:title>
+    </image:image>
   </url>
 </urlset>

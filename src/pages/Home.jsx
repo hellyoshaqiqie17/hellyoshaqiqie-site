@@ -146,7 +146,7 @@ function HeroSection() {
       <div className="order-1 xl:order-none xl:col-start-1 xl:row-start-1 flex flex-col gap-y-10">
         <div className="space-y-6">
           <m.div
-            initial="hidden"
+            initial={false}
             animate="visible"
             variants={revealVariants}
             className="flex items-center gap-x-4"
@@ -170,7 +170,7 @@ function HeroSection() {
           </m.div>
 
           <m.h2
-            initial="hidden"
+            initial={false}
             animate="visible"
             variants={revealDelay(100)}
             className="text-[1.75rem] sm:text-4xl leading-[1.3] text-foreground tracking-tight font-medium"
@@ -200,7 +200,7 @@ function HeroSection() {
             <a
               href="https://github.com/hellyoshaqiqie17"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="inline-flex items-center gap-x-2 text-white px-6 py-4 rounded-full font-medium btn-embossed"
             >
               <GithubLogo size={20} weight="regular" />
@@ -242,7 +242,7 @@ function HeroSection() {
       {/* Right Column (Hero image layers) */}
       <div className="order-2 xl:order-none xl:col-start-2 xl:row-start-1 xl:row-span-2 flex flex-col gap-6 h-full xl:-my-4">
         <m.div
-          initial="hidden"
+          initial={false}
           animate="visible"
           variants={revealDelay(300)}
           className="rounded-[1rem] overflow-hidden aspect-[1.91/1] xl:flex-1 relative bg-surface-nested"
@@ -946,7 +946,7 @@ function AboutMe() {
               Building modern platforms and automation systems.
             </m.h2>
             <m.p variants={aboutItemVariants} className="text-[16px] leading-relaxed text-muted mb-10 max-w-lg">
-              I am a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. Currently studying Robotics & Artificial Intelligence Engineering at Airlangga University, I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
+              I'm Hellyos (Hellyos Ageng Haqiqie), a Full-Stack Software Engineer and Systems Architect who builds intelligent web ecosystems, automation workflows, and high-performance applications. Currently studying Robotics & Artificial Intelligence Engineering at Universitas Airlangga (UNAIR), I enjoy building seamless integration layers between secure databases, backend APIs, and beautiful control interfaces.
             </m.p>
             <m.div variants={aboutItemVariants} className="flex flex-wrap items-center gap-4">
               <button
@@ -959,7 +959,7 @@ function AboutMe() {
               <a
                  href="https://github.com/hellyoshaqiqie17"
                  target="_blank"
-                 rel="noopener noreferrer"
+                 rel="me noopener noreferrer"
                  className="inline-flex items-center gap-x-2 text-white px-8 py-3.5 rounded-full font-medium text-[15px] btn-embossed focus:outline-none"
               >
                 <GithubLogo size={20} weight="regular" />

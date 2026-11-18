@@ -523,7 +523,12 @@
                 <xsl:choose>
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/'">Beranda &amp; Portfolio Utama</xsl:when>
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/projects'">Katalog Proyek Lengkap</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/journeys'">Perjalanan &amp; Prestasi</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/cv'">Curriculum Vitae (CV)</xsl:when>
+                  <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/portfolio'">Dokumen Portfolio</xsl:when>
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/coaching'">Layanan Coaching &amp; Mentoring</xsl:when>
+                  <xsl:when test="contains(sitemap:loc, '/project/mitra-megah-interior-3d-cad')">Mitra Megah Interior — 3D CAD</xsl:when>
+                  <xsl:when test="contains(sitemap:loc, '/project/sms-vest')">SMS-Vest — Smart Marine Safety Vest</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-platform')">VORCE — Workforce Intelligence</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-hr-management')">VORCE — Workforce &amp; HR Management</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vlinked-desktop-agent')">vLinked — Desktop Control Agent</xsl:when>

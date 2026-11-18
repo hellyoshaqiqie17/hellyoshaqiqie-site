@@ -312,7 +312,7 @@ export default function ProjectDetail() {
 
         {/* Screenshot Images */}
         {project.images && project.images.length > 1 && (
-          <div className="space-y-8">
+          <div className="space-y-8 mb-24">
             {project.images.slice(1).map((imgUrl, imgIdx) => (
               <m.div
                 key={imgIdx}
@@ -331,6 +331,33 @@ export default function ProjectDetail() {
             ))}
           </div>
         )}
+
+        {/* Related Projects Internal Links */}
+        <section aria-label="More Projects" className="pt-16 border-t border-border">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-semibold text-foreground">More Projects</h2>
+            <Link to="/projects" className="text-[14px] font-medium text-muted hover:text-foreground theme-transition">
+              View all &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projectsData
+              .filter((p) => p.slug !== project.slug)
+              .slice(0, 3)
+              .map((rel) => (
+                <Link
+                  key={rel.slug}
+                  to={`/project/${rel.slug}`}
+                  className="group rounded-2xl border border-border bg-surface/50 p-5 hover:border-foreground/30 theme-transition block space-y-2"
+                >
+                  <h3 className="text-base font-semibold text-foreground group-hover:text-muted theme-transition">
+                    {rel.title}
+                  </h3>
+                  <p className="text-[14px] text-muted line-clamp-2">{rel.description}</p>
+                </Link>
+              ))}
+          </div>
+        </section>
       </m.main>
     </>
   )
