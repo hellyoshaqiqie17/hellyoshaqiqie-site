@@ -271,10 +271,10 @@ function HeroSection() {
           {loading || !pageSettings ? (
             <ImagePlaceholder />
           ) : (
-            <Link to="/project/vlinked-desktop-agent" className="block w-full h-full relative group">
+            <Link to="/project/meridian-3d-clothing-store" className="block w-full h-full relative group">
             <ProgressiveImage
               src={pageSettings.heroImageMiddle}
-              alt="VLinked — Desktop Monitoring Agent"
+              alt="Meridian — Contemporary Clothing Store & 3D Garment Marketplace"
               imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
             />
           </Link>
