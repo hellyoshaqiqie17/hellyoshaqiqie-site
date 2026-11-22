@@ -7,6 +7,7 @@
     "image": "/assets/megah-interior-mockup.webp",
     "video": "/assets/mitra-megah-showcase.mp4",
     "cardVideo": "/assets/mitra-megah-card.mp4",
+    "cardVideoWebm": "/assets/mitra-megah-card.webm",
     "videoDuration": "PT27S",
     "tags": [
       "3D Web / Three.js",
@@ -34,6 +35,7 @@
     "image": "/assets/meridian-mockup.webp",
     "video": "/assets/meridian-showcase.mp4",
     "cardVideo": "/assets/meridian-card.mp4",
+    "cardVideoWebm": "/assets/meridian-card.webm",
     "tags": [
       "Next.js 16 / React 19",
       "3D Web / Three.js",
@@ -60,6 +62,7 @@
     "image": "/assets/vnyl-mockup.webp",
     "video": "/assets/vnyl-showcase.mp4",
     "cardVideo": "/assets/vnyl-card.mp4",
+    "cardVideoWebm": "/assets/vnyl-card.webm",
     "tags": [
       "Next.js 16 / React 19",
       "E-Commerce",
@@ -110,6 +113,7 @@
     "image": "/assets/vorcehr.webp",
     "video": "/assets/vorce-showcase.mp4",
     "cardVideo": "/assets/vorce-card.mp4",
+    "cardVideoWebm": "/assets/vorce-card.webm",
     "videoDuration": "PT16S",
     "tags": [
       "Next.js / React",
@@ -162,6 +166,7 @@
     "image": "/assets/vorce_platform_mockup.webp",
     "video": "/assets/vorce-showcase.mp4",
     "cardVideo": "/assets/vorce-card.mp4",
+    "cardVideoWebm": "/assets/vorce-card.webm",
     "videoDuration": "PT16S",
     "tags": [
       "Next.js / React",
@@ -189,6 +194,7 @@
     "image": "/assets/vlinked_cards_mockup.webp",
     "video": "/assets/vlinked-showcase.mp4",
     "cardVideo": "/assets/vlinked-card.mp4",
+    "cardVideoWebm": "/assets/vlinked-card.webm",
     "videoDuration": "PT16S",
     "tags": [
       "Electron",

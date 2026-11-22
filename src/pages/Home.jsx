@@ -253,10 +253,12 @@ function HeroSection() {
             <Link to="/project/mitra-megah-interior-3d-cad" className="block w-full h-full relative group">
             <CoverTransitionVideo
               poster={pageSettings.heroImageTop}
-              videoSrc="/assets/mitra-megah-showcase.mp4"
+              webmSrc="/assets/mitra-megah-hero.webm"
+              videoSrc="/assets/mitra-megah-hero.mp4"
               alt="Mitra Megah Interior 3D CAD Mockup"
               coverDurationMs={2000}
               eager
+              loadOrder={0}
               hoverScaleClass="group-hover:scale-[1.025]"
               className="absolute inset-0 w-full h-full"
             />
@@ -276,10 +278,12 @@ function HeroSection() {
             <Link to="/project/meridian-3d-clothing-store" className="block w-full h-full relative group">
             <CoverTransitionVideo
               poster={pageSettings.heroImageMiddle}
-              videoSrc="/assets/meridian-showcase.mp4"
+              webmSrc="/assets/meridian-hero.webm"
+              videoSrc="/assets/meridian-hero.mp4"
               alt="Meridian — Contemporary Clothing Store & 3D Garment Marketplace"
               coverDurationMs={2000}
               eager
+              loadOrder={1}
               hoverScaleClass="group-hover:scale-[1.025]"
               className="absolute inset-0 w-full h-full"
             />
@@ -299,10 +303,12 @@ function HeroSection() {
             <Link to="/project/vorce-hr-management" className="block w-full h-full relative group">
             <CoverTransitionVideo
               poster={pageSettings.heroImageBottom}
-              videoSrc="/assets/vorce-showcase.mp4"
+              webmSrc="/assets/vorce-hero.webm"
+              videoSrc="/assets/vorce-hero.mp4"
               alt="VORCE — Enterprise Workforce & HR Management Platform"
               coverDurationMs={2000}
               eager
+              loadOrder={2}
               hoverScaleClass="group-hover:scale-[1.025]"
               className="absolute inset-0 w-full h-full"
             />
@@ -401,7 +407,7 @@ function getBgClass(bgClass) {
   return mapping[bgClass] || 'bg-canvas'
 }
 
-function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePosition = 'object-top', index }) {
+function ProjectCard({ slug, title, image, cardVideo, cardVideoWebm, tags, bgClass, imagePosition = 'object-top', index }) {
   return (
     <m.div
       initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
@@ -417,7 +423,9 @@ function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePositi
           {cardVideo ? (
             <CoverTransitionVideo
               poster={image}
+              webmSrc={cardVideoWebm}
               videoSrc={cardVideo}
+              loadOrder={10 + index}
               alt={title}
               coverDurationMs={2000}
               imagePosition={imagePosition}
@@ -507,6 +515,7 @@ function FeaturedProjects() {
               title={proj.title}
               image={proj.image}
               cardVideo={proj.cardVideo}
+              cardVideoWebm={proj.cardVideoWebm}
               tags={proj.tags}
               bgClass={proj.bgClass}
               imagePosition={proj.imagePosition}

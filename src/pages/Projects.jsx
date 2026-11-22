@@ -27,7 +27,7 @@ function Skeleton({ className = '' }) {
   )
 }
 
-function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePosition = 'object-top' }) {
+function ProjectCard({ slug, title, image, cardVideo, cardVideoWebm, tags, bgClass, imagePosition = 'object-top', index = 0 }) {
   return (
     <div className="transition-all duration-300">
       <Link
@@ -39,6 +39,8 @@ function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePositi
             <CoverTransitionVideo
               poster={image}
               videoSrc={cardVideo}
+              webmSrc={cardVideoWebm}
+              loadOrder={10 + index}
               alt={title}
               coverDurationMs={2000}
               imagePosition={imagePosition}
@@ -157,13 +159,15 @@ export default function Projects() {
 
         {!loading && !error && projects.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((proj) => (
+            {projects.map((proj, idx) => (
               <ProjectCard
                 key={proj.slug}
+                index={idx}
                 slug={proj.slug}
                 title={proj.title}
                 image={proj.image}
                 cardVideo={proj.cardVideo}
+                cardVideoWebm={proj.cardVideoWebm}
                 tags={proj.tags}
                 bgClass={proj.bgClass}
                 imagePosition={proj.imagePosition}
