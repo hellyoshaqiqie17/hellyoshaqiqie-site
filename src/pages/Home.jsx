@@ -391,7 +391,7 @@ function getBgClass(bgClass) {
   return mapping[bgClass] || 'bg-canvas'
 }
 
-function ProjectCard({ slug, title, image, tags, bgClass, imagePosition = 'object-top', index }) {
+function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePosition = 'object-top', index }) {
   return (
     <m.div
       initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
@@ -404,11 +404,25 @@ function ProjectCard({ slug, title, image, tags, bgClass, imagePosition = 'objec
         className="group block cursor-pointer active:scale-[0.98] transition-transform duration-200 ease-out"
       >
         <div className={`overflow-hidden ${getBgClass(bgClass)} aspect-[4/3] rounded-[1rem] relative mb-4 transition-shadow duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-elevated theme-transition`}>
-          <img
-            src={image}
-            alt={title}
-            className={`w-full h-full object-cover ${imagePosition} transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]`}
-          />
+          {cardVideo ? (
+            <video
+              src={cardVideo}
+              poster={image}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              aria-label={title}
+              className="w-full h-full object-cover object-center transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]"
+            />
+          ) : (
+            <img
+              src={image}
+              alt={title}
+              className={`w-full h-full object-cover ${imagePosition} transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]`}
+            />
+          )}
           <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:bg-black/[0.03]" />
         </div>
         <div className="flex flex-col gap-y-0.5 px-1 mt-1">
@@ -485,6 +499,7 @@ function FeaturedProjects() {
               slug={proj.slug}
               title={proj.title}
               image={proj.image}
+              cardVideo={proj.cardVideo}
               tags={proj.tags}
               bgClass={proj.bgClass}
               imagePosition={proj.imagePosition}

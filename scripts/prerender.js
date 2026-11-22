@@ -113,7 +113,7 @@ const homeBodyHtml = `
         ${projects.filter(p => p.featured).map(p => `
           <article style="border:1px solid #e2e8f0;border-radius:1rem;padding:1.25rem">
             <a href="/project/${p.slug}" style="text-decoration:none;color:inherit">
-              <img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:200px;object-fit:cover;border-radius:0.75rem;margin-bottom:1rem" loading="lazy" />
+              ${p.cardVideo ? `<video src="${p.cardVideo}" poster="${p.image}" autoplay loop muted playsinline style="width:100%;height:200px;object-fit:cover;border-radius:0.75rem;margin-bottom:1rem"></video>` : `<img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:200px;object-fit:cover;border-radius:0.75rem;margin-bottom:1rem" loading="lazy" />`}
               <h3 style="font-size:1.1rem;font-weight:600;color:#0f172a;margin:0 0 0.4rem">${escapeHtml(p.title)}</h3>
               <p style="font-size:0.9rem;color:#64748b;margin:0">${escapeHtml(p.description)}</p>
             </a>
@@ -238,7 +238,7 @@ const pages = [
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;margin-top:2rem">
           ${projects.map(p => `
             <article style="border:1px solid #e2e8f0;border-radius:1rem;overflow:hidden;padding:1.25rem">
-              <img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:220px;object-fit:cover;border-radius:0.75rem" loading="lazy" />
+              ${p.cardVideo ? `<video src="${p.cardVideo}" poster="${p.image}" autoplay loop muted playsinline style="width:100%;height:220px;object-fit:cover;border-radius:0.75rem"></video>` : `<img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:220px;object-fit:cover;border-radius:0.75rem" loading="lazy" />`}
               <h2 style="font-size:1.25rem;font-weight:600;margin:1rem 0 0.5rem">
                 <a href="/project/${p.slug}" style="text-decoration:none;color:inherit">${escapeHtml(p.title)}</a>
               </h2>
