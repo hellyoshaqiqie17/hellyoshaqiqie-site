@@ -586,7 +586,7 @@ for (const p of projects) {
                 thumbnailUrl: pImg,
                 contentUrl: `${SITE_URL}${p.video}`,
                 uploadDate: TODAY_ISO,
-                duration: 'PT12S'
+                duration: p.videoDuration || 'PT12S'
               }
             ]
           : [])

@@ -197,7 +197,7 @@ export default function ProjectDetail() {
                 : `https://www.hellyoshaqiqie.id${project.image}`,
               "contentUrl": `https://www.hellyoshaqiqie.id${project.video}`,
               "uploadDate": "2026-11-22",
-              "duration": "PT12S"
+              "duration": project.videoDuration || "PT12S"
             }
           ]
         : [])
