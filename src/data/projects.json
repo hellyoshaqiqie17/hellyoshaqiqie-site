@@ -108,6 +108,9 @@
     "description": "An enterprise-grade hybrid HR platform combining GPS/Face ID attendance, real-time leaves, OCR-powered reimbursements, tasks, and performance tracking.",
     "longDescription": "VORCE HR Management is an enterprise-grade hybrid workforce management and human resource ecosystem designed to streamline business operations and synchronize employee activities. Built to scale, the system marks a transition from a legacy REST API architecture to a high-performance Hybrid (REST API + Firebase Firestore) model.\n\nUnder this hybrid schema, all transactional writes and complex business validations—such as check-ins, check-outs, leave applications, and reimbursement workflows—are processed securely through REST API controllers. This ensures the backend remains the absolute source of truth. Simultaneously, the platform utilizes real-time Firestore listeners to instantly stream updates back to the web dashboard and mobile app, bypassing polling and GET APIs to provide an instantaneous user experience.\n\nThe platform integrates several specialized modules:\n• Presence & Shift Management: GPS geocoding coordinates, Face ID logins, and shift schedules synced via Firestore.\n• Leave & Time-Off Requests: A decentralized CRUD system where files (such as medical certificates) are uploaded, and leave data is synchronized using strict ISO8601 timestamps.\n• OCR-Powered Reimbursements: Integrates a Cloud Run extraction endpoint to scan receipts via OCR, automatically parsing metadata and posting real-time reimbursement claims with Firebase Web SDK.\n• Task & Collaboration: Supports multi-assignee task distribution, sub-task attachments, and real-time status changes handled directly through Firestore documents.\n• Personal AI Assistant (Mitsu AI): User-scoped chat histories, markdown-formatted prompt responses, and a secure transaction-safe system to transfer credit tokens between employee profile documents.",
     "image": "/assets/vorcehr.webp",
+    "video": "/assets/vorce-showcase.mp4",
+    "cardVideo": "/assets/vorce-card.mp4",
+    "videoDuration": "PT16S",
     "tags": [
       "Next.js / React",
       "Firebase / Firestore",
@@ -157,6 +160,9 @@
     "description": "An end-to-end workforce intelligence and business operations platform combining employee directories, attendance tracking, task management, and desktop device analytics.",
     "longDescription": "VORCE is an integrated, end-to-end workforce intelligence and business operations platform designed to help organizations streamline employee management, monitor work activities, and extract real-time operational insights. I developed the platform end-to-end, starting from the responsive Next.js landing page to building the comprehensive web dashboard, and integrating the complete mobile and desktop telemetry systems.\n\nAt its core, VORCE unites GPS/Face ID attendance tracking, shift scheduling, task coordination, OCR receipt reimbursement, and organizational knowledge databases into a single responsive portal. By integrating device telemetry from the VLinked desktop agent, the platform's intelligence engine aggregates raw system activity into higher-level workforce signals. This generates real-time analytics for focus ratios, productivity scores, workload levels, and behavioral trends, presenting an executive view of team performance while maintaining data privacy and security.",
     "image": "/assets/vorce_platform_mockup.webp",
+    "video": "/assets/vorce-showcase.mp4",
+    "cardVideo": "/assets/vorce-card.mp4",
+    "videoDuration": "PT16S",
     "tags": [
       "Next.js / React",
       "TypeScript",
@@ -181,6 +187,9 @@
     "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
     "longDescription": "VLinked Desktop Agent is a lightweight, cross-platform desktop monitoring agent developed as part of the VORCE ecosystem. It runs silently on macOS, Windows, and Linux machines to collect essential telemetry metrics, enabling companies to track employee device health, app-specific usage, and active work times.\n\nAs the Lead Desktop Developer, I built the agent using Electron, ensuring high-efficiency monitoring without high system overhead. Key implementations included secure OAuth token persistence via the OS keychain (DPAPI/safeStorage), background tracking systems using systeminformation and powerMonitor for idle-time checking, and a sandboxed IPC renderer architecture. All metric updates stream directly to the centralized VORCE API, serving as the single point of entry to ensure absolute data consistency and system security.",
     "image": "/assets/vlinked_cards_mockup.webp",
+    "video": "/assets/vlinked-showcase.mp4",
+    "cardVideo": "/assets/vlinked-card.mp4",
+    "videoDuration": "PT16S",
     "tags": [
       "Electron",
       "Desktop App",

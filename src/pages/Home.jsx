@@ -298,10 +298,14 @@ function HeroSection() {
             <ImagePlaceholder />
           ) : (
             <Link to="/project/vorce-hr-management" className="block w-full h-full relative group">
-            <ProgressiveImage
-              src={pageSettings.heroImageBottom}
+            <CoverTransitionVideo
+              poster={pageSettings.heroImageBottom}
+              videoSrc="/assets/vorce-showcase.mp4"
               alt="VORCE — Enterprise Workforce & HR Management Platform"
-              imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
+              coverDurationMs={2000}
+              eager
+              hoverScaleClass="group-hover:scale-[1.025]"
+              className="absolute inset-0 w-full h-full"
             />
           </Link>
           )}

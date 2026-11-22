@@ -185,7 +185,7 @@ export default function CoverTransitionVideo({
         <img
           src={poster}
           alt={alt}
-          loading={eager ? 'eager' : 'lazy'}
+          loading="eager"
           fetchPriority={eager ? 'high' : undefined}
           decoding="async"
           className={`absolute inset-0 w-full h-full object-cover ${imagePosition} will-change-[opacity,transform] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
@@ -195,6 +195,10 @@ export default function CoverTransitionVideo({
           }`}
         />
       </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-black/[0.07] dark:ring-white/[0.08]"
+      />
     </div>
   )
 }
