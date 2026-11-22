@@ -24,6 +24,56 @@
     "sortOrder": 1
   },
   {
+    "slug": "meridian-3d-clothing-store",
+    "title": "Meridian — Contemporary Clothing Store & 3D Garment Marketplace",
+    "description": "A contemporary fashion e-commerce platform built with Next.js 16 and Three.js, enabling shoppers to inspect studio photography or interactively orbit any garment in 360° 3D before choosing their size.",
+    "longDescription": "Meridian is a modern contemporary clothing storefront and interactive 3D garment marketplace engineered to bridge luxury editorial photography with real-time WebGL product inspection. Shoppers can browse heavyweight cotton tees, knitwear, washed denim, and outerwear while seamlessly switching between studio photos and a full 360° interactive 3D garment viewer.\n\nKey engineering and architecture modules include:\n• Interactive 3D Garment Viewer (Three.js): Powered by a custom GLB model loader and dynamic front/back garment texture builder, letting customers drag and rotate every piece in real time to inspect drape, silhouette, collar weight, and front/back graphics before picking a size.\n• Full-Stack Storefront & Seller Studio: Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4, featuring instant category filtering, live shopping bag and wishlist drawers, member authentication with automatic member discounts, promo vouchers, order tracking, and a dedicated Seller Studio plus Admin Console.\n• Cloudflare D1 & R2 Edge Architecture: Uses a structured D1 relational database for products, orders, vouchers, and sessions while offloading high-resolution garment packshots and 3D .glb model binaries to S3-compatible Cloudflare R2 object storage.\n• BinderPay SNAP BI Checkout: Integrated Indonesian multi-channel payment gateway supporting QRIS with live QR rendering, Virtual Accounts (BCA, Mandiri, BNI, BRI, Permata, BSI, CIMB), and Payment Links with RSA signature verification.",
+    "image": "/assets/meridian-mockup.webp",
+    "video": "/assets/meridian-showcase.mp4",
+    "tags": [
+      "Next.js 16 / React 19",
+      "3D Web / Three.js",
+      "E-Commerce",
+      "Cloudflare D1 & R2"
+    ],
+    "bgClass": "bg-surface-warm",
+    "imagePosition": "object-center",
+    "client": "Meridian Studio",
+    "role": "Full-Stack & 3D Web Engineer",
+    "timeline": "2026",
+    "liveUrl": "",
+    "images": [
+      "/assets/meridian-mockup.webp"
+    ],
+    "featured": true,
+    "sortOrder": 2
+  },
+  {
+    "slug": "vnyl-record-store",
+    "title": "VNYL Store — Vinyl Pressings & Limited Editions E-Commerce",
+    "description": "An editorial vinyl record storefront built with Next.js 16, React 19, and Radix UI featuring curated seasonal pressings, limited archival drops, live catalog filtering, an interactive Admin Studio, and IDR QRIS/VA checkout.",
+    "longDescription": "VNYL Store is an editorial vinyl record e-commerce platform and curation suite designed for collectors of heavyweight 180g pressings, colored limited variants, pre-order releases, and archival LPs priced in IDR.\n\nKey engineering and product highlights include:\n• Editorial Storefront & Discovery Experience: Crafted with Syne display typography, IBM Plex Mono pressing metadata, and Plus Jakarta Sans UI copy. Features a full-bleed hero carousel, artist discovery strip, pinned featured releases, a Hyped Vinyl limited-run spotlight with peeking disc previews, and a genre directory.\n• Catalog Browser & Pressing Detail Pages: Responsive multi-filter shop interface supporting collection filters, real-time title/artist/catalog-number search, detailed vinyl pressing sheets (format, wax colorway, condition, imprint), slide-over cart sheet, and wishlist persistence.\n• Full Admin Studio & Live Preview: Protected management console featuring a Banner Manager, Pin Curation Panel for landing page sections, Product and Promo Managers, Bulk Data import/export tools, Order tracking panel, Payment Settings, and a live Admin Preview Studio.\n• BinderPay SNAP API Integration: End-to-end payment checkout supporting QRIS QR generation, Virtual Accounts, and Payment Links with dedicated order payment tracking views and encrypted credential management.",
+    "image": "/assets/vnyl-mockup.webp",
+    "video": "/assets/vnyl-showcase.mp4",
+    "tags": [
+      "Next.js 16 / React 19",
+      "E-Commerce",
+      "TypeScript / Radix UI",
+      "Admin Studio"
+    ],
+    "bgClass": "bg-surface-blue",
+    "imagePosition": "object-center",
+    "client": "VNYL Listening Room",
+    "role": "Lead Full-Stack Engineer & UI Designer",
+    "timeline": "2026",
+    "liveUrl": "",
+    "images": [
+      "/assets/vnyl-mockup.webp"
+    ],
+    "featured": true,
+    "sortOrder": 3
+  },
+  {
     "slug": "climatix",
     "title": "ClimatiX — Climate Tech & Carbon Credit Ecosystem",
     "description": "An end-to-end climate technology ecosystem connecting IoT sensors, AI-powered carbon analytics, and blockchain tokenization to bring transparency to the carbon market.",
@@ -45,7 +95,7 @@
       "/climatix.webp"
     ],
     "featured": true,
-    "sortOrder": 2
+    "sortOrder": 4
   },
   {
     "slug": "vorce-hr-management",
@@ -70,7 +120,7 @@
       "/assets/vorce_hr_image.png"
     ],
     "featured": true,
-    "sortOrder": 3
+    "sortOrder": 5
   },
   {
     "slug": "sms-vest",
@@ -94,7 +144,7 @@
       "/assets/vest.webp"
     ],
     "featured": true,
-    "sortOrder": 4
+    "sortOrder": 6
   },
   {
     "slug": "vorce-platform",
@@ -118,7 +168,7 @@
       "/assets/vorce_platform_mockup.webp"
     ],
     "featured": true,
-    "sortOrder": 5
+    "sortOrder": 7
   },
   {
     "slug": "vlinked-desktop-agent",
@@ -143,7 +193,7 @@
       "/assets/vlinkedshowcase.webp"
     ],
     "featured": true,
-    "sortOrder": 6
+    "sortOrder": 8
   },
   {
     "slug": "fleet-management",
@@ -167,7 +217,7 @@
       "/assets/velinked.webp"
     ],
     "featured": true,
-    "sortOrder": 7
+    "sortOrder": 9
   },
   {
     "slug": "driver-dashboard",
@@ -191,7 +241,7 @@
       "https://framerusercontent.com/images/0HJFVdqnwrJp7Okp7ik7wJgsw.png"
     ],
     "featured": true,
-    "sortOrder": 8
+    "sortOrder": 10
   },
   {
     "slug": "dermdoc",
@@ -215,7 +265,7 @@
       "https://framerusercontent.com/images/piXIh0MApLT3IXT0djAsKvDlc.png"
     ],
     "featured": true,
-    "sortOrder": 9
+    "sortOrder": 11
   },
   {
     "slug": "smart-home",
@@ -239,7 +289,7 @@
       "https://framerusercontent.com/images/J60E24aSFzP8DZpmb7jeNDFlDt0.png"
     ],
     "featured": true,
-    "sortOrder": 10
+    "sortOrder": 12
   },
   {
     "slug": "smart-vehicle",
@@ -263,6 +313,6 @@
       "https://framerusercontent.com/images/jiwJSIlc9phxQNtKeGIeQNNSCo.png"
     ],
     "featured": true,
-    "sortOrder": 11
+    "sortOrder": 13
   }
 ]

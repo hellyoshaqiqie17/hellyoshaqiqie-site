@@ -92,12 +92,14 @@ export default function ProjectDetail() {
   const [project, setProject] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error] = useState(null)
+  const [activeMedia, setActiveMedia] = useState('video')
 
   useEffect(() => {
     window.scrollTo(0, 0)
     if (slug) {
       const found = projectsData.find(p => p.slug === slug)
       setProject(found || null)
+      setActiveMedia(found?.video ? 'video' : 'mockup')
       setLoading(false)
     }
   }, [slug])
@@ -182,7 +184,23 @@ export default function ProjectDetail() {
         "isPartOf": {
           "@id": "https://www.hellyoshaqiqie.id/#website"
         }
-      }
+      },
+      ...(project.video
+        ? [
+            {
+              "@type": "VideoObject",
+              "@id": `https://www.hellyoshaqiqie.id/project/${project.slug}#video`,
+              "name": `${project.title} — Interactive Walkthrough Showcase`,
+              "description": project.description,
+              "thumbnailUrl": project.image.startsWith('http')
+                ? project.image
+                : `https://www.hellyoshaqiqie.id${project.image}`,
+              "contentUrl": `https://www.hellyoshaqiqie.id${project.video}`,
+              "uploadDate": "2026-11-22",
+              "duration": "PT12S"
+            }
+          ]
+        : [])
     ]
   }
 
@@ -280,15 +298,58 @@ export default function ProjectDetail() {
             )}
           </div>
 
-          {/* Featured Image block */}
-          <m.div variants={itemVariants} className="lg:col-span-7">
+          {/* Featured Media block (Video Walkthrough + UI Mockup Switcher) */}
+          <m.div variants={itemVariants} className="lg:col-span-7 space-y-4">
             <div className={`rounded-[2rem] overflow-hidden ${getBgClass(project.bgClass)} aspect-[4/3] sm:aspect-video relative border border-border theme-transition`}>
-              <img
-                src={project.image}
-                alt={project.title}
-                className={`w-full h-full object-cover ${project.imagePosition || 'object-center'}`}
-              />
+              {project.video && activeMedia === 'video' ? (
+                <video
+                  key={project.video}
+                  src={project.video}
+                  poster={project.image}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={`w-full h-full object-cover ${project.imagePosition || 'object-center'}`}
+                />
+              )}
             </div>
+
+            {project.video && (
+              <div className="flex items-center justify-end gap-2">
+                <div className="inline-flex rounded-full border border-border bg-surface p-1 text-[13px] font-medium">
+                  <button
+                    type="button"
+                    onClick={() => setActiveMedia('video')}
+                    className={`px-4 py-1.5 rounded-full theme-transition cursor-pointer ${
+                      activeMedia === 'video'
+                        ? 'bg-foreground text-canvas'
+                        : 'text-muted hover:text-foreground'
+                    }`}
+                  >
+                    Video Showcase
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveMedia('mockup')}
+                    className={`px-4 py-1.5 rounded-full theme-transition cursor-pointer ${
+                      activeMedia === 'mockup'
+                        ? 'bg-foreground text-canvas'
+                        : 'text-muted hover:text-foreground'
+                    }`}
+                  >
+                    UI Mockup
+                  </button>
+                </div>
+              </div>
+            )}
           </m.div>
         </div>
 
@@ -309,6 +370,26 @@ export default function ProjectDetail() {
             ))}
           </div>
         </m.div>
+
+        {/* Full UI Mockup Showcase (for projects whose hero defaults to video) */}
+        {project.video && (
+          <m.div
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, ease: Hu }}
+            className="space-y-4 mb-24"
+          >
+            <h2 className="text-2xl font-semibold text-foreground">UI Showcase Mockup</h2>
+            <div className="rounded-[2rem] overflow-hidden bg-surface border border-border">
+              <img
+                src={project.image}
+                alt={`${project.title} UI Mockup`}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </m.div>
+        )}
 
         {/* Screenshot Images */}
         {project.images && project.images.length > 1 && (

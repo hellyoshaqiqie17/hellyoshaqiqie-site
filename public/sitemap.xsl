@@ -528,6 +528,8 @@
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/portfolio'">Dokumen Portfolio</xsl:when>
                   <xsl:when test="sitemap:loc = 'https://www.hellyoshaqiqie.id/coaching'">Layanan Coaching &amp; Mentoring</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/mitra-megah-interior-3d-cad')">Mitra Megah Interior — 3D CAD</xsl:when>
+                  <xsl:when test="contains(sitemap:loc, '/project/meridian-3d-clothing-store')">Meridian — 3D Clothing Store</xsl:when>
+                  <xsl:when test="contains(sitemap:loc, '/project/vnyl-record-store')">VNYL Store — Vinyl Pressings</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/sms-vest')">SMS-Vest — Smart Marine Safety Vest</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-platform')">VORCE — Workforce Intelligence</xsl:when>
                   <xsl:when test="contains(sitemap:loc, '/project/vorce-hr-management')">VORCE — Workforce &amp; HR Management</xsl:when>

@@ -15,7 +15,7 @@ const testimonials = JSON.parse(fs.readFileSync(path.resolve(rootDir, 'src/data/
 
 const SITE_URL = 'https://www.hellyoshaqiqie.id'
 const DEFAULT_IMAGE = `${SITE_URL}/fotoku.webp`
-const TODAY_ISO = '2026-11-19'
+const TODAY_ISO = '2026-11-22'
 
 const templatePath = path.resolve(distDir, 'index.html')
 if (!fs.existsSync(templatePath)) {
@@ -575,7 +575,21 @@ for (const p of projects) {
           creator: { '@id': `${SITE_URL}/#person` },
           author: { '@id': `${SITE_URL}/#person` },
           isPartOf: { '@id': `${SITE_URL}/#website` }
-        }
+        },
+        ...(p.video
+          ? [
+              {
+                '@type': 'VideoObject',
+                '@id': `${SITE_URL}${pPath}#video`,
+                name: `${p.title} — Interactive Walkthrough Showcase`,
+                description: p.description,
+                thumbnailUrl: pImg,
+                contentUrl: `${SITE_URL}${p.video}`,
+                uploadDate: TODAY_ISO,
+                duration: 'PT12S'
+              }
+            ]
+          : [])
       ]
     },
     bodyHtml: `
@@ -598,12 +612,13 @@ for (const p of projects) {
             </div>
           </header>
           <div style="border-radius:1rem;overflow:hidden;margin-bottom:2.5rem;border:1px solid #e2e8f0">
-            <img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:auto;display:block" />
+            ${p.video ? `<video src="${p.video}" poster="${p.image}" autoplay loop muted playsinline controls style="width:100%;height:auto;display:block"></video>` : `<img src="${p.image}" alt="${escapeHtml(p.title)}" style="width:100%;height:auto;display:block" />`}
           </div>
           <section style="font-size:1.1rem;line-height:1.8;color:#334155;margin-bottom:3rem">
             <h2 style="font-size:1.75rem;font-weight:600;color:#0f172a;margin-bottom:1rem">About the Project</h2>
             ${(p.longDescription || '').split(/\n\n+/).filter(Boolean).map(para => `<p style="margin-bottom:1.5rem">${linkifyHtml(para.trim())}</p>`).join('')}
           </section>
+          ${p.video ? `<div style="border-radius:1rem;overflow:hidden;margin-bottom:2.5rem;border:1px solid #e2e8f0"><img src="${p.image}" alt="${escapeHtml(p.title)} UI Mockup" style="width:100%;height:auto;display:block" /></div>` : ''}
           ${p.liveUrl ? `<div style="margin-bottom:3rem"><a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:0.85rem 1.75rem;background:#0f172a;color:#fff;border-radius:9999px;text-decoration:none;font-weight:600">Visit Live Site &rarr;</a></div>` : ''}
         </article>
         <section aria-label="More Projects" style="padding-top:2rem;border-top:1px solid #e2e8f0">
