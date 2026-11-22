@@ -192,10 +192,6 @@
     "description": "Electron-powered cross-platform desktop telemetry agent capturing device and active-window analytics for VORCE.",
     "longDescription": "VLinked Desktop Agent is a lightweight, cross-platform desktop monitoring agent developed as part of the VORCE ecosystem. It runs silently on macOS, Windows, and Linux machines to collect essential telemetry metrics, enabling companies to track employee device health, app-specific usage, and active work times.\n\nAs the Lead Desktop Developer, I built the agent using Electron, ensuring high-efficiency monitoring without high system overhead. Key implementations included secure OAuth token persistence via the OS keychain (DPAPI/safeStorage), background tracking systems using systeminformation and powerMonitor for idle-time checking, and a sandboxed IPC renderer architecture. All metric updates stream directly to the centralized VORCE API, serving as the single point of entry to ensure absolute data consistency and system security.",
     "image": "/assets/vlinked_cards_mockup.webp",
-    "video": "/assets/vlinked-showcase.mp4",
-    "cardVideo": "/assets/vlinked-card.mp4",
-    "cardVideoWebm": "/assets/vlinked-card.webm",
-    "videoDuration": "PT16S",
     "tags": [
       "Electron",
       "Desktop App",
