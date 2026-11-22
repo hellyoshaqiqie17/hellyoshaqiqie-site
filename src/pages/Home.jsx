@@ -24,7 +24,6 @@ import testimonialsData from '../data/testimonials.json'
 import projectsData from '../data/projects.json'
 import journeysData from '../data/journeys.json'
 import achievementsData from '../data/achievements.json'
-import githubData from '../data/github.json'
 
 // Lazy load heavy 3D component
 const GithubSnake3D = React.lazy(() => import('../components/GithubSnake3D'))
@@ -186,7 +185,7 @@ function HeroSection() {
           <m.div
             initial="hidden"
             animate="visible"
-            variants={revealDelay(150)}
+            variants={revealDelay(60)}
             className="pt-2 flex flex-wrap items-center gap-4"
           >
             <button
@@ -214,7 +213,7 @@ function HeroSection() {
         <m.div
           initial="hidden"
           animate="visible"
-          variants={revealDelay(200)}
+          variants={revealDelay(100)}
           className="flex flex-wrap gap-3 sm:gap-4 pt-4"
         >
           <div className="flex items-center gap-x-2 px-5 py-3 rounded-full border border-border text-sm font-medium text-foreground hover:bg-surface theme-transition cursor-default">
@@ -245,7 +244,7 @@ function HeroSection() {
         <m.div
           initial={false}
           animate="visible"
-          variants={revealDelay(300)}
+          variants={revealDelay(80)}
           className="rounded-[1rem] overflow-hidden aspect-[1.91/1] xl:flex-1 relative bg-surface-nested"
         >
           {loading || !pageSettings ? (
@@ -268,7 +267,7 @@ function HeroSection() {
         <m.div
           initial="hidden"
           animate="visible"
-          variants={revealDelay(400)}
+          variants={revealDelay(140)}
           className="rounded-[1rem] overflow-hidden aspect-[1.91/1] xl:flex-1 relative bg-surface-nested"
         >
           {loading || !pageSettings ? (
@@ -291,7 +290,7 @@ function HeroSection() {
         <m.div
           initial="hidden"
           animate="visible"
-          variants={revealDelay(500)}
+          variants={revealDelay(200)}
           className="rounded-[1rem] overflow-hidden aspect-[1.91/1] xl:flex-1 relative bg-surface-nested"
         >
           {loading || !pageSettings ? (
@@ -317,7 +316,7 @@ function HeroSection() {
         <m.div
           initial="hidden"
           animate="visible"
-          variants={revealDelay(250)}
+          variants={revealDelay(120)}
           className="order-3 xl:order-none xl:col-start-1 xl:row-start-2 pt-0 xl:pt-6 w-full sm:max-w-xl"
         >
           <div className="relative z-0">
@@ -682,11 +681,57 @@ const lightThemeColors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']
 const darkThemeColors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
 
 function GitHubContributions() {
-  const [data] = useState(githubData)
-  const [loading] = useState(false)
+  const [data, setData] = useState(null)
+  const sectionRef = useRef(null)
   const gridContainerRef = useRef(null)
 
-  if (loading || !data || !data.weeks || data.weeks.length === 0) return null
+  useEffect(() => {
+    let active = true
+    const loadData = () => {
+      import('../data/github.json')
+        .then((mod) => {
+          if (active) setData(mod.default || mod)
+        })
+        .catch(() => {})
+    }
+
+    const el = sectionRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      loadData()
+      return () => { active = false }
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect()
+          loadData()
+        }
+      },
+      { rootMargin: '500px' }
+    )
+    observer.observe(el)
+    return () => {
+      active = false
+      observer.disconnect()
+    }
+  }, [])
+
+  if (!data || !data.weeks || data.weeks.length === 0) {
+    return (
+      <section ref={sectionRef}>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground">GitHub Contributions</h2>
+            <div className="mt-2 h-5 w-52 rounded-md skeleton skeleton-shimmer" />
+          </div>
+        </div>
+        <div className="rounded-[1rem] border border-border bg-card p-5 sm:p-6 theme-transition">
+          <div className="h-[168px] w-full rounded-xl skeleton skeleton-shimmer" />
+        </div>
+      </section>
+    )
+  }
 
   const getMonthLabel = (weeks, idx) => {
     const curMonth = weeks[idx].contributionDays[0]?.date.slice(0, 7)
@@ -935,6 +980,8 @@ function ToolsIUse() {
                 <img
                   src={tool.icon}
                   alt={tool.name}
+                  loading="lazy"
+                  decoding="async"
                   className={`${iconStyle} object-contain ${tool.imgClassName || ''}`}
                 />
               )}

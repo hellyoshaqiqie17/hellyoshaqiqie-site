@@ -22,7 +22,18 @@ if (!fs.existsSync(templatePath)) {
   console.error('dist/index.html not found. Please run "vite build" first.')
   process.exit(1)
 }
-const baseHtml = fs.readFileSync(templatePath, 'utf8')
+const rawTemplateHtml = fs.readFileSync(templatePath, 'utf8')
+
+// Convert Vite's main stylesheet link to non-render-blocking preload + media="print" swap
+// so #boot-skeleton paints at t=0ms even on slow connections, while src/main.jsx gates React
+// mount until #app-stylesheet is active (zero FOUC, zero unstyled HTML flash).
+const baseHtml = rawTemplateHtml.replace(
+  /<link\s+rel="stylesheet"\s+crossorigin\s+href="(\/assets\/index-[^"]+\.css)">/,
+  (_, href) =>
+    `<link rel="preload" as="style" crossorigin href="${href}">\n    ` +
+    `<link id="app-stylesheet" rel="stylesheet" media="print" crossorigin href="${href}" onload="this.media='all';window.__CSS_READY__=true">\n    ` +
+    `<noscript><link rel="stylesheet" crossorigin href="${href}"></noscript>`
+)
 
 function escapeHtml(str) {
   if (!str) return ''
@@ -60,6 +71,103 @@ const navHtml = `
     </nav>
   </header>
 `
+
+const bootNavSkeleton = `
+      <div class="bs-nav">
+        <div class="bs-s bs-logo"></div>
+        <div class="bs-nav-links">
+          <div class="bs-s bs-nav-link"></div>
+          <div class="bs-s bs-nav-link"></div>
+          <div class="bs-s bs-nav-link"></div>
+          <div class="bs-s bs-nav-link"></div>
+          <div class="bs-s bs-nav-link" style="width:32px"></div>
+          <div class="bs-s bs-nav-link"></div>
+          <div class="bs-s bs-nav-btn"></div>
+        </div>
+        <div class="bs-nav-mobile">
+          <div class="bs-s bs-nav-btn"></div>
+          <div class="bs-s bs-nav-btn"></div>
+        </div>
+      </div>`
+
+const homeBootSkeletonHtml = `<div id="boot-skeleton" aria-hidden="true"><div class="bs-card">${bootNavSkeleton}
+      <div class="bs-hero">
+        <div class="bs-col-left">
+          <div class="bs-avatar-row">
+            <div class="bs-s bs-avatar"></div>
+            <div class="bs-s bs-title"></div>
+          </div>
+          <div class="bs-lines">
+            <div class="bs-s bs-line" style="width:94%"></div>
+            <div class="bs-s bs-line" style="width:86%"></div>
+            <div class="bs-s bs-line" style="width:62%"></div>
+          </div>
+          <div class="bs-btns">
+            <div class="bs-s bs-btn" style="width:186px"></div>
+            <div class="bs-s bs-btn" style="width:128px"></div>
+          </div>
+          <div class="bs-pills">
+            <div class="bs-s bs-pill" style="width:168px"></div>
+            <div class="bs-s bs-pill" style="width:142px"></div>
+            <div class="bs-s bs-pill" style="width:166px"></div>
+            <div class="bs-s bs-pill" style="width:154px"></div>
+            <div class="bs-s bs-pill" style="width:164px"></div>
+          </div>
+          <div class="bs-testimonial">
+            <div class="bs-lines">
+              <div class="bs-s" style="height:18px;width:96%"></div>
+              <div class="bs-s" style="height:18px;width:88%"></div>
+              <div class="bs-s" style="height:18px;width:72%"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem">
+              <div class="bs-s" style="width:40px;height:40px;border-radius:.75rem"></div>
+              <div style="display:flex;flex-direction:column;gap:.45rem;flex:1">
+                <div class="bs-s" style="height:14px;width:136px"></div>
+                <div class="bs-s" style="height:12px;width:184px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-col-right">
+          <div class="bs-s bs-media-card"></div>
+          <div class="bs-s bs-media-card"></div>
+          <div class="bs-s bs-media-card"></div>
+        </div>
+      </div>
+      <div class="bs-section">
+        <div class="bs-sec-head">
+          <div class="bs-s" style="height:32px;width:220px"></div>
+          <div class="bs-s" style="height:18px;width:84px"></div>
+        </div>
+        <div class="bs-grid-3">
+          <div><div class="bs-s bs-proj-thumb"></div><div class="bs-s" style="height:18px;width:82%;margin-bottom:.6rem"></div><div class="bs-s" style="height:14px;width:62%"></div></div>
+          <div><div class="bs-s bs-proj-thumb"></div><div class="bs-s" style="height:18px;width:78%;margin-bottom:.6rem"></div><div class="bs-s" style="height:14px;width:58%"></div></div>
+          <div><div class="bs-s bs-proj-thumb"></div><div class="bs-s" style="height:18px;width:85%;margin-bottom:.6rem"></div><div class="bs-s" style="height:14px;width:64%"></div></div>
+        </div>
+      </div>
+    </div></div>`
+
+const subpageBootSkeletonHtml = `<div id="boot-skeleton" aria-hidden="true"><div class="bs-card">${bootNavSkeleton}
+      <div class="bs-subpage">
+        <div class="bs-s" style="height:18px;width:136px"></div>
+        <div class="bs-lines">
+          <div class="bs-s" style="height:40px;width:min(540px,88%)"></div>
+          <div class="bs-s" style="height:20px;width:min(640px,95%)"></div>
+          <div class="bs-s" style="height:20px;width:min(480px,74%)"></div>
+        </div>
+        <div class="bs-pills">
+          <div class="bs-s bs-pill" style="height:32px;width:110px"></div>
+          <div class="bs-s bs-pill" style="height:32px;width:132px"></div>
+          <div class="bs-s bs-pill" style="height:32px;width:96px"></div>
+        </div>
+        <div class="bs-s bs-sub-hero"></div>
+        <div class="bs-lines">
+          <div class="bs-s" style="height:16px;width:100%"></div>
+          <div class="bs-s" style="height:16px;width:94%"></div>
+          <div class="bs-s" style="height:16px;width:86%"></div>
+        </div>
+      </div>
+    </div></div>`
 
 const footerHtml = `
   <footer style="max-width:1200px;margin:3rem auto 0;padding:2rem 1rem;border-top:1px solid #e2e8f0;text-align:center;color:#64748b;font-size:0.9rem">
@@ -181,7 +289,10 @@ const homeBodyHtml = `
   ${footerHtml}
 `
 
-const homeHtml = baseHtml.replace('<div id="root"></div>', `<div id="root">${homeBodyHtml}</div>`)
+const homeHtml = baseHtml.replace(
+  '<div id="root"></div>',
+  `<div id="root">${homeBootSkeletonHtml}<div id="seo-prerender">${homeBodyHtml}</div></div>`
+)
 fs.writeFileSync(templatePath, homeHtml, 'utf8')
 console.log('✓ Pre-rendered: / -> /index.html')
 
@@ -789,8 +900,9 @@ for (const p of pages) {
   )
   html = html.replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:image" content="${p.image}" />`)
 
-  // 7. Strip homepage ProfilePage schema cleanly from subpages
+  // 7. Strip homepage ProfilePage schema & homepage-only hero image preload cleanly from subpages
   html = html.replace(/\s*<!-- JSON-LD: ProfilePage Schema[\s\S]*?<\/script>/, '')
+  html = html.replace(/\s*<!-- PRELOAD_HERO_COVER -->[\s\S]*?<!-- \/PRELOAD_HERO_COVER -->/, '')
 
   // 8. Replace #breadcrumb-json-ld IN-PLACE (zero duplicate BreadcrumbList!)
   const breadcrumbSchema = {
@@ -815,8 +927,11 @@ for (const p of pages) {
     </script>`
   html = html.replace('</head>', `${pageSchemaTag}\n  </head>`)
 
-  // 10. Inject Pre-rendered Content into <div id="root">
-  html = html.replace('<div id="root"></div>', `<div id="root">${p.bodyHtml}</div>`)
+  // 10. Inject Boot Skeleton + Pre-rendered SEO Content into <div id="root">
+  html = html.replace(
+    '<div id="root"></div>',
+    `<div id="root">${subpageBootSkeletonHtml}<div id="seo-prerender">${p.bodyHtml}</div></div>`
+  )
 
   // Write both directory index and cleanUrl .html
   const targetDir = path.join(distDir, p.path)
@@ -838,9 +953,10 @@ notFoundHtml = notFoundHtml.replace(/<title>[\s\S]*?<\/title>/, '<title>Page not
 notFoundHtml = notFoundHtml.replace(/<link\s+rel="canonical"[^>]*\/?>/, '')
 notFoundHtml = notFoundHtml.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/, '<meta name="robots" content="noindex, nofollow" />')
 notFoundHtml = notFoundHtml.replace(/\s*<!-- JSON-LD: ProfilePage Schema[\s\S]*?<\/script>/, '')
+notFoundHtml = notFoundHtml.replace(/\s*<!-- PRELOAD_HERO_COVER -->[\s\S]*?<!-- \/PRELOAD_HERO_COVER -->/, '')
 notFoundHtml = notFoundHtml.replace(
   '<div id="root"></div>',
-  `<div id="root">${navHtml}<main style="max-width:600px;margin:4rem auto;padding:2rem 1rem;text-align:center"><h1 style="font-size:2rem;font-weight:700">Page not found</h1><p style="color:#64748b;margin:1rem 0 2rem">This URL does not match any page on the site.</p><a href="/" style="color:#0f172a;font-weight:600">&larr; Back to home</a></main>${footerHtml}</div>`
+  `<div id="root">${subpageBootSkeletonHtml}<div id="seo-prerender">${navHtml}<main style="max-width:600px;margin:4rem auto;padding:2rem 1rem;text-align:center"><h1 style="font-size:2rem;font-weight:700">Page not found</h1><p style="color:#64748b;margin:1rem 0 2rem">This URL does not match any page on the site.</p><a href="/" style="color:#0f172a;font-weight:600">&larr; Back to home</a></main>${footerHtml}</div></div>`
 )
 fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtml, 'utf8')
 console.log('✓ Pre-rendered: /404.html')

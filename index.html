@@ -3,14 +3,65 @@
   <head>
     <script>
       (function () {
+        var root = document.documentElement;
+        root.classList.add('js-boot');
         try {
           if (localStorage.getItem('hellyos-theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.documentElement.style.colorScheme = 'dark';
+            root.classList.add('dark');
+            root.style.colorScheme = 'dark';
           }
         } catch (_) {}
+        setTimeout(function () {
+          if (!window.__APP_MOUNTED__) {
+            root.classList.remove('js-boot');
+          }
+        }, 6000);
       })();
     </script>
+    <style id="boot-critical-css">
+      :root{--bs-shell:#e2e8f0;--bs-dot:rgba(148,163,184,.36);--bs-card-bg:rgba(255,255,255,.86);--bs-card-border:rgba(205,205,201,.8);--bs-card-shadow:0 8px 32px rgba(0,0,0,.05);--bs-base:#edf0f5;--bs-hi:#dfe5ee;--bs-muted:#f6f8fb;--bs-inner-border:rgba(203,213,225,.75)}
+      html.dark{--bs-shell:#111827;--bs-dot:rgba(71,85,105,.38);--bs-card-bg:rgba(30,41,59,.76);--bs-card-border:rgba(51,65,85,.35);--bs-card-shadow:0 8px 32px rgba(0,0,0,.35);--bs-base:#263244;--bs-hi:#334155;--bs-muted:#1e293b;--bs-inner-border:rgba(51,65,85,.55)}
+      html,body{margin:0;padding:0;background-color:var(--bs-shell)}
+      html.js-boot #seo-prerender{display:none!important}
+      html:not(.js-boot) #boot-skeleton{display:none!important}
+      @keyframes bs-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+      #boot-skeleton{box-sizing:border-box;min-height:100vh;padding:1rem;background-color:var(--bs-shell);background-image:radial-gradient(var(--bs-dot) 1.5px,transparent 1.5px);background-size:24px 24px;overflow:hidden}
+      #boot-skeleton *,#boot-skeleton *::before,#boot-skeleton *::after{box-sizing:border-box}
+      .bs-card{max-width:1300px;margin:0 auto;border-radius:2rem;padding:1.5rem;background:var(--bs-card-bg);border:1px solid var(--bs-card-border);box-shadow:var(--bs-card-shadow);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+      .bs-s{background:linear-gradient(90deg,var(--bs-base) 0%,var(--bs-hi) 40%,var(--bs-base) 80%);background-size:200% 100%;animation:bs-shimmer 1.45s ease-in-out infinite;border-radius:.75rem}
+      .bs-s-pill{border-radius:9999px}
+      .bs-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:4rem}
+      .bs-logo{width:76px;height:30px;border-radius:.5rem}
+      .bs-nav-links{display:none;align-items:center;gap:1.5rem}
+      .bs-nav-link{width:54px;height:16px;border-radius:.375rem}
+      .bs-nav-btn{width:44px;height:44px;border-radius:9999px}
+      .bs-nav-mobile{display:flex;align-items:center;gap:.5rem}
+      .bs-hero{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start}
+      .bs-col-left{display:flex;flex-direction:column;gap:2.25rem}
+      .bs-avatar-row{display:flex;align-items:center;gap:1rem}
+      .bs-avatar{width:64px;height:64px;border-radius:1rem;flex-shrink:0}
+      .bs-title{height:40px;width:min(360px,72%);border-radius:.75rem}
+      .bs-lines{display:flex;flex-direction:column;gap:.75rem}
+      .bs-line{height:28px;border-radius:.625rem}
+      .bs-btns{display:flex;flex-wrap:wrap;gap:1rem;padding-top:.25rem}
+      .bs-btn{height:54px;border-radius:9999px}
+      .bs-pills{display:flex;flex-wrap:wrap;gap:.75rem}
+      .bs-pill{height:44px;border-radius:9999px}
+      .bs-testimonial{margin-top:.5rem;border-radius:1.5rem;padding:2rem;border:1px solid var(--bs-inner-border);background:var(--bs-muted);min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;max-width:36rem}
+      .bs-col-right{display:flex;flex-direction:column;gap:1.5rem}
+      .bs-media-card{width:100%;aspect-ratio:1.91/1;border-radius:1rem}
+      .bs-section{margin-top:6rem}
+      .bs-sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+      .bs-grid-3{display:grid;grid-template-columns:1fr;gap:2rem}
+      .bs-proj-thumb{width:100%;aspect-ratio:4/3;border-radius:1rem;margin-bottom:1rem}
+      .bs-subpage{display:flex;flex-direction:column;gap:2rem;max-width:1040px;margin:0 auto}
+      .bs-sub-hero{width:100%;aspect-ratio:16/9;max-height:460px;border-radius:1.25rem}
+      @media(min-width:640px){#boot-skeleton{padding:2rem 1.5rem}.bs-card{border-radius:3rem;padding:2.5rem}.bs-nav{margin-bottom:5.5rem}.bs-avatar{width:80px;height:80px}.bs-title{height:48px}.bs-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(min-width:768px){#boot-skeleton{padding:3rem 1.5rem}.bs-card{padding:3.5rem}.bs-nav-links{display:flex}.bs-nav-mobile{display:none}}
+      @media(min-width:1024px){#boot-skeleton{padding:3rem 2rem}.bs-card{padding:4rem}.bs-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media(min-width:1280px){.bs-hero{grid-template-columns:1.2fr 1fr;gap:5rem}}
+      @media(prefers-reduced-motion:reduce){.bs-s{animation:none;background:var(--bs-base)}}
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -44,6 +95,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://utfs.io" />
+
+    <!-- Performance: Non-blocking web fonts (zero render-blocking @import) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&amp;display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&amp;display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" />
+    </noscript>
+
+    <!-- Performance: Preload above-the-fold Hero images -->
+    <link rel="preload" as="image" href="/fotoku.webp" fetchpriority="high" />
+    <!-- PRELOAD_HERO_COVER -->
+    <link rel="preload" as="image" href="/assets/megah-interior-mockup.webp" fetchpriority="high" />
+    <!-- /PRELOAD_HERO_COVER -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Hellyos" />

@@ -52,6 +52,31 @@ function mockApiPlugin() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), mockApiPlugin()],
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              name: 'react-vendor',
+              test: /node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/,
+              priority: 30,
+            },
+            {
+              name: 'motion-vendor',
+              test: /node_modules[\\/](framer-motion|motion-dom|motion-utils)[\\/]/,
+              priority: 25,
+            },
+            {
+              name: 'icons-vendor',
+              test: /node_modules[\\/]@phosphor-icons[\\/]/,
+              priority: 20,
+            },
+          ],
+        },
+      },
+    },
+  },
   server: {
     watch: {
       usePolling: true,

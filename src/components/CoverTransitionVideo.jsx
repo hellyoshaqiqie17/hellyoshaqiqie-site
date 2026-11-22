@@ -17,25 +17,31 @@ export default function CoverTransitionVideo({
 }) {
   const containerRef = useRef(null)
   const videoRef = useRef(null)
+  const imgRef = useRef(null)
   const resetTimerRef = useRef(null)
 
   const [isInView, setIsInView] = useState(eager)
-  const [hasPreloaded, setHasPreloaded] = useState(eager)
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [hasPreloaded, setHasPreloaded] = useState(false)
   const [coverElapsed, setCoverElapsed] = useState(false)
   const [phase, setPhase] = useState('cover') // 'cover' | 'video'
 
-  // Reset state if videoSrc changes
+  // Reset state if videoSrc or poster changes
   useEffect(() => {
     setPhase('cover')
     setCoverElapsed(false)
-  }, [videoSrc])
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setImgLoaded(true)
+    } else {
+      setImgLoaded(false)
+    }
+  }, [videoSrc, poster])
 
   // Track viewport visibility so below-the-fold cards always get their full 2s cover reveal
   useEffect(() => {
     const el = containerRef.current
     if (!el || typeof IntersectionObserver === 'undefined') {
       setIsInView(true)
-      setHasPreloaded(true)
       return
     }
 
@@ -43,9 +49,7 @@ export default function CoverTransitionVideo({
       ([entry]) => {
         const visible = entry.isIntersecting
         setIsInView(visible)
-        if (visible) {
-          setHasPreloaded(true)
-        } else {
+        if (!visible) {
           clearTimeout(resetTimerRef.current)
           setPhase('cover')
           setCoverElapsed(false)
@@ -70,7 +74,17 @@ export default function CoverTransitionVideo({
     }
   }, [])
 
-  // Trigger preload as soon as card enters viewport so video is ready right at t = 2s
+  // Defer video preload slightly so initial CSS, JS, fonts, and crisp WebP covers never compete with MP4 downloads
+  useEffect(() => {
+    if (!isInView || hasPreloaded) return
+    const delayMs = eager ? (imgLoaded ? 350 : 750) : 250
+    const timer = setTimeout(() => {
+      setHasPreloaded(true)
+    }, delayMs)
+    return () => clearTimeout(timer)
+  }, [isInView, hasPreloaded, eager, imgLoaded])
+
+  // Trigger preload once deferred timer opens the gate so video is buffered right at t = 2s
   useEffect(() => {
     if (!hasPreloaded) return
     const video = videoRef.current
@@ -79,9 +93,9 @@ export default function CoverTransitionVideo({
     }
   }, [hasPreloaded, videoSrc])
 
-  // Run the 2-second mockup cover countdown whenever visible in 'cover' phase
+  // Run the 2-second mockup cover countdown once cover image is loaded and visible
   useEffect(() => {
-    if (!isInView || phase !== 'cover') {
+    if (!isInView || !imgLoaded || phase !== 'cover') {
       setCoverElapsed(false)
       return
     }
@@ -91,7 +105,7 @@ export default function CoverTransitionVideo({
     }, coverDurationMs)
 
     return () => clearTimeout(timer)
-  }, [isInView, phase, coverDurationMs])
+  }, [isInView, imgLoaded, phase, coverDurationMs])
 
   // Once 2s cover hold has elapsed, start playback and reveal video only when actually playing
   useEffect(() => {
@@ -169,6 +183,13 @@ export default function CoverTransitionVideo({
       <div
         className={`w-full h-full relative transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${hoverScaleClass}`}
       >
+        <div
+          aria-hidden="true"
+          className={`absolute inset-0 skeleton skeleton-shimmer transition-opacity duration-500 ${
+            imgLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+        />
+
         <video
           ref={videoRef}
           src={videoSrc}
@@ -183,15 +204,20 @@ export default function CoverTransitionVideo({
         />
 
         <img
+          ref={imgRef}
           src={poster}
           alt={alt}
-          loading="eager"
+          loading={eager ? 'eager' : 'lazy'}
           fetchPriority={eager ? 'high' : undefined}
           decoding="async"
+          onLoad={() => setImgLoaded(true)}
+          onError={() => setImgLoaded(true)}
           className={`absolute inset-0 w-full h-full object-cover ${imagePosition} will-change-[opacity,transform] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             phase === 'video'
               ? 'opacity-0 scale-[1.035] pointer-events-none'
-              : 'opacity-100 scale-100'
+              : imgLoaded
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-[1.02]'
           }`}
         />
       </div>
