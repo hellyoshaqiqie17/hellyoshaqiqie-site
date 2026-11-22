@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { m, AnimatePresence } from 'framer-motion'
 import { useContactDialog } from '../context/ContactDialogContext'
 import Meta from '../components/Meta'
+import CoverTransitionVideo from '../components/CoverTransitionVideo'
 import {
   ArrowRight,
   Briefcase,
@@ -251,12 +252,14 @@ function HeroSection() {
             <ImagePlaceholder />
           ) : (
             <Link to="/project/mitra-megah-interior-3d-cad" className="block w-full h-full relative group">
-            <ProgressiveImage
-              src={pageSettings.heroImageTop}
+            <CoverTransitionVideo
+              poster={pageSettings.heroImageTop}
+              videoSrc="/assets/mitra-megah-showcase.mp4"
               alt="Mitra Megah Interior 3D CAD Mockup"
-              imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
-              loading="eager"
-              fetchPriority="high"
+              coverDurationMs={2000}
+              eager
+              hoverScaleClass="group-hover:scale-[1.025]"
+              className="absolute inset-0 w-full h-full"
             />
           </Link>
           )}
@@ -272,10 +275,14 @@ function HeroSection() {
             <ImagePlaceholder />
           ) : (
             <Link to="/project/meridian-3d-clothing-store" className="block w-full h-full relative group">
-            <ProgressiveImage
-              src={pageSettings.heroImageMiddle}
+            <CoverTransitionVideo
+              poster={pageSettings.heroImageMiddle}
+              videoSrc="/assets/meridian-showcase.mp4"
               alt="Meridian — Contemporary Clothing Store & 3D Garment Marketplace"
-              imgClassName="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.025]"
+              coverDurationMs={2000}
+              eager
+              hoverScaleClass="group-hover:scale-[1.025]"
+              className="absolute inset-0 w-full h-full"
             />
           </Link>
           )}
@@ -405,16 +412,13 @@ function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePositi
       >
         <div className={`overflow-hidden ${getBgClass(bgClass)} aspect-[4/3] rounded-[1rem] relative mb-4 transition-shadow duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-elevated theme-transition`}>
           {cardVideo ? (
-            <video
-              src={cardVideo}
+            <CoverTransitionVideo
               poster={image}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              aria-label={title}
-              className="w-full h-full object-cover object-center transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]"
+              videoSrc={cardVideo}
+              alt={title}
+              coverDurationMs={2000}
+              imagePosition={imagePosition}
+              className="w-full h-full"
             />
           ) : (
             <img

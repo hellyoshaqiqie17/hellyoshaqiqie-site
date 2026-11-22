@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from '../components/Icons'
 import Meta from '../components/Meta'
+import CoverTransitionVideo from '../components/CoverTransitionVideo'
 import projectsData from '../data/projects.json'
 
 // ----------------------------------------------------
@@ -35,16 +36,13 @@ function ProjectCard({ slug, title, image, cardVideo, tags, bgClass, imagePositi
       >
         <div className={`overflow-hidden ${getBgClass(bgClass)} aspect-[4/3] rounded-[1rem] relative mb-4 transition-shadow duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:shadow-elevated theme-transition`}>
           {cardVideo ? (
-            <video
-              src={cardVideo}
+            <CoverTransitionVideo
               poster={image}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              aria-label={title}
-              className="w-full h-full object-cover object-center transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]"
+              videoSrc={cardVideo}
+              alt={title}
+              coverDurationMs={2000}
+              imagePosition={imagePosition}
+              className="w-full h-full"
             />
           ) : (
             <img

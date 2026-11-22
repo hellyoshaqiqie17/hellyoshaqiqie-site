@@ -59,6 +59,7 @@
     "longDescription": "VNYL Store is an editorial vinyl record e-commerce platform and curation suite designed for collectors of heavyweight 180g pressings, colored limited variants, pre-order releases, and archival LPs priced in IDR.\n\nKey engineering and product highlights include:\n• Editorial Storefront & Discovery Experience: Crafted with Syne display typography, IBM Plex Mono pressing metadata, and Plus Jakarta Sans UI copy. Features a full-bleed hero carousel, artist discovery strip, pinned featured releases, a Hyped Vinyl limited-run spotlight with peeking disc previews, and a genre directory.\n• Catalog Browser & Pressing Detail Pages: Responsive multi-filter shop interface supporting collection filters, real-time title/artist/catalog-number search, detailed vinyl pressing sheets (format, wax colorway, condition, imprint), slide-over cart sheet, and wishlist persistence.\n• Full Admin Studio & Live Preview: Protected management console featuring a Banner Manager, Pin Curation Panel for landing page sections, Product and Promo Managers, Bulk Data import/export tools, Order tracking panel, Payment Settings, and a live Admin Preview Studio.\n• BinderPay SNAP API Integration: End-to-end payment checkout supporting QRIS QR generation, Virtual Accounts, and Payment Links with dedicated order payment tracking views and encrypted credential management.",
     "image": "/assets/vnyl-mockup.webp",
     "video": "/assets/vnyl-showcase.mp4",
+    "cardVideo": "/assets/vnyl-card.mp4",
     "tags": [
       "Next.js 16 / React 19",
       "E-Commerce",
