@@ -1,5 +1,12 @@
 [
   {
+    "id": 11,
+    "year": "2027",
+    "title": "Selected Learner",
+    "competition": "Apple Developer Academy @UC Surabaya Cohort 2027",
+    "institution": "Apple Inc. | Universitas Ciputra Surabaya"
+  },
+  {
     "id": 8,
     "year": "2026",
     "title": "Best Presentation",
